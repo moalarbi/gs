@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فاتورة اتفاقية - RAHA Health</title>
+
+    <!-- Google Fonts - IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">تم النسخ بنجاح</div>
+
+    <!-- Top Bar -->
+    <header class="top-bar no-print">
+        <div class="top-bar-content">
+            <div class="brand">
+                <span class="brand-icon">🩺</span>
+                <span class="brand-name">RAHA HEALTH</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Document Card -->
+    <main class="document-wrapper">
+        <div class="document-card" id="document-card">
+
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-banner">
+                    <h1 class="hero-title">
+                        <span>فاتورة اتفاقية</span><br>
+                        تطوير متجر خدمات طبية متكامل
+                    </h1>
+                </div>
+            </section>
+
+            <!-- Invoice Meta Section -->
+            <section class="meta-section">
+                <div class="meta-single-card">
+                    <div class="meta-row">
+                        <span class="meta-label">رقم الفاتورة:</span>
+                        <span class="meta-value" id="invoice-number">002399</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">تاريخ الفاتورة:</span>
+                        <span class="meta-value">٢-٣-٢٠٢٦</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">المقدمة إلى:</span>
+                        <span class="meta-value company-name">ادارة مركز رها للرعاية الطبيه</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">مدة التنفيذ:</span>
+                        <span class="meta-value">14 يوم</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scope Section -->
+            <section class="scope-section">
+                <h2 class="section-title">بنود الاتفاقية</h2>
+
+                <div class="scope-grid">
+                    <!-- Scope Card 1 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🎨</span>
+                            <h3 class="scope-title">تصميم وتجربة المستخدم (UI/UX)</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تصميم واجهة احترافية متجاوبة (جوال – تابلت – كمبيوتر)</span>
+                                    <span class="item-count">(550 ريال)</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحسين رحلة العميل: خدمة → حجز → دفع</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Scope Card 2 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🛍️</span>
+                            <h3 class="scope-title">إعداد متجر سلة وهيكلة الخدمات</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تهيئة الخدمات كمنتجات قابلة للبيع + تصنيفات واضحة</span>
+                                    <span class="item-count">(480 ريال)</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تفعيل القسائم والعروض + إعدادات خدمة العملاء</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Scope Card 3 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">📅</span>
+                            <h3 class="scope-title">الحجز والدفع وتهيئة SEO</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تفعيل نظام الحجز واختيار الوقت للخدمات المنزلية</span>
+                                    <span class="item-count">(320 ريال)</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">ربط بوابات الدفع الإلكتروني حسب تفعيل الحساب</span>
+                                    <span class="item-count">(250 ريال)</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إعداد SEO أساسي + ربط Analytics / Search Console</span>
+                                    <span class="item-count">(180 ريال)</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تهيئة الأمان والصفحات النظامية + اختبار قبل التسليم</span>
+                                    <span class="item-count">(96 ريال)</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Workflow Section -->
+            <section class="workflow-section">
+                <h2 class="section-title">آلية العمل</h2>
+                <div class="workflow-container">
+                    <ul class="workflow-list">
+                        <li class="workflow-item"><span class="step-number">1</span><span class="step-text">استلام المتطلبات وتأكيد الخدمات</span></li>
+                        <li class="workflow-item"><span class="step-number">2</span><span class="step-text">تصميم الواجهة وتجهيز الصفحات</span></li>
+                        <li class="workflow-item"><span class="step-number">3</span><span class="step-text">إعداد متجر سلة + الحجز + الدفع</span></li>
+                        <li class="workflow-item"><span class="step-number">4</span><span class="step-text">SEO + التحليلات + الاختبار</span></li>
+                        <li class="workflow-item"><span class="step-number">5</span><span class="step-text">التسليم والتدريب المختصر</span></li>
+                    </ul>
+                    <div class="workflow-note">
+                        <span class="highlight-text">مدة التنفيذ: 14 يوم</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section class="pricing-section">
+                <div class="pricing-box">
+                    <span class="pricing-label">قيمة المشروع</span>
+                    <div class="pricing-amount">
+                        <span class="amount">1,876</span>
+                        <span class="currency">ريال سعودي</span>
+                    </div>
+                    <p class="pricing-note">قيمة إجمالية – تُسلم خلال 14 يوم</p>
+                </div>
+            </section>
+
+            <!-- Notes Section -->
+            <section class="notes-section">
+                <h2 class="section-title">ملاحظات</h2>
+                <ul class="notes-list">
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">التنفيذ ضمن إمكانيات منصة سلة والإضافات المتاحة.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">أي تطويرات خاصة خارج نطاق سلة تعتبر أعمال إضافية.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">الميزانيات الإعلانية غير مشمولة.</span></li>
+                </ul>
+            </section>
+
+            <!-- Footer -->
+            <footer class="document-footer">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <span class="footer-brand-name">RAHA HEALTH</span>
+                    </div>
+                </div>
+                <div class="print-action-bottom no-print">
+                    <button class="btn btn-primary btn-large" onclick="printDocument()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                            <rect x="6" y="14" width="12" height="8"></rect>
+                        </svg>
+                        طباعة الفاتورة
+                    </button>
+                </div>
+            </footer>
+
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../assets/script.js"></script>
+</body>
+</html>
