@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم الفواتير - Invoice Admin Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 700px;
+            width: 100%;
+            padding: 40px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .form-row .form-group {
+            margin-bottom: 0;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        button {
+            flex: 1;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-reset {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .btn-reset:hover {
+            background: #e0e0e0;
+        }
+
+        .message {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            font-size: 14px;
+        }
+
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+
+        .message.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+            display: block;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .info-box {
+            background: #f9f9f9;
+            border-right: 4px solid #667eea;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .result-link {
+            word-break: break-all;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .result-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧾 لوحة تحكم الفواتير</h1>
+            <p>إنشاء فواتير جديدة تلقائياً عبر GitHub</p>
+        </div>
+
+        <div class="info-box">
+            <strong>ملاحظة:</strong> هذه الصفحة تتطلب توكن GitHub صحيح. التوكن لن يتم حفظه في أي مكان، بل يتم استخدامه فقط لإرسال الطلب إلى GitHub API.
+        </div>
+
+        <div id="message" class="message"></div>
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p style="margin-top: 10px; color: #667eea;">جاري إنشاء الفاتورة...</p>
+        </div>
+
+        <form id="invoiceForm">
+            <!-- GitHub Token -->
+            <div class="form-group">
+                <label for="token">توكن GitHub *</label>
+                <input type="password" id="token" name="token" placeholder="ghp_xxxxxxxxxxxxx" required>
+            </div>
+
+            <!-- Invoice Number & Random Code -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="invoiceNumber">رقم الفاتورة *</label>
+                    <input type="text" id="invoiceNumber" name="invoiceNumber" placeholder="002400" required>
+                </div>
+                <div class="form-group">
+                    <label for="randomCode">الكود العشوائي (6 أحرف) *</label>
+                    <input type="text" id="randomCode" name="randomCode" placeholder="ABCDEF" maxlength="6" required>
+                </div>
+            </div>
+
+            <!-- Client Name & Date -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="clientName">اسم العميل *</label>
+                    <input type="text" id="clientName" name="clientName" placeholder="شركة العميل المحدودة" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">التاريخ *</label>
+                    <input type="text" id="date" name="date" placeholder="٥-٣-٢٠٢٦" required>
+                </div>
+            </div>
+
+            <!-- Duration & Total Price -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="duration">مدة التنفيذ *</label>
+                    <input type="text" id="duration" name="duration" placeholder="20 يوم" required>
+                </div>
+                <div class="form-group">
+                    <label for="totalPrice">السعر الإجمالي *</label>
+                    <input type="text" id="totalPrice" name="totalPrice" placeholder="2500 ريال سعودي" required>
+                </div>
+            </div>
+
+            <!-- WhatsApp Number & Website -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="whatsappNumber">رقم الواتساب *</label>
+                    <input type="text" id="whatsappNumber" name="whatsappNumber" placeholder="0537311886" required>
+                </div>
+                <div class="form-group">
+                    <label for="website">رابط الموقع *</label>
+                    <input type="url" id="website" name="website" placeholder="https://golf-stusio.umso.co/" required>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني *</label>
+                <input type="email" id="email" name="email" placeholder="Golf.Studio.Adv@gmail.com" required>
+            </div>
+
+            <!-- Buttons -->
+            <div class="button-group">
+                <button type="submit" class="btn-submit">إنشاء ورفع الفاتورة</button>
+                <button type="reset" class="btn-reset">مسح البيانات</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('invoiceForm');
+        const messageDiv = document.getElementById('message');
+        const loadingDiv = document.getElementById('loading');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const token = document.getElementById('token').value;
+            const invoiceNumber = document.getElementById('invoiceNumber').value;
+            const randomCode = document.getElementById('randomCode').value.toUpperCase();
+            const clientName = document.getElementById('clientName').value;
+            const date = document.getElementById('date').value;
+            const duration = document.getElementById('duration').value;
+            const totalPrice = document.getElementById('totalPrice').value;
+            const whatsappNumber = document.getElementById('whatsappNumber').value;
+            const website = document.getElementById('website').value;
+            const email = document.getElementById('email').value;
+
+            // Validation
+            if (!token || !invoiceNumber || !randomCode || !clientName || !date || !duration || !totalPrice) {
+                showMessage('جميع الحقول مطلوبة', 'error');
+                return;
+            }
+
+            if (randomCode.length !== 6) {
+                showMessage('الكود العشوائي يجب أن يكون 6 أحرف بالضبط', 'error');
+                return;
+            }
+
+            showLoading(true);
+            messageDiv.style.display = 'none';
+
+            try {
+                const folderName = `${invoiceNumber}${randomCode}`;
+                const invoiceContent = generateInvoiceHTML(invoiceNumber, clientName, date, duration, totalPrice, whatsappNumber, website, email);
+
+                // Create file via GitHub API
+                const response = await fetch(`https://api.github.com/repos/moalarbi/gs/contents/v/${folderName}/index.html`, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `token ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: `Add invoice ${folderName}`,
+                        content: btoa(invoiceContent),
+                        branch: 'main'
+                    })
+                });
+
+                showLoading(false);
+
+                if (response.ok) {
+                    const invoiceUrl = `https://moalarbi.github.io/gs/v/${folderName}/`;
+                    showMessage(`✅ تم إنشاء الفاتورة بنجاح!<br><br>الرابط: <a href="${invoiceUrl}" target="_blank" class="result-link">${invoiceUrl}</a><br><br>قد يستغرق ظهور الرابط دقيقة أو اثنتين.`, 'success');
+                    form.reset();
+                } else {
+                    const errorData = await response.json();
+                    showMessage(`❌ خطأ: ${errorData.message || 'فشل إنشاء الفاتورة'}`, 'error');
+                }
+            } catch (error) {
+                showLoading(false);
+                showMessage(`❌ خطأ: ${error.message}`, 'error');
+            }
+        });
+
+        function showMessage(text, type) {
+            messageDiv.innerHTML = text;
+            messageDiv.className = `message ${type}`;
+            messageDiv.style.display = 'block';
+        }
+
+        function showLoading(show) {
+            loadingDiv.style.display = show ? 'block' : 'none';
+        }
+
+        function generateInvoiceHTML(invoiceNumber, clientName, date, duration, totalPrice, whatsappNumber, website, email) {
+            return `<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فاتورة اتفاقية - RAHA Health</title>
+
+    <!-- Google Fonts - IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"><\/script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"><\/script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../assets/style.css">
+    <style>
+        .toast {
+            visibility: hidden;
+            min-width: 200px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            padding: 12px;
+            position: fixed;
+            z-index: 1000;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 14px;
+        }
+        .toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+        @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+        @keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+    </style>
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">تم نسخ الرابط بنجاح</div>
+
+    <!-- Top Bar -->
+    <header class="top-bar no-print">
+        <div class="top-bar-content">
+            <div class="brand">
+                <span class="brand-icon">🩺</span>
+                <span class="brand-name">RAHA HEALTH</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Document Card -->
+    <main class="document-wrapper">
+        <div class="document-card" id="document-card">
+
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-banner">
+                    <h1 class="hero-title">
+                        <span>فاتورة اتفاقية</span><br>
+                        تطوير متجر خدمات طبية متكامل
+                    </h1>
+                </div>
+            </section>
+
+            <!-- Invoice Meta Section -->
+            <section class="meta-section">
+                <div class="meta-single-card">
+                    <div class="meta-row">
+                        <span class="meta-label">رقم الفاتورة:</span>
+                        <span class="meta-value" id="invoice-number">${invoiceNumber}</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">تاريخ الفاتورة:</span>
+                        <span class="meta-value">${date}</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">المقدمة إلى:</span>
+                        <span class="meta-value company-name">${clientName}</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">مدة التنفيذ:</span>
+                        <span class="meta-value">${duration}</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scope Section -->
+            <section class="scope-section">
+                <h2 class="section-title">بنود الاتفاقية</h2>
+
+                <div class="scope-grid">
+                    <!-- Scope Card 1 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🎨</span>
+                            <h3 class="scope-title">تصميم وتجربة المستخدم (UI/UX)</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"><\/span>
+                                <div class="item-content">
+                                    <span class="item-name">تصميم واجهة احترافية متجاوبة (جوال – تابلت – كمبيوتر)</span>
+                                <\/div>
+                            <\/li>
+                            <li class="scope-item">
+                                <span class="item-bullet"><\/span>
+                                <div class="item-content">
+                                    <span class="item-name">تحسين رحلة العميل: خدمة → حجز → دفع</span>
+                                <\/div>
+                            <\/li>
+                        <\/ul>
+                    <\/div>
+
+                    <!-- Scope Card 2 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🛍️</span>
+                            <h3 class="scope-title">إعداد متجر سلة وهيكلة الخدمات</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"><\/span>
+                                <div class="item-content">
+                                    <span class="item-name">تهيئة الخدمات كمنتجات قابلة للبيع + تصنيفات واضحة</span>
+                                <\/div>
+                            <\/li>
+                            <li class="scope-item">
+                                <span class="item-bullet"><\/span>
+                                <div class="item-content">
+                                    <span class="item-name">تفعيل القسائم والعروض + إعدادات خدمة العملاء</span>
+                                <\/div>
+                            <\/li>
+                        <\/ul>
+                    <\/div>
+
+                    <!-- Scope Card 3 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">📅</span>
+                            <h3 class="scope-title">الحجز والدفع وتهيئة SEO</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"><\/span>
+                                <div class="item-content">
+                                    <span class="item-name">تفعيل نظام الحجز واختيار الوقت للخدمات المنزلية</span>
+                                <\/div>
+                            <\/li>
+                            <li class="scope-item">
+                                <span class="item-bullet"><\/span>
+                                <div class="item-content">
+                                    <span class="item-name">ربط بوابات الدفع الإلكتروني حسب تفعيل الحساب</span>
+                                <\/div>
+                            <\/li>
+                            <li class="scope-item">
+                                <span class="item-bullet"><\/span>
+                                <div class="item-content">
+                                    <span class="item-name">إعداد SEO أساسي + ربط Analytics / Search Console</span>
+                                <\/div>
+                            <\/li>
+                            <li class="scope-item">
+                                <span class="item-bullet"><\/span>
+                                <div class="item-content">
+                                    <span class="item-name">تهيئة الأمان والصفحات النظامية + اختبار قبل التسليم</span>
+                                <\/div>
+                            <\/li>
+                        <\/ul>
+                    <\/div>
+                </div>
+            </section>
+
+            <!-- Workflow Section -->
+            <section class="workflow-section">
+                <h2 class="section-title">آلية العمل</h2>
+                <div class="workflow-container">
+                    <ul class="workflow-list">
+                        <li class="workflow-item"><span class="step-number">1</span><span class="step-text">استلام المتطلبات وتأكيد الخدمات</span><\/li>
+                        <li class="workflow-item"><span class="step-number">2</span><span class="step-text">تصميم الواجهة وتجهيز الصفحات</span><\/li>
+                        <li class="workflow-item"><span class="step-number">3</span><span class="step-text">إعداد متجر سلة + الحجز + الدفع</span><\/li>
+                        <li class="workflow-item"><span class="step-number">4</span><span class="step-text">SEO + التحليلات + الاختبار</span><\/li>
+                        <li class="workflow-item"><span class="step-number">5</span><span class="step-text">التسليم والتدريب المختصر</span><\/li>
+                    <\/ul>
+                    <div class="workflow-note">
+                        <span class="highlight-text">مدة التنفيذ: ${duration}</span>
+                    <\/div>
+                <\/div>
+            <\/section>
+
+            <!-- Pricing Section -->
+            <section class="pricing-section">
+                <div class="pricing-box">
+                    <span class="pricing-label">قيمة المشروع</span>
+                    <div class="pricing-amount">
+                        <span class="amount">${totalPrice.split(' ')[0]}</span>
+                        <span class="currency">${totalPrice.split(' ').slice(1).join(' ')}</span>
+                    </div>
+                    <p class="pricing-note">قيمة إجمالية – تُسلم خلال ${duration}</p>
+                </div>
+            </section>
+
+            <!-- Notes Section -->
+            <section class="notes-section">
+                <h2 class="section-title">ملاحظات</h2>
+                <ul class="notes-list">
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">التنفيذ ضمن إمكانيات منصة سلة والإضافات المتاحة.</span><\/li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">أي تطويرات خاصة خارج نطاق سلة تعتبر أعمال إضافية.</span><\/li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">الميزانيات الإعلانية غير مشمولة.</span><\/li>
+                </ul>
+            </section>
+
+            <!-- Footer -->
+            <footer class="document-footer">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <span class="footer-brand-name">GOLF STUDIO</span>
+                    </div>
+                    <div class="footer-contact">
+                        <a href="https://wa.me/966${whatsappNumber.replace(/[^0-9]/g, '')}" target="_blank" class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            ${whatsappNumber}
+                        </a>
+                        <a href="mailto:${email}" class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            ${email}
+                        </a>
+                        <a href="${website}" target="_blank" class="contact-item">
+                            <span class="contact-icon">🌐</span>
+                            ${website.replace('https://', '').replace('http://', '').replace(/\/$/, '')}
+                        </a>
+                    </div>
+                </div>
+                <div class="print-action-bottom no-print">
+                    <button class="btn btn-primary btn-large" onclick="copyInvoiceLink()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 8px;">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"><\/rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"><\/path>
+                        <\/svg>
+                        نسخ رابط الفاتورة
+                    </button>
+                </div>
+            </footer>
+
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../assets/script.js"><\/script>
+    <script>
+        function copyInvoiceLink() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                const toast = document.getElementById("toast");
+                toast.className = "toast show";
+                setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    <\/script>
+</body>
+</html>`;
+        }
+    </script>
+</body>
+</html>
