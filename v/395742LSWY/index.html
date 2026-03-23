@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فاتورة اتفاقية - GOLF STUDIO</title>
+    
+    <!-- Google Fonts - IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">تم النسخ بنجاح</div>
+
+    <!-- Top Bar -->
+    <header class="top-bar no-print">
+        <div class="top-bar-content">
+            <div class="brand">
+                <span class="brand-icon">⛳</span>
+                <span class="brand-name">GOLF STUDIO</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Document Card -->
+    <main class="document-wrapper">
+        <div class="document-card" id="document-card">
+            
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-banner">
+                    <h1 class="hero-title">
+                        <span>فاتورة اتفاقية</span><br>
+                        تدشين وتصميم متجر إلكتروني لمنتجات السيارات
+                    </h1>
+                </div>
+            </section>
+
+            <!-- Invoice Meta Section -->
+            <section class="meta-section">
+                <div class="meta-single-card">
+                    <div class="meta-row">
+                        <span class="meta-label">رقم الفاتورة:</span>
+                        <span class="meta-value" id="invoice-number">395742</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">تاريخ الفاتورة:</span>
+                        <span class="meta-value">24 مارس 2026</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">المقدمة إلى:</span>
+                        <span class="meta-value company-name">عميلنا العزيز</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">مدة التنفيذ:</span>
+                        <span class="meta-value">7 أيام من تاريخ سداد الفاتورة</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scope Section -->
+            <section class="scope-section">
+                <h2 class="section-title">تفاصيل الخدمة</h2>
+                
+                <div class="scope-grid">
+                    <!-- Scope Card 1: Store Design -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🛒</span>
+                            <h3 class="scope-title">تدشين وتصميم المتجر</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تهيئة متجر سلة بشكل كامل</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">اختيار الثيم المناسب لنشاط منتجات السيارات</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تصميم واجهة المتجر بشكل احترافي</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">ترتيب أقسام المتجر والمنتجات</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">ضبط التوافق مع الجوال والأجهزة المختلفة (Responsive)</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تجهيز المتجر ليكون جاهز للبيع</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">مراجعة واعتماد العميل</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">التسليم النهائي للمتجر</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Scope Card 2: Gifts -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🎁</span>
+                            <h3 class="scope-title">الهدايا المجانية</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">ترتيب المنتجات بطريقة تساعد على زيادة المبيعات</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تجهيز المتجر ليكون جاهز للتسويق</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section class="pricing-section">
+                <div class="pricing-box">
+                    <span class="pricing-label">سعر الخدمة مع الخصم</span>
+                    <div class="pricing-amount">
+                        <span class="amount" style="text-decoration: line-through; font-size: 0.6em; color: #888; margin-left: 10px;">1500</span>
+                        <span class="amount" style="font-size: 1.5em; color: #2d3436;">600</span>
+                        <span class="currency">ريال سعودي</span>
+                    </div>
+                    <p class="pricing-note">عرض خاص لمتجر منتجات السيارات</p>
+                </div>
+            </section>
+
+            <!-- Exclusions Section -->
+            <section class="exclusions-section" style="padding: 30px; background: #fff; border-top: 1px solid #eee;">
+                <h3 style="margin-bottom: 15px; color: #2d3436; font-size: 18px;">غير مشمول في السعر</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 8px; color: #636e72; font-size: 14px;">• رسوم تفعيل اشتراك منصة سلة</li>
+                    <li style="margin-bottom: 8px; color: #636e72; font-size: 14px;">• شراء قالب المتجر (إن وجد)</li>
+                    <li style="margin-bottom: 8px; color: #636e72; font-size: 14px;">• شراء الدومين</li>
+                </ul>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="contact-section no-print" style="padding: 30px; text-align: center; background: #f8f9fa;">
+                <p style="margin-bottom: 15px; color: #2d3436;">لأي استفسار، يسعدنا تواصلك معنا</p>
+                <a href="https://wa.me/966537311886" style="display: inline-block; background: #25d366; color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: 700;">
+                    تواصل عبر واتساب
+                </a>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="../../assets/script.js"></script>
+</body>
+</html>
