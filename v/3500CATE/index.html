@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فاتورة اتفاقية - GOLF STUDIO</title>
+    
+    <!-- Google Fonts - IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">تم النسخ بنجاح</div>
+
+    <!-- Top Bar -->
+    <header class="top-bar no-print">
+        <div class="top-bar-content">
+            <div class="brand">
+                <span class="brand-icon">⛳</span>
+                <span class="brand-name">GOLF STUDIO</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Document Card -->
+    <main class="document-wrapper">
+        <div class="document-card" id="document-card">
+            
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-banner">
+                    <h1 class="hero-title">
+                        <span>فاتورة اتفاقية</span><br>
+                        تحسين محركات البحث (SEO) لمتجر رقميات بلس
+                    </h1>
+                </div>
+            </section>
+
+            <!-- Invoice Meta Section -->
+            <section class="meta-section">
+                <div class="meta-single-card">
+                    <div class="meta-row">
+                        <span class="meta-label">رقم الفاتورة:</span>
+                        <span class="meta-value" id="invoice-number">3500</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">تاريخ الفاتورة:</span>
+                        <span class="meta-value">25/3/2026</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">المقدمة إلى:</span>
+                        <span class="meta-value company-name">رقميات بلس</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">مدة التنفيذ:</span>
+                        <span class="meta-value">30 يوم من تاريخ اعتماد الاتفاقية</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scope Section -->
+            <section class="scope-section">
+                <h2 class="section-title">بنود الاتفاقية</h2>
+                
+                <div class="scope-grid">
+                    <!-- SEO Services -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🔍</span>
+                            <h3 class="scope-title">تحسين محركات البحث (SEO)</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[التهيئة التقنية]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إصلاح مشاكل الفهرسة (Indexing)</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحسين ملف robots.txt و sitemap</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">معالجة الروابط المكسورة</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحسين سرعة الموقع وتجربة الجوال</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحسين الصور وتقليل حجمها</span>
+                                </div>
+                            </li>
+                            
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[تحسين المحتوى والمنتجات]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحسين عناوين المنتجات (SEO Titles)</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">كتابة وصف احترافي متوافق مع SEO</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحسين الكلمات المفتاحية لكل منتج</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحسين بنية العناوين (H1 - H2)</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحسين روابط المنتجات (URL Structure)</span>
+                                </div>
+                            </li>
+
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[النمو والظهور]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إنشاء خطة محتوى للمدونة</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">كتابة مقالات تستهدف كلمات يبحث عنها العملاء</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحسين ظهور المتجر في نتائج البحث</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">بناء Authority للموقع في مجاله</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحسين صفحات المنتجات لزيادة المبيعات</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إضافة عناصر الثقة</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحسين تجربة المستخدم</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">رفع نسبة التحويل داخل المتجر</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Free Gifts -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🎁</span>
+                            <h3 class="scope-title">الهدايا المجانية</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحليل شامل للمتجر قبل التنفيذ</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تقرير أداء بعد التنفيذ</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">استشارة مجانية لمدة 7 أيام</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">توصيات تسويقية للنمو</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section class="pricing-section">
+                <div class="pricing-box">
+                    <span class="pricing-label">الاستثمار المطلوب</span>
+                    <div class="pricing-amount">
+                        <span class="amount-old" style="text-decoration: line-through; color: #888; font-size: 0.6em; margin-left: 10px;">3500</span>
+                        <span class="amount" style="font-size: 1.5em; font-weight: bold;">1500</span>
+                        <span class="currency">ريال سعودي</span>
+                    </div>
+                    <p class="pricing-note">عرض خاص وحصري - شامل كافة الخدمات المذكورة</p>
+                </div>
+            </section>
+
+            <!-- Notes Section (Exclusions) -->
+            <section class="notes-section">
+                <h2 class="section-title">غير مشمول في السعر</h2>
+                <ul class="notes-list">
+                    <li class="note-item">
+                        <span class="note-bullet">•</span>
+                        <span class="note-text">الإعلانات المدفوعة</span>
+                    </li>
+                    <li class="note-item">
+                        <span class="note-bullet">•</span>
+                        <span class="note-text">كتابة محتوى خارج نطاق الخطة المتفق عليها</span>
+                    </li>
+                    <li class="note-item">
+                        <span class="note-bullet">•</span>
+                        <span class="note-text">أدوات SEO المدفوعة</span>
+                    </li>
+                    <li class="note-item">
+                        <span class="note-bullet">•</span>
+                        <span class="note-text">تطوير برمجي خارج تحسين السيو</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Footer -->
+            <footer class="document-footer">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <span class="footer-brand-name">GOLF STUDIO</span>
+                    </div>
+                    <div class="footer-contact">
+                        <a href="https://wa.me/966537311886" class="contact-item">
+                            <span>0537311886</span>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+</body>
+</html>
