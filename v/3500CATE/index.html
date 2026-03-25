@@ -16,6 +16,14 @@
     
     <!-- Styles -->
     <link rel="stylesheet" href="../../assets/style.css">
+    <style>
+        /* تكبير رقم 3500 في نسخة الجوال */
+        @media (max-width: 768px) {
+            .amount-old {
+                font-size: 1.2em !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Toast Notification -->
@@ -50,7 +58,7 @@
                 <div class="meta-single-card">
                     <div class="meta-row">
                         <span class="meta-label">رقم الفاتورة:</span>
-                        <span class="meta-value" id="invoice-number">3500</span>
+                        <span class="meta-value" id="invoice-number">002397</span>
                     </div>
                     <div class="meta-row">
                         <span class="meta-label">تاريخ الفاتورة:</span>
@@ -212,13 +220,12 @@
             <!-- Pricing Section -->
             <section class="pricing-section">
                 <div class="pricing-box">
-                    <span class="pricing-label">الاستثمار المطلوب</span>
+                    <span class="pricing-label">سعر الخدمة</span>
                     <div class="pricing-amount">
                         <span class="amount-old" style="text-decoration: line-through; color: #888; font-size: 0.6em; margin-left: 10px;">3500</span>
                         <span class="amount" style="font-size: 1.5em; font-weight: bold;">1500</span>
-                        <span class="currency">ريال سعودي</span>
+                        <span class="currency">ر.س</span>
                     </div>
-                    <p class="pricing-note">عرض خاص وحصري - شامل كافة الخدمات المذكورة</p>
                 </div>
             </section>
 
