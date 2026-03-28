@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فاتورة اتفاقية - GOLF STUDIO</title>
+    
+    <!-- Google Fonts - IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">تم النسخ بنجاح</div>
+
+    <!-- Top Bar -->
+    <header class="top-bar no-print">
+        <div class="top-bar-content">
+            <div class="brand">
+                <span class="brand-icon">⛳</span>
+                <span class="brand-name">GOLF STUDIO</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Document Card -->
+    <main class="document-wrapper">
+        <div class="document-card" id="document-card">
+            
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-banner">
+                    <h1 class="hero-title">
+                        <span>فاتورة اتفاقية</span><br>
+                        إنشاء متجر عطور احترافي على منصة سلة
+                    </h1>
+                </div>
+            </section>
+
+            <!-- Invoice Meta Section -->
+            <section class="meta-section">
+                <div class="meta-single-card">
+                    <div class="meta-row">
+                        <span class="meta-label">رقم الفاتورة:</span>
+                        <span class="meta-value" id="invoice-number">280326</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">تاريخ الفاتورة:</span>
+                        <span class="meta-value">28/3/2026</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">المقدمة إلى:</span>
+                        <span class="meta-value company-name">Beauty of Glory</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">مدة التنفيذ:</span>
+                        <span class="meta-value">7 أيام من تاريخ اعتماد الاتفاقية</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scope Section -->
+            <section class="scope-section">
+                <h2 class="section-title">بنود الاتفاقية</h2>
+                
+                <div class="scope-grid">
+                    <!-- Scope Card 1 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🔍</span>
+                            <h3 class="scope-title">تحليل المتجر الحالي وإعادة الهيكلة</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[التحليل]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">مراجعة المتجر الحالي على ووردبريس</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحليل طريقة عرض المنتجات الحالية</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحليل الأقسام والتصنيفات والهيكل العام</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحديد فرص التحسين في تجربة المستخدم</span>
+                                </div>
+                            </li>
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[إعادة الهيكلة]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إعادة تنظيم التصنيفات بما يناسب متجر العطور</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">اقتراح بنية متجر أوضح وأسهل للتصفح</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحسين تسلسل الوصول إلى المنتجات</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تجهيز تصور واضح للواجهة الرئيسية والأقسام</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Scope Card 2 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🎨</span>
+                            <h3 class="scope-title">بناء متجر سلة وتجهيز الواجهة</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[إعداد المتجر]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إنشاء متجر جديد على منصة سلة</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إعداد الصفحات الأساسية للمتجر</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">ضبط الإعدادات العامة للمتجر</span>
+                                </div>
+                            </li>
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[تصميم الواجهة]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تصميم واجهة رئيسية احترافية ومتوافقة مع الجوال</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إبراز طابع الفخامة المناسب لمجال العطور</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">ترتيب البانرات والأقسام بشكل بيعي واضح</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحسين تجربة التصفح والوصول للمنتجات</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Scope Card 3 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🚀</span>
+                            <h3 class="scope-title">تهيئة المتجر للبيع والتسليم النهائي</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[صفحات المنتجات]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تجهيز عرض المنتجات بطريقة أوضح</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحسين المحتوى النصي الأساسي داخل المتجر</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إبراز العناصر التي تساعد على اتخاذ قرار الشراء</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحسين تجربة العميل داخل صفحات التصفح</span>
+                                </div>
+                            </li>
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[التجهيز النهائي]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">مراجعة شاملة للمتجر قبل التسليم</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">اعتماد النسخة النهائية مع العميل</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تسليم متجر جاهز للانطلاق على سلة</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Workflow Section -->
+            <section class="workflow-section">
+                <h2 class="section-title">آلية العمل</h2>
+                <div class="workflow-container">
+                    <ul class="workflow-list">
+                        <li class="workflow-item">
+                            <span class="step-number">1</span>
+                            <span class="step-text">مراجعة المتجر الحالي</span>
+                        </li>
+                        <li class="workflow-item">
+                            <span class="step-number">2</span>
+                            <span class="step-text">إعداد هيكلة المتجر الجديدة</span>
+                        </li>
+                        <li class="workflow-item">
+                            <span class="step-number">3</span>
+                            <span class="step-text">إنشاء المتجر على سلة</span>
+                        </li>
+                        <li class="workflow-item">
+                            <span class="step-number">4</span>
+                            <span class="step-text">تصميم وتجهيز الواجهة</span>
+                        </li>
+                        <li class="workflow-item">
+                            <span class="step-number">5</span>
+                            <span class="step-text">مراجعة المحتوى والتنظيم</span>
+                        </li>
+                        <li class="workflow-item">
+                            <span class="step-number">6</span>
+                            <span class="step-text">اعتماد العميل</span>
+                        </li>
+                        <li class="workflow-item">
+                            <span class="step-number">7</span>
+                            <span class="step-text">التسليم النهائي</span>
+                        </li>
+                    </ul>
+                    <div class="workflow-note">
+                        <span class="highlight-text">مدة التنفيذ: 7 أيام عمل</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section class="pricing-section">
+                <div class="pricing-box">
+                    <span class="pricing-label">الاستثمار</span>
+                    <div class="pricing-amount">
+                        <span class="amount" style="text-decoration: line-through; font-size: 0.6em; color: #888; margin-left: 10px;">2500</span>
+                        <span class="amount">1500</span>
+                        <span class="currency">ريال سعودي</span>
+                    </div>
+                    <p class="pricing-note">دفعة واحدة – تنفيذ خلال 7 أيام</p>
+                </div>
+            </section>
+
+            <!-- Notes Section (Exclusions) -->
+            <section class="notes-section">
+                <h2 class="section-title">غير مشمول في السعر</h2>
+                <ul class="notes-list">
+                    <li class="note-item">
+                        <span class="note-bullet">•</span>
+                        <span class="note-text">رسوم اشتراك منصة سلة</span>
+                    </li>
+                    <li class="note-item">
+                        <span class="note-bullet">•</span>
+                        <span class="note-text">شراء أو تفعيل القالب المدفوع إن وجد</span>
+                    </li>
+                    <li class="note-item">
+                        <span class="note-bullet">•</span>
+                        <span class="note-text">شراء الدومين أو نقله</span>
+                    </li>
+                    <li class="note-item">
+                        <span class="note-bullet">•</span>
+                        <span class="note-text">التطبيقات أو الخدمات المدفوعة داخل سلة</span>
+                    </li>
+                    <li class="note-item">
+                        <span class="note-bullet">•</span>
+                        <span class="note-text">إدخال عدد كبير جدًا من المنتجات يدويًا إلا إذا تم الاتفاق عليه بشكل منفصل</span>
+                    </li>
+                    <li class="note-item">
+                        <span class="note-bullet">•</span>
+                        <span class="note-text">تصوير المنتجات أو تصميم هوية بصرية جديدة بشكل كامل</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Footer -->
+            <footer class="document-footer">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <span class="footer-brand-name">GOLF STUDIO</span>
+                    </div>
+                    <div class="footer-contact">
+                        <a href="https://wa.me/966537311886" class="contact-item">
+                            <span>0537311886</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+</body>
+</html>
