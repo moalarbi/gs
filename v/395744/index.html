@@ -16,6 +16,220 @@
     
     <!-- Styles -->
     <link rel="stylesheet" href="../../assets/style.css">
+    <style>
+        /* Custom Overrides to match the image UI/UX */
+        :root {
+            --primary: #0f5c3b;
+            --primary-dark: #0a442b;
+        }
+
+        .hero-banner {
+            background-color: var(--primary);
+            padding: 40px 20px;
+            border-bottom: none;
+        }
+
+        .hero-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .hero-title span {
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .client-name-header {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-top: 10px;
+            display: block;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #ffffff;
+            margin-top: 15px;
+            font-weight: 600;
+            opacity: 0.95;
+        }
+
+        .meta-section {
+            padding: 20px;
+            background: #fff;
+        }
+
+        .meta-single-card {
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            box-shadow: none;
+        }
+
+        .section-title {
+            text-align: left;
+            border-bottom: none;
+            position: relative;
+            padding-right: 0;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+        }
+
+        .scope-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .scope-card {
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .scope-header {
+            background: #f8f9fa;
+            border-bottom: 1px solid #eee;
+            justify-content: space-between;
+        }
+
+        .scope-title {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .scope-list .scope-item {
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        /* Pricing Box Style */
+        .pricing-section {
+            padding: 40px 20px;
+            background: #fff;
+        }
+
+        .pricing-box-container {
+            border: 2px solid var(--primary);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 450px;
+            margin: 0 auto;
+            background-color: #f6fbf9;
+            text-align: center;
+        }
+
+        .pricing-label {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .price-old {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .price-new {
+            color: #b8860b; /* Golden color for price */
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .price-currency {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-right: 5px;
+        }
+
+        .pricing-footer-note {
+            background: #fff9e6;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 13px;
+            color: #856404;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        /* Footer Styles */
+        .main-footer {
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+
+        .footer-logo-text {
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 18px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .print-button-container {
+            margin-top: 20px;
+        }
+
+        .btn-print {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .btn-print:hover {
+            background-color: var(--primary-dark);
+        }
+
+        @media print {
+            .no-print { display: none; }
+            body { background: white; }
+            .document-wrapper { padding: 0; }
+            .document-card { border: none; box-shadow: none; }
+        }
+    </style>
 </head>
 <body>
     <!-- Toast Notification -->
@@ -39,9 +253,10 @@
             <section class="hero-section">
                 <div class="hero-banner">
                     <h1 class="hero-title">
-                        <span>فاتورة اتفاقية</span><br>
-                        إطلاق وتدشين متجر إلكتروني على منصة سلة
+                        <span>إطلاق وتدشين متجر</span>
+                        <span class="client-name-header">Yaqoot Boutique | ياقوت بوتيك</span>
                     </h1>
+                    <p class="hero-subtitle">خدمة متكاملة لتجهيز وتصميم متجر إلكتروني احترافي على منصة سلة</p>
                 </div>
             </section>
 
@@ -75,8 +290,7 @@
                     <!-- Scope Card: Service Details -->
                     <div class="scope-card">
                         <div class="scope-header">
-                            <span class="scope-icon">🛒</span>
-                            <h3 class="scope-title">تفاصيل الخدمة</h3>
+                            <h3 class="scope-title">🛒 تفاصيل الخدمة</h3>
                         </div>
                         <ul class="scope-list">
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تهيئة متجر سلة بشكل كامل</span></div></li>
@@ -100,6 +314,21 @@
                 </div>
             </section>
 
+            <!-- Pricing Section -->
+            <section class="pricing-section">
+                <div class="pricing-box-container">
+                    <div class="pricing-label">الاستثمار المطلوب</div>
+                    <div class="price-old">1500 ريال سعودي</div>
+                    <div class="price-new">
+                        1000
+                        <span class="price-currency">ريال سعودي</span>
+                    </div>
+                    <div class="pricing-footer-note">
+                        7 أيام عمل - من تاريخ اعتماد الاتفاقية
+                    </div>
+                </div>
+            </section>
+
             <!-- Exclusion Section -->
             <section class="scope-section">
                 <h2 class="section-title">غير مشمول في السعر</h2>
@@ -119,35 +348,18 @@
                 </div>
             </section>
 
-            <!-- Pricing Section -->
-            <section class="pricing-section">
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <span class="pricing-label">إجمالي مبلغ الاستثمار</span>
-                    </div>
-                    <div class="pricing-main">
-                        <div class="price-old">
-                            <span class="old-amount">1500</span>
-                            <span class="old-currency">ريال سعودي</span>
-                        </div>
-                        <div class="price-current">
-                            <span class="current-amount">1000</span>
-                            <span class="current-currency">ريال سعودي</span>
-                        </div>
-                    </div>
-                    <div class="pricing-note">
-                        * الأسعار تشمل كافة البنود المذكورة أعلاه.
-                    </div>
-                </div>
-            </section>
-
             <!-- Footer Section -->
-            <footer class="document-footer">
-                <div class="footer-content">
-                    <div class="footer-info">
-                        <p>هذه الفاتورة صالحة لمدة 7 أيام من تاريخ الإصدار.</p>
-                        <p>شكرًا لثقتكم بنا في GOLF STUDIO.</p>
-                    </div>
+            <footer class="main-footer">
+                <span class="footer-logo-text">GOLF STUDIO ⛳</span>
+                <div class="contact-info">
+                    <div class="contact-item">🌐 www.Golf-Studio.umso.co</div>
+                    <div class="contact-item">✉️ Golf.Studio.Adv@gmail.com</div>
+                    <div class="contact-item">📞 0537311886</div>
+                </div>
+                <div class="print-button-container no-print">
+                    <button class="btn-print" onclick="window.print()">
+                        <span>🖨️</span> طباعة الفاتورة
+                    </button>
                 </div>
             </footer>
         </div>
