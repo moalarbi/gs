@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فاتورة اتفاقية - GOLF STUDIO</title>
+    
+    <!-- Google Fonts - IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">تم النسخ بنجاح</div>
+
+    <!-- Top Bar -->
+    <header class="top-bar no-print">
+        <div class="top-bar-content">
+            <div class="brand">
+                <span class="brand-icon">⛳</span>
+                <span class="brand-name">GOLF STUDIO</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Document Card -->
+    <main class="document-wrapper">
+        <div class="document-card" id="document-card">
+            
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-banner">
+                    <h1 class="hero-title">
+                        <span>فاتورة اتفاقية</span><br>
+                        إطلاق وتدشين متجر إلكتروني على منصة سلة
+                    </h1>
+                </div>
+            </section>
+
+            <!-- Invoice Meta Section -->
+            <section class="meta-section">
+                <div class="meta-single-card">
+                    <div class="meta-row">
+                        <span class="meta-label">رقم الفاتورة:</span>
+                        <span class="meta-value" id="invoice-number">395745</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">تاريخ الفاتورة:</span>
+                        <span class="meta-value">09/04/2026</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">المقدمة إلى:</span>
+                        <span class="meta-value company-name">Yaqoot Boutique | ياقوت بوتيك</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">مدة التنفيذ:</span>
+                        <span class="meta-value">7 أيام عمل من تاريخ اعتماد الطلب وسداد الدفعة</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Description Section -->
+            <section class="description-section" style="padding: 20px; background: #f9f9f9; border-radius: 12px; margin-bottom: 30px; border: 1px solid #eee;">
+                <h2 class="section-title" style="margin-bottom: 15px;">وصف الخدمة</h2>
+                <p style="line-height: 1.8; color: #444; font-size: 1.05rem;">
+                    خدمة متكاملة تشمل تجهيز وتصميم متجر إلكتروني احترافي على منصة سلة لمتجر ياقوت بوتيك بنظام الدروبشيبينغ، متخصص في البدلات الرجالية الرسمية وإكسسواراتها، مع تنفيذ تصميم فخم وراقي وتنظيم الأقسام والفلاتر بشكل احترافي باستخدام الشعار المقدم من العميل وثيم سيليا.
+                </p>
+            </section>
+
+            <!-- Scope Section -->
+            <section class="scope-section">
+                <h2 class="section-title">تفاصيل الخدمة</h2>
+                
+                <div class="scope-grid">
+                    <div class="scope-card" style="grid-column: span 2;">
+                        <ul class="scope-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تهيئة متجر سلة بشكل كامل</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إعداد متجر بنظام الدروبشيبينغ</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">اختيار وتنسيق ثيم سيليا</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تصميم واجهة فخمة وراقية</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">توظيف الشعار داخل الهوية البصرية</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تنظيم الأقسام والتصنيفات</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إعداد فلاتر المنتجات بشكل احترافي</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تصميم الصفحة الرئيسية بشكل بيعي</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تجهيز البنرات والصور</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">ضبط الألوان والتنسيق العام</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إعداد صفحات (من نحن – الشحن – الاسترجاع – تواصل)</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">ربط وسائل التواصل الاجتماعي</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">ضبط تجربة الجوال بالكامل</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">مراجعة واعتماد العميل</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تسليم متجر جاهز للبيع</span></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section class="pricing-section">
+                <div class="pricing-box">
+                    <span class="pricing-label">قيمة الاستثمار</span>
+                    <div class="pricing-amount">
+                        <div style="text-decoration: line-through; color: #888; font-size: 1.2rem; margin-bottom: 5px;">1500 ريال</div>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: #000;">1000 <span style="font-size: 1.2rem;">ريال سعودي</span></div>
+                    </div>
+                    <p class="pricing-note">عرض خاص لمتجر ياقوت بوتيك</p>
+                </div>
+            </section>
+
+            <!-- Notes Section (Exclusions) -->
+            <section class="notes-section">
+                <h2 class="section-title">غير مشمول في السعر</h2>
+                <ul class="notes-list">
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">اشتراك منصة سلة</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">شراء الثيم المدفوع</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">الدومين</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">التطبيقات المدفوعة</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">تصوير المنتجات</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">كتابة المحتوى التسويقي</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">الحملات الإعلانية</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">إدارة المتجر بعد التسليم</span></li>
+                </ul>
+            </section>
+
+            <!-- Footer -->
+            <footer class="document-footer">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <span class="footer-brand-name">GOLF STUDIO</span>
+                    </div>
+                    <div class="footer-contact">
+                        <a href="https://wa.me/966537311886" class="contact-item">
+                            <span>0537311886</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </a>
+                        <a href="mailto:Golf.Studio.Adv@gmail.com" class="contact-item">
+                            <span>Golf.Studio.Adv@gmail.com</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                        <a href="https://www.Golf-Studio.umso.co" target="_blank" rel="noopener" class="contact-item">
+                            <span>www.Golf-Studio.umso.co</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="print-action-bottom no-print">
+                    <button class="btn btn-primary btn-large" onclick="printDocument()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                            <rect x="6" y="14" width="12" height="8"></rect>
+                        </svg>
+                        طباعة الفاتورة
+                    </button>
+                </div>
+            </footer>
+        </div>
+    </main>
+    <!-- Scripts -->
+    <script src="../../assets/script.js"></script>
+</body>
+</html>
