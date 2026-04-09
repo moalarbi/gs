@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فاتورة اتفاقية - GOLF STUDIO</title>
+    
+    <!-- Google Fonts - IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">تم النسخ بنجاح</div>
+
+    <!-- Top Bar -->
+    <header class="top-bar no-print">
+        <div class="top-bar-content">
+            <div class="brand">
+                <span class="brand-icon">⛳</span>
+                <span class="brand-name">GOLF STUDIO</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Document Card -->
+    <main class="document-wrapper">
+        <div class="document-card" id="document-card">
+            
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-banner">
+                    <h1 class="hero-title">
+                        <span>فاتورة اتفاقية</span><br>
+                        إطلاق وتدشين متجر إلكتروني على منصة سلة
+                    </h1>
+                </div>
+            </section>
+
+            <!-- Invoice Meta Section -->
+            <section class="meta-section">
+                <div class="meta-single-card">
+                    <div class="meta-row">
+                        <span class="meta-label">رقم الفاتورة:</span>
+                        <span class="meta-value" id="invoice-number">395743RCYH</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">تاريخ الفاتورة:</span>
+                        <span class="meta-value">09/04/2026</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">المقدمة إلى:</span>
+                        <span class="meta-value company-name">Yaqoot Boutique | ياقوت بوتيك</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">مدة التنفيذ:</span>
+                        <span class="meta-value">7 أيام عمل من تاريخ اعتماد الطلب وسداد الدفعة</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scope Section -->
+            <section class="scope-section">
+                <h2 class="section-title">بنود الاتفاقية</h2>
+                
+                <div class="scope-grid">
+                    <!-- Scope Card 1: Service Details -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🛒</span>
+                            <h3 class="scope-title">تفاصيل الخدمة</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تهيئة متجر سلة بشكل كامل</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إعداد متجر مخصص لنظام الدروبشيبينغ</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">اختيار وتنسيق ثيم سيليا بما يناسب نشاط المتجر</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تصميم واجهة المتجر بشكل فخم وراقي</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">توظيف الشعار المقدم من العميل داخل هوية المتجر</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إعداد الأقسام الرئيسية للمتجر بشكل منظم</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تنظيم التصنيفات الخاصة بالبدلات الرجالية والإكسسوارات</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إعداد فلاتر المنتجات بشكل يسهل التصفح والبحث</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">ترتيب الصفحة الرئيسية بشكل احترافي يخدم البيع</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تجهيز البنرات والصور الرئيسية للمتجر</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">ضبط الألوان والتنسيق بما يتناسب مع هوية البراند</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إعداد الصفحات الأساسية مثل من نحن، اتصل بنا، سياسة الشحن والاسترجاع</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">ربط وسائل التواصل الاجتماعي داخل المتجر</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">ضبط التوافق الكامل مع الجوال</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">مراجعة واعتماد العميل قبل التسليم</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">التسليم النهائي للمتجر جاهز للإطلاق والبيع</span></div></li>
+                        </ul>
+                    </div>
+
+                    <!-- Scope Card 2: Gifts -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🎁</span>
+                            <h3 class="scope-title">الهدايا المجانية</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تجهيز حسابات السوشيال ميديا الخاصة بالمتجر</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تصميم صورة بروفايل وصورة غلاف باستخدام الشعار</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">ربط حسابات التواصل الاجتماعي داخل المتجر</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">ترتيب زر الواتساب وربطه بشكل واضح داخل الموقع</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">استشارة مبدئية بعد التسليم لتوضيح خطوات الانطلاق</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">مراجعة أولية لتجربة المستخدم داخل المتجر</span></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exclusion Section -->
+            <section class="scope-section">
+                <h2 class="section-title">غير مشمول في السعر</h2>
+                <div class="scope-card">
+                    <ul class="scope-list">
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">رسوم اشتراك منصة سلة</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">شراء ثيم سيليا أو أي قالب مدفوع إن وجد</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">شراء الدومين أو ربطه</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">رسوم التطبيقات والإضافات المدفوعة داخل سلة</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تصوير المنتجات تصوير احترافي</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">كتابة المحتوى التسويقي التفصيلي للمنتجات</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إدخال عدد كبير من المنتجات خارج الحد المتفق عليه</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">الحملات الإعلانية الممولة</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إدارة المتجر بعد التسليم</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">أي طلبات إضافية خارج نطاق الخدمة المذكورة</span></div></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section class="pricing-section">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <span class="pricing-label">إجمالي مبلغ الاستثمار</span>
+                    </div>
+                    <div class="pricing-main">
+                        <div class="price-old">
+                            <span class="old-amount">1500</span>
+                            <span class="old-currency">ريال سعودي</span>
+                        </div>
+                        <div class="price-current">
+                            <span class="current-amount">1000</span>
+                            <span class="current-currency">ريال سعودي</span>
+                        </div>
+                    </div>
+                    <div class="pricing-note">
+                        * الأسعار تشمل كافة البنود المذكورة أعلاه.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer Section -->
+            <footer class="document-footer">
+                <div class="footer-content">
+                    <div class="footer-info">
+                        <p>هذه الفاتورة صالحة لمدة 7 أيام من تاريخ الإصدار.</p>
+                        <p>شكرًا لثقتكم بنا في GOLF STUDIO.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+</body>
+</html>
