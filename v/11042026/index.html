@@ -74,6 +74,17 @@
             width: 20px;
             height: 20px;
         }
+        /* تحسين توزيع البطاقات لثلاثة أقسام فقط */
+        .scope-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        @media (max-width: 768px) {
+            .scope-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -178,21 +189,6 @@
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تحسين وضوح عرض المنتجات والتفاصيل</span></div></li>
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تجهيز المتجر لاستقبال زوار تيك توك وإنستغرام</span></div></li>
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تحسين البنية البصرية لرفع الثقة والاحترافية</span></div></li>
-                        </ul>
-                    </div>
-
-                    <!-- Section 4 -->
-                    <div class="scope-card">
-                        <div class="scope-header">
-                            <span class="scope-icon">💎</span>
-                            <h3 class="scope-title">خدمات إضافية داخل الباقة</h3>
-                        </div>
-                        <ul class="scope-list">
-                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">ربط وسائل التواصل الاجتماعي داخل المتجر</span></div></li>
-                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تحسين الربط مع حسابات TikTok و Instagram</span></div></li>
-                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">مراجعة كاملة للمتجر قبل التسليم</span></div></li>
-                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">استشارة تشغيل وتوجيه مبدئي بعد التطوير</span></div></li>
-                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">الاستفادة من الشعار الحالي بشكل أفضل</span></div></li>
                         </ul>
                     </div>
                 </div>
