@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang='ar' dir='rtl'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>فاتورة عرض سعر - الريم كوفي كورنر</title>
+    
+    <!-- Google Fonts - IBM Plex Sans Arabic -->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap' rel='stylesheet'>
+    
+    <!-- External Libraries -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js'></script>
+    
+    <!-- Styles -->
+    <link rel='stylesheet' href='../../assets/style.css'>
+    <style>
+        .hero-section { background-color: #1a4d2e !important; } /* Dark Green Header */
+        .old-price { text-decoration: line-through; color: #888; font-size: 1.2rem; }
+        .new-price { font-size: 2.5rem; font-weight: bold; color: #1a4d2e; }
+        .pricing-box { text-align: center; padding: 2rem; border: 2px solid #1a4d2e; border-radius: 15px; margin: 2rem auto; max-width: 400px; background: #f9f9f9; }
+        .lang-en { direction: ltr; text-align: left; display: block; font-size: 0.9rem; color: #555; margin-top: 5px; }
+        .section-title-en { display: block; font-size: 1rem; color: #666; font-weight: normal; }
+        .scope-card { height: auto !important; }
+    </style>
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div id='toast' class='toast'>تم النسخ بنجاح</div>
+
+    <!-- Top Bar -->
+    <header class='top-bar no-print'>
+        <div class='top-bar-content'>
+            <div class='brand'>
+                <span class='brand-icon'>☕</span>
+                <span class='brand-name'>الريم كوفي كورنر | Al Reem Coffee Corner</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Document Card -->
+    <main class='document-wrapper'>
+        <div class='document-card' id='document-card'>
+            
+            <!-- Hero Section -->
+            <section class='hero-section'>
+                <div class='hero-banner'>
+                    <h1 class='hero-title'>
+                        <span>إنشاء وتجهيز متجر إلكتروني على منصة سلة</span><br>
+                        <small style='font-size: 1.2rem;'>Salla Store Setup & Launch Service</small>
+                    </h1>
+                    <p style='color: white; margin-top: 15px; opacity: 0.9;'>
+                        الريم كوفي كورنر | Al Reem Coffee Corner
+                    </p>
+                </div>
+            </section>
+
+            <!-- Invoice Meta Section -->
+            <section class='meta-section'>
+                <div class='meta-single-card'>
+                    <div class='meta-row'>
+                        <span class='meta-label'>رقم الفاتورة / Invoice No:</span>
+                        <span class='meta-value' id='invoice-number'>77652189</span>
+                    </div>
+                    <div class='meta-row'>
+                        <span class='meta-label'>التاريخ / Date:</span>
+                        <span class='meta-value'>11/04/2026</span>
+                    </div>
+                    <div class='meta-row'>
+                        <span class='meta-label'>العميل / Client:</span>
+                        <span class='meta-value company-name'>REMO CORNER</span>
+                    </div>
+                    <div class='meta-row'>
+                        <span class='meta-label'>مدة التنفيذ / Timeline:</span>
+                        <span class='meta-value'>5 إلى 7 أيام عمل / 5 to 7 business days</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Description Section -->
+            <section class='scope-section'>
+                <div class='scope-card' style='width: 100%; margin-bottom: 20px;'>
+                    <h3 class='scope-title'>وصف الخدمة / Service Description</h3>
+                    <p>خدمة متكاملة تشمل إنشاء وتجهيز متجر إلكتروني احترافي على منصة سلة لمتجر الريم كوفي كورنر، مع تصميم واجهة مناسبة لهوية البراند، وتنظيم الأقسام والمنتجات بشكل احترافي، وتجهيز المتجر ليكون جاهزًا للإطلاق والبيع.</p>
+                    <p class='lang-en'>A complete service that includes creating and preparing a professional online store on Salla for Al Reem Coffee Corner, with a storefront design that matches the brand identity, organized categories and products, and full setup for launch and sales readiness.</p>
+                </div>
+            </section>
+
+            <!-- Scope Section -->
+            <section class='scope-section'>
+                <h2 class='section-title'>بنود العرض <span class='section-title-en'>Offer Details</span></h2>
+                
+                <div class='scope-grid'>
+                    <!-- Section 1 -->
+                    <div class='scope-card'>
+                        <div class='scope-header'>
+                            <span class='scope-icon'>🎨</span>
+                            <h3 class='scope-title'>تصميم وتطوير المتجر<br><small>Store Design & Development</small></h3>
+                        </div>
+                        <ul class='scope-list'>
+                            <li class='scope-item'><span class='item-bullet'></span><div class='item-content'><span class='item-name'>تصميم واجهة احترافية تعكس هوية البراند</span><span class='lang-en'>Professional storefront design aligned with the brand</span></div></li>
+                            <li class='scope-item'><span class='item-bullet'></span><div class='item-content'><span class='item-name'>بناء تجربة مستخدم واضحة وسهلة</span><span class='lang-en'>Clear and user-friendly shopping experience</span></div></li>
+                            <li class='scope-item'><span class='item-bullet'></span><div class='item-content'><span class='item-name'>تصميم الصفحة الرئيسية بشكل جذاب وبيعي</span><span class='lang-en'>Attractive and conversion-focused homepage</span></div></li>
+                            <li class='scope-item'><span class='item-bullet'></span><div class='item-content'><span class='item-name'>ضبط الألوان والخطوط بشكل متناسق</span><span class='lang-en'>Consistent colors and typography</span></div></li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 2 -->
+                    <div class='scope-card'>
+                        <div class='scope-header'>
+                            <span class='scope-icon'>🚀</span>
+                            <h3 class='scope-title'>تجهيز وتشغيل المتجر<br><small>Store Setup & Launch</small></h3>
+                        </div>
+                        <ul class='scope-list'>
+                            <li class='scope-item'><span class='item-bullet'></span><div class='item-content'><span class='item-name'>تهيئة متجر سلة بالكامل</span><span class='lang-en'>Full Salla store setup</span></div></li>
+                            <li class='scope-item'><span class='item-bullet'></span><div class='item-content'><span class='item-name'>إعداد الأقسام والتصنيفات</span><span class='lang-en'>Category and collection setup</span></div></li>
+                            <li class='scope-item'><span class='item-bullet'></span><div class='item-content'><span class='item-name'>تجهيز طريقة عرض المنتجات</span><span class='lang-en'>Product display preparation</span></div></li>
+                            <li class='scope-item'><span class='item-bullet'></span><div class='item-content'><span class='item-name'>إعداد الصفحات الأساسية (من نحن – التواصل – السياسات)</span><span class='lang-en'>Essential pages setup (About – Contact – Policies)</span></div></li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 3 -->
+                    <div class='scope-card'>
+                        <div class='scope-header'>
+                            <span class='scope-icon'>📈</span>
+                            <h3 class='scope-title'>تحسين الأداء والتحويل<br><small>Performance & Optimization</small></h3>
+                        </div>
+                        <ul class='scope-list'>
+                            <li class='scope-item'><span class='item-bullet'></span><div class='item-content'><span class='item-name'>تحسين تجربة العميل داخل المتجر</span><span class='lang-en'>Enhanced customer experience</span></div></li>
+                            <li class='scope-item'><span class='item-bullet'></span><div class='item-content'><span class='item-name'>تنظيم مسار الشراء</span><span class='lang-en'>Optimized purchase journey</span></div></li>
+                            <li class='scope-item'><span class='item-bullet'></span><div class='item-content'><span class='item-name'>تحسين التصفح وسهولة الوصول</span><span class='lang-en'>Improved browsing and navigation</span></div></li>
+                            <li class='scope-item'><span class='item-bullet'></span><div class='item-content'><span class='item-name'>تجهيز المتجر ليكون جاهز للبيع</span><span class='lang-en'>Store prepared for launch and sales</span></div></li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 4 -->
+                    <div class='scope-card'>
+                        <div class='scope-header'>
+                            <span class='scope-icon'>➕</span>
+                            <h3 class='scope-title'>خدمات إضافية داخل الباقة<br><small>Additional Services</small></h3>
+                        </div>
+                        <ul class='scope-list'>
+                            <li class='scope-item'><span class='item-bullet'></span><div class='item-content'><span class='item-name'>ربط وسائل التواصل</span><span class='lang-en'>Social media linking</span></div></li>
+                            <li class='scope-item'><span class='item-bullet'></span><div class='item-content'><span class='item-name'>إعداد واتساب بيزنس</span><span class='lang-en'>WhatsApp Business setup</span></div></li>
+                            <li class='scope-item'><span class='item-bullet'></span><div class='item-content'><span class='item-name'>مراجعة كاملة قبل التسليم</span><span class='lang-en'>Full review before delivery</span></div></li>
+                            <li class='scope-item'><span class='item-bullet'></span><div class='item-content'><span class='item-name'>استشارة تشغيل بعد الإطلاق</span><span class='lang-en'>Initial launch consultation</span></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section class='pricing-section'>
+                <div class='pricing-box'>
+                    <div class='old-price'>1200 ريال</div>
+                    <div class='new-price'>700 ريال</div>
+                    <p style='margin-top: 10px; color: #666;'>السعر النهائي للباقة المتكاملة<br>Final Price for Full Package</p>
+                </div>
+            </section>
+
+            <!-- Not Included Section -->
+            <section class='scope-section'>
+                <h2 class='section-title'>غير مشمول في السعر <span class='section-title-en'>Not Included</span></h2>
+                <div class='scope-card' style='width: 100%;'>
+                    <ul class='scope-list' style='display: grid; grid-template-columns: 1fr 1fr; gap: 10px;'>
+                        <li class='scope-item'><span class='item-bullet'></span><div class='item-content'><span class='item-name'>اشتراك منصة سلة</span><span class='lang-en'>Salla subscription fees</span></div></li>
+                        <li class='scope-item'><span class='item-bullet'></span><div class='item-content'><span class='item-name'>القوالب المدفوعة</span><span class='lang-en'>Paid themes</span></div></li>
+                        <li class='scope-item'><span class='item-bullet'></span><div class='item-content'><span class='item-name'>الدومين</span><span class='lang-en'>Domain purchase</span></div></li>
+                        <li class='scope-item'><span class='item-bullet'></span><div class='item-content'><span class='item-name'>الحملات الإعلانية</span><span class='lang-en'>Advertising campaigns</span></div></li>
+                        <li class='scope-item'><span class='item-bullet'></span><div class='item-content'><span class='item-name'>التصوير الاحترافي</span><span class='lang-en'>Professional product photography</span></div></li>
+                        <li class='scope-item'><span class='item-bullet'></span><div class='item-content'><span class='item-name'>كتابة المحتوى التسويقي</span><span class='lang-en'>Marketing copywriting</span></div></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class='document-footer'>
+                <div class='footer-actions no-print'>
+                    <button class='btn btn-primary' onclick='window.print()'>طباعة الفاتورة / Print Invoice</button>
+                </div>
+                <div class='footer-contact'>
+                    <p>شكراً لثقتكم بنا | Thank you for your trust</p>
+                </div>
+            </footer>
+        </div>
+    </main>
+</body>
+</html>
