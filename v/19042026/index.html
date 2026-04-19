@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض سعر - الماجد للذبايح</title>
+    
+    <!-- Google Fonts - IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../assets/style.css">
+    <style>
+        :root {
+            --primary: #8B0000; /* Dark Red */
+            --primary-light: rgba(139, 0, 0, 0.06);
+            --primary-medium: rgba(139, 0, 0, 0.12);
+            --accent-gold: #D4AF37;
+            --border-green: rgba(139, 0, 0, 0.2);
+        }
+        .hero-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, #5a0000 100%);
+            border-bottom: 4px solid var(--accent-gold);
+        }
+        .brand-icon {
+            color: var(--primary);
+        }
+        .pricing-box {
+            border: 2px solid var(--accent-gold);
+            background: var(--white);
+        }
+        .pricing-amount .amount {
+            color: var(--primary);
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: var(--text-muted);
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+        .option-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+        .option-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+        }
+        .option-title {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .badge {
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">تم النسخ بنجاح</div>
+
+    <!-- Top Bar -->
+    <header class="top-bar no-print">
+        <div class="top-bar-content">
+            <div class="brand">
+                <span class="brand-icon">🥩</span>
+                <span class="brand-name">الماجد للذبايح</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Document Card -->
+    <main class="document-wrapper">
+        <div class="document-card" id="document-card">
+            
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-banner">
+                    <h1 class="hero-title">
+                        <span>عرض سعر وتدشين متجر</span><br>
+                        إطلاق وتدشين متجر إلكتروني لبيع الذبايح على منصة سلة
+                    </h1>
+                </div>
+            </section>
+
+            <!-- Invoice Meta Section -->
+            <section class="meta-section">
+                <div class="meta-single-card">
+                    <div class="meta-row">
+                        <span class="meta-label">رقم العرض:</span>
+                        <span class="meta-value" id="invoice-number">19042026</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">التاريخ:</span>
+                        <span class="meta-value">19/04/2026</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">العميل:</span>
+                        <span class="meta-value company-name">الماجد للذبايح</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">مدة التنفيذ:</span>
+                        <span class="meta-value">5 إلى 7 أيام عمل</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Description Section -->
+            <section class="scope-section">
+                <h2 class="section-title">وصف الخدمة</h2>
+                <div class="scope-card" style="width: 100%;">
+                    <p style="color: var(--text-secondary); padding: 10px;">
+                        خدمة متكاملة تشمل إنشاء وتجهيز متجر إلكتروني احترافي مخصص لبيع الذبايح والمواشي، مع تصميم واجهة احترافية مشابهة لأفضل المتاجر في السوق، وتنظيم المنتجات بشكل يسهل على العميل اختيار نوع الذبيحة، الوزن، وطريقة التقطيع، مع تجهيز المتجر ليكون جاهزًا لاستقبال الطلبات والدفع.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Scope Section -->
+            <section class="scope-section">
+                <h2 class="section-title">تفاصيل العمل</h2>
+                
+                <div class="scope-grid">
+                    <!-- Design -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🎨</span>
+                            <h3 class="scope-title">تصميم وتطوير المتجر</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تصميم واجهة احترافية مشابهة للمتاجر المرجعية</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إبراز جودة المنتج والثقة</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تصميم الصفحة الرئيسية بشكل بيعي</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تحسين تجربة المستخدم</span></div></li>
+                        </ul>
+                    </div>
+
+                    <!-- Setup -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">⚙️</span>
+                            <h3 class="scope-title">تجهيز وتشغيل المتجر</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تهيئة متجر سلة بالكامل</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إعداد 23 منتج داخل المتجر</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تنظيم الأقسام (ذبايح – تقطيع – إضافات)</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إعداد خيارات الطلب (وزن – تقطيع – تغليف)</span></div></li>
+                        </ul>
+                    </div>
+
+                    <!-- Optimization -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">📈</span>
+                            <h3 class="scope-title">تحسين الأداء والتحويل</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تحسين تجربة الطلب وتسهيل الشراء</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تجهيز المتجر للإعلانات</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تحسين عرض المنتجات</span></div></li>
+                        </ul>
+                    </div>
+
+                    <!-- Extras -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🎁</span>
+                            <h3 class="scope-title">خدمات إضافية داخل الباقة</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">ربط وسائل التواصل وإعداد واتساب</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">مراجعة كاملة قبل التسليم</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">استشارة تشغيل بعد الإطلاق</span></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Options -->
+            <section class="scope-section">
+                <h2 class="section-title">خيارات الاستثمار</h2>
+                
+                <div class="option-card">
+                    <div class="option-title">
+                        <span>الخيار الأول: إنشاء المتجر بدون تابي وتمارا</span>
+                    </div>
+                    <div class="pricing-amount">
+                        <span class="old-price">1500 ريال</span>
+                        <span class="amount">1000</span>
+                        <span class="currency">ريال سعودي</span>
+                    </div>
+                </div>
+
+                <div class="option-card">
+                    <div class="option-title">
+                        <span>الخيار الثاني: إنشاء المتجر + التقديم على تابي وتمارا</span>
+                        <span class="badge">الأكثر طلباً</span>
+                    </div>
+                    <div class="pricing-amount">
+                        <span class="old-price">2000 ريال</span>
+                        <span class="amount">1400</span>
+                        <span class="currency">ريال سعودي</span>
+                    </div>
+                    <p style="font-size: 0.8em; color: var(--text-muted); margin-top: 10px;">
+                        * التقديم على تابي وتمارا يتطلب وجود سجل تجاري وموافقة الجهات.
+                    </p>
+                </div>
+
+                <div class="option-card" style="border-style: dashed;">
+                    <div class="option-title">
+                        <span>خدمة إضافية: تصميم شعار احترافي</span>
+                    </div>
+                    <div class="pricing-amount">
+                        <span class="amount">300</span>
+                        <span class="currency">ريال سعودي</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Notes Section (Exclusions) -->
+            <section class="notes-section">
+                <h2 class="section-title">غير مشمول في السعر</h2>
+                <ul class="notes-list">
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">اشتراك منصة سلة، شراء القالب، وشراء الدومين</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">رسوم تابي وتمارا، التصوير الاحترافي، والحملات الإعلانية</span></li>
+                </ul>
+            </section>
+
+            <!-- Footer -->
+            <footer class="document-footer">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <span class="footer-brand-name">الماجد للذبايح</span>
+                    </div>
+                    <div class="footer-contact">
+                        <span class="contact-item">عرض سعر احترافي</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+</body>
+</html>
