@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض سعر - أركان العز للعود</title>
+    
+    <!-- Google Fonts - IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../assets/style.css">
+    <style>
+        .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 0.8em;
+            margin-left: 10px;
+        }
+        .new-price {
+            color: #d4af37; /* Gold color for luxury feel */
+            font-weight: bold;
+        }
+        .pricing-amount {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">تم النسخ بنجاح</div>
+
+    <!-- Top Bar -->
+    <header class="top-bar no-print">
+        <div class="top-bar-content">
+            <div class="brand">
+                <span class="brand-icon">🪵</span>
+                <span class="brand-name">أركان العز للعود</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Document Card -->
+    <main class="document-wrapper">
+        <div class="document-card" id="document-card">
+            
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-banner">
+                    <h1 class="hero-title">
+                        <span>عرض سعر وتدشين</span><br>
+                        إطلاق وتدشين متجر إلكتروني على منصة سلة
+                    </h1>
+                    <p style="margin-top: 15px; color: #eee; font-size: 0.9em; max-width: 800px; margin-left: auto; margin-right: auto;">
+                        خدمة متكاملة تشمل إنشاء وتجهيز متجر إلكتروني احترافي على منصة سلة لمتجر أركان العز للعود، مع تصميم واجهة راقية تعكس هوية البراند الفاخرة.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Invoice Meta Section -->
+            <section class="meta-section">
+                <div class="meta-single-card">
+                    <div class="meta-row">
+                        <span class="meta-label">رقم العرض:</span>
+                        <span class="meta-value" id="invoice-number">2026041901</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">التاريخ:</span>
+                        <span class="meta-value">19/04/2026</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">العميل:</span>
+                        <span class="meta-value company-name">أركان العز للعود | ARKAN ALAZ ALOUD</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">مدة التنفيذ:</span>
+                        <span class="meta-value">5 إلى 7 أيام عمل</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scope Section -->
+            <section class="scope-section">
+                <h2 class="section-title">بنود العمل</h2>
+                
+                <div class="scope-grid">
+                    <!-- Section 1 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🎨</span>
+                            <h3 class="scope-title">تصميم وتطوير المتجر</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تصميم واجهة احترافية تعكس فخامة علامة العود</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">بناء تجربة مستخدم واضحة وسهلة</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تصميم الصفحة الرئيسية بشكل جذاب وبيعي</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">ضبط الألوان والخطوط بما يتناسق مع هوية الشعار</span></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 2 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">⚙️</span>
+                            <h3 class="scope-title">تجهيز وتشغيل المتجر</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تهيئة متجر سلة بالكامل وإعداد الأقسام</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">إضافة المنتجات الجاهزة الحالية (عود محسن، بخور، عطور)</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تجهيز الأقسام المستقبلية (عود طبيعي، خمريات) كتابياً</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">إعداد الصفحات الأساسية (من نحن، التواصل، السياسات)</span></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 3 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">📈</span>
+                            <h3 class="scope-title">تحسين الأداء والتحويل</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تحسين تجربة العميل وتنظيم رحلة الشراء</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تحسين التصفح وسرعة الوصول للأقسام</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تجهيز المتجر ليكون جاهزاً للإعلانات لاحقاً</span></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 4 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">✨</span>
+                            <h3 class="scope-title">خدمات إضافية داخل الباقة</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">ربط وسائل التواصل وإعداد واتساب بيزنس</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">مراجعة كاملة قبل التسليم واستشارة تشغيل</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">توجيه مبدئي لتحسين ظهور المتجر باحترافية</span></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section class="pricing-section">
+                <div class="pricing-box">
+                    <span class="pricing-label">قيمة الاستثمار</span>
+                    <div class="pricing-amount">
+                        <span class="old-price">1500 ريال سعودي</span>
+                        <div>
+                            <span class="amount new-price">900</span>
+                            <span class="currency">ريال سعودي</span>
+                        </div>
+                    </div>
+                    <p class="pricing-note">عرض خاص لمرة واحدة - شامل كافة البنود المذكورة</p>
+                </div>
+            </section>
+
+            <!-- Notes Section (Exclusions) -->
+            <section class="notes-section">
+                <h2 class="section-title">غير مشمول في السعر</h2>
+                <ul class="notes-list">
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">اشتراك منصة سلة، القوالب المدفوعة، والدومين</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">الحملات الإعلانية والتصوير الاحترافي</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">إدارة المتجر بعد التسليم</span></li>
+                </ul>
+            </section>
+
+            <!-- Footer -->
+            <footer class="document-footer">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <span class="footer-brand-name">أركان العز للعود</span>
+                    </div>
+                    <div class="footer-contact no-print">
+                        <button onclick="window.print()" class="print-btn" style="padding: 10px 20px; background: #d4af37; color: white; border: none; border-radius: 5px; cursor: pointer; font-family: inherit;">طباعة العرض</button>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+</body>
+</html>
