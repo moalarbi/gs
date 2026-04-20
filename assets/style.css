@@ -379,6 +379,46 @@ body {
     margin: 0;
 }
 
+/* Old Price Styles */
+.pricing-old-price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.old-price {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-decoration: line-through;
+    line-height: 1;
+}
+
+.currency-old {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-decoration: line-through;
+}
+
+/* Service Description */
+.service-description {
+    background: var(--primary-light);
+    border: 1px solid var(--border-green);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    line-height: 1.8;
+}
+
+.service-description p {
+    font-size: 15px;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.8;
+}
+
 /* ═══════════════════════════════════════════════════════════════════
    Notes Section
    ═══════════════════════════════════════════════════════════════════ */
