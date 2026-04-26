@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>عرض سعر - إطلاق متجر عود وبخور - GOLF STUDIO</title>
     
     <!-- Google Fonts - IBM Plex Sans Arabic -->
@@ -17,18 +17,213 @@
     <!-- Styles -->
     <link rel="stylesheet" href="../../assets/style.css">
     <style>
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
-        .pricing-card { background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 20px; text-align: center; transition: transform 0.3s ease; }
-        .pricing-card.featured { border: 2px solid #2c3e50; background: #f8f9fa; transform: scale(1.05); }
-        .pricing-card .card-title { font-weight: 600; color: #2c3e50; margin-bottom: 10px; display: block; }
-        .pricing-card .card-price { font-size: 1.8em; font-weight: 700; color: #27ae60; }
-        .pricing-card .card-currency { font-size: 0.9em; color: #888; }
-        .platform-fees { background: #f9f9f9; border-right: 4px solid #3498db; padding: 15px; margin-top: 20px; border-radius: 8px; }
-        .summary-box { background: #2c3e50; color: white; padding: 20px; border-radius: 12px; margin-top: 30px; }
-        .summary-item { display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px; }
-        .summary-item.total { border-bottom: none; font-weight: 700; font-size: 1.2em; color: #f1c40f; margin-top: 10px; }
-        .duration-box { background: #fff8e1; border: 1px solid #ffe082; padding: 15px; border-radius: 8px; margin-top: 20px; }
-        .duration-title { font-weight: 600; color: #f57f17; display: block; margin-bottom: 5px; }
+        /* Mobile Optimization Overrides */
+        :root {
+            --primary-dark: #2c3e50;
+            --accent-gold: #f1c40f;
+            --success-green: #27ae60;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .document-wrapper {
+            padding: 10px !important;
+        }
+
+        .document-card {
+            border-radius: 15px !important;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
+            overflow: hidden;
+        }
+
+        .hero-section {
+            padding: 30px 20px !important;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 1.6em !important;
+            line-height: 1.4 !important;
+        }
+
+        .hero-subtitle {
+            font-size: 1em !important;
+            margin-top: 15px !important;
+            color: white;
+            opacity: 0.9;
+        }
+
+        .meta-section {
+            padding: 15px !important;
+        }
+
+        .meta-single-card {
+            padding: 15px !important;
+            border-radius: 10px !important;
+        }
+
+        .meta-row {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 5px !important;
+            margin-bottom: 12px !important;
+        }
+
+        .meta-label {
+            font-size: 0.85em !important;
+            color: #7f8c8d !important;
+        }
+
+        .meta-value {
+            font-size: 1em !important;
+            font-weight: 600 !important;
+        }
+
+        .section-title {
+            font-size: 1.2em !important;
+            margin-bottom: 15px !important;
+            padding-right: 10px;
+            border-right: 4px solid var(--primary-dark);
+        }
+
+        .scope-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 15px !important;
+        }
+
+        .scope-card {
+            padding: 15px !important;
+            border-radius: 12px !important;
+        }
+
+        .scope-header {
+            margin-bottom: 12px !important;
+        }
+
+        .scope-title {
+            font-size: 1.05em !important;
+        }
+
+        .scope-list {
+            gap: 8px !important;
+        }
+
+        .item-name {
+            font-size: 0.92em !important;
+            line-height: 1.5 !important;
+        }
+
+        .pricing-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 12px !important;
+        }
+
+        .pricing-card {
+            padding: 15px !important;
+            transform: none !important;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--primary-dark) !important;
+            background: #f8f9fa;
+        }
+
+        .card-title {
+            font-size: 0.95em !important;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .card-price {
+            font-size: 1.5em !important;
+            font-weight: 700;
+            color: var(--success-green);
+        }
+
+        .card-currency {
+            font-size: 0.8em;
+            color: #888;
+        }
+
+        .summary-box {
+            padding: 15px !important;
+            margin-top: 20px !important;
+            background: var(--primary-dark);
+            color: white;
+            border-radius: 12px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em !important;
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 5px;
+        }
+
+        .summary-item.total {
+            font-size: 1.1em !important;
+            border-bottom: none;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-top: 10px;
+        }
+
+        .duration-box {
+            padding: 12px !important;
+            font-size: 0.9em !important;
+            background: #fff8e1;
+            border: 1px solid #ffe082;
+            border-radius: 8px;
+        }
+
+        .duration-title {
+            font-weight: 600;
+            color: #f57f17;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .platform-fees {
+            background: #f9f9f9;
+            border-right: 4px solid #3498db;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .notes-list {
+            padding-right: 5px !important;
+        }
+
+        .note-text {
+            font-size: 0.88em !important;
+        }
+
+        section {
+            margin-bottom: 25px !important;
+        }
+
+        .meta-value, .item-name {
+            word-break: break-word;
+        }
+
+        .contact-item {
+            padding: 10px !important;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -56,7 +251,7 @@
                         <span>عرض سعر</span><br>
                         إطلاق متجر عود وبخور على منصة سلة
                     </h1>
-                    <p class="hero-subtitle" style="color: white; opacity: 0.9; margin-top: 10px; font-size: 1.1em;">
+                    <p class="hero-subtitle">
                         إطلاق متجر إلكتروني متخصص في العود والبخور مع خيار تصميم الهوية التجارية والتغليف
                     </p>
                 </div>
@@ -81,9 +276,9 @@
             </section>
 
             <!-- Description Section -->
-            <section class="notes-section" style="margin-top: 20px;">
+            <section class="notes-section">
                 <h2 class="section-title">وصف الخدمة</h2>
-                <p style="line-height: 1.8; color: #444;">
+                <p style="line-height: 1.6; color: #444; font-size: 0.95em;">
                     عرض سعر مخصص لإنشاء وتجهيز متجر إلكتروني متخصص في العود والبخور على منصة سلة، يشمل تجهيز واجهة المتجر، إعداد الأقسام الأساسية، تنسيق القالب، وتجهيز المتجر للانطلاق، مع خيار مستقل لتصميم الهوية التجارية من اختيار الاسم وحتى الشعار والتغليف.
                 </p>
             </section>
@@ -160,17 +355,17 @@
             <section class="notes-section">
                 <h2 class="section-title">مدة التنفيذ</h2>
                 <div class="duration-box">
-                    <div style="margin-bottom: 10px;">
+                    <div style="margin-bottom: 12px;">
                         <span class="duration-title">إطلاق وتجهيز المتجر:</span>
                         <span>5 إلى 7 أيام عمل</span>
                     </div>
-                    <div style="margin-bottom: 10px;">
+                    <div style="margin-bottom: 12px;">
                         <span class="duration-title">تصميم الهوية والتغليف:</span>
                         <span>7 إلى 10 أيام عمل</span>
                     </div>
                     <div style="border-top: 1px solid #ffe082; padding-top: 10px; margin-top: 10px;">
                         <span class="duration-title">في حال اختيار الخدمتين معاً:</span>
-                        <span>10 إلى 14 يوم عمل (حسب سرعة اعتماد التصاميم واستلام البيانات)</span>
+                        <span>10 إلى 14 يوم عمل</span>
                     </div>
                 </div>
             </section>
@@ -199,34 +394,34 @@
 
                 <!-- Platform Fees -->
                 <div class="platform-fees">
-                    <h3 style="font-size: 1.1em; margin-bottom: 10px; color: #2c3e50;">متطلبات ورسوم منصة سلة (تدفع لسلة مباشرة)</h3>
+                    <h3 style="font-size: 1em; margin-bottom: 10px; color: #2c3e50;">رسوم منصة سلة (تدفع لسلة مباشرة)</h3>
                     <ul class="notes-list">
-                        <li class="note-item"><span class="note-bullet">•</span> <span class="note-text">اشتراك سلة بلس السنوي: 990 ريال سنويًا</span></li>
+                        <li class="note-item"><span class="note-bullet">•</span> <span class="note-text">اشتراك سلة بلس السنوي: 990 ريال</span></li>
                         <li class="note-item"><span class="note-bullet">•</span> <span class="note-text">الدومين: مجاني مع الاشتراك السنوي</span></li>
                         <li class="note-item"><span class="note-bullet">•</span> <span class="note-text">قالب ملاك: 287.50 ريال</span></li>
-                        <li class="note-item"><span class="note-bullet">•</span> <span class="note-text"><strong>إجمالي رسوم منصة سلة والقالب: 1277.50 ريال</strong></span></li>
+                        <li class="note-item"><span class="note-bullet">•</span> <span class="note-text"><strong>الإجمالي: 1277.50 ريال</strong></span></li>
                     </ul>
                 </div>
 
                 <!-- Summary Scenarios -->
                 <div class="summary-box">
-                    <h3 style="color: #f1c40f; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px;">ملخص تكاليف الانطلاق (الاحتمالات)</h3>
+                    <h3 style="color: #f1c40f; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px; font-size: 1.1em;">ملخص تكاليف الانطلاق</h3>
                     
                     <div style="margin-bottom: 20px;">
-                        <h4 style="font-size: 1em; margin-bottom: 8px;">1) إطلاق المتجر فقط:</h4>
+                        <h4 style="font-size: 0.95em; margin-bottom: 8px;">1) إطلاق المتجر فقط:</h4>
                         <div class="summary-item"><span>رسوم التنفيذ:</span> <span>1000 ريال</span></div>
                         <div class="summary-item"><span>رسوم سلة والقالب:</span> <span>1277.50 ريال</span></div>
                         <div class="summary-item total"><span>الإجمالي التقريبي:</span> <span>2277.50 ريال</span></div>
                     </div>
 
                     <div style="margin-bottom: 20px;">
-                        <h4 style="font-size: 1em; margin-bottom: 8px;">2) الهوية والتغليف فقط:</h4>
+                        <h4 style="font-size: 0.95em; margin-bottom: 8px;">2) الهوية والتغليف فقط:</h4>
                         <div class="summary-item"><span>رسوم التنفيذ:</span> <span>1000 ريال</span></div>
-                        <div class="summary-item total"><span>الإجمالي:</span> <span>1000 ريال (لا تشمل رسوم سلة)</span></div>
+                        <div class="summary-item total"><span>الإجمالي:</span> <span>1000 ريال</span></div>
                     </div>
 
                     <div>
-                        <h4 style="font-size: 1em; margin-bottom: 8px;">3) إطلاق المتجر + الهوية والتغليف:</h4>
+                        <h4 style="font-size: 0.95em; margin-bottom: 8px;">3) إطلاق المتجر + الهوية والتغليف:</h4>
                         <div class="summary-item"><span>رسوم التنفيذ:</span> <span>2000 ريال</span></div>
                         <div class="summary-item"><span>رسوم سلة والقالب:</span> <span>1277.50 ريال</span></div>
                         <div class="summary-item total"><span>الإجمالي التقريبي الكامل:</span> <span>3277.50 ريال</span></div>
@@ -238,26 +433,21 @@
             <section class="notes-section">
                 <h2 class="section-title">غير مشمول في السعر</h2>
                 <ul class="notes-list">
-                    <li class="note-item"><span class="note-bullet">•</span> <span class="note-text">اشتراك منصة سلة</span></li>
-                    <li class="note-item"><span class="note-bullet">•</span> <span class="note-text">قالب ملاك أو أي قالب مدفوع آخر</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span> <span class="note-text">اشتراك منصة سلة وقالب ملاك</span></li>
                     <li class="note-item"><span class="note-bullet">•</span> <span class="note-text">أي تطبيقات مدفوعة داخل سلة</span></li>
-                    <li class="note-item"><span class="note-bullet">•</span> <span class="note-text">الحملات الإعلانية</span></li>
-                    <li class="note-item"><span class="note-bullet">•</span> <span class="note-text">التصوير الاحترافي للمنتجات</span></li>
-                    <li class="note-item"><span class="note-bullet">•</span> <span class="note-text">كتابة المحتوى التسويقي التفصيلي للمنتجات</span></li>
-                    <li class="note-item"><span class="note-bullet">•</span> <span class="note-text">الطباعة الفعلية للعلب والأكياس وبطاقات الإهداء</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span> <span class="note-text">الحملات الإعلانية والتصوير الاحترافي</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span> <span class="note-text">الطباعة الفعلية للعلب والأكياس</span></li>
                     <li class="note-item"><span class="note-bullet">•</span> <span class="note-text">إدارة المتجر بعد التسليم</span></li>
-                    <li class="note-item"><span class="note-bullet">•</span> <span class="note-text">رفع منتجات إضافية خارج المتفق عليه</span></li>
                 </ul>
             </section>
 
             <!-- Important Notes -->
-            <section class="notes-section" style="background: #f0f4f8; padding: 20px; border-radius: 12px; margin-top: 20px;">
+            <section class="notes-section" style="background: #f0f4f8; padding: 15px; border-radius: 12px;">
                 <h2 class="section-title">ملاحظات هامة</h2>
                 <ul class="notes-list">
-                    <li class="note-item"><span class="note-bullet">•</span> <span class="note-text">رسوم منصة سلة والقالب تُدفع من العميل مباشرة لمنصة سلة.</span></li>
-                    <li class="note-item"><span class="note-bullet">•</span> <span class="note-text">رسومنا تخص تنفيذ وتجهيز المتجر وتصميم الهوية فقط.</span></li>
-                    <li class="note-item"><span class="note-bullet">•</span> <span class="note-text">الدومين مجاني عند اختيار الاشتراك السنوي في سلة.</span></li>
-                    <li class="note-item"><span class="note-bullet">•</span> <span class="note-text">تصميم التغليف يشمل التصميم فقط ولا يشمل تكلفة الطباعة.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span> <span class="note-text">رسوم سلة والقالب تُدفع لسلة مباشرة.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span> <span class="note-text">الدومين مجاني عند الاشتراك السنوي.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span> <span class="note-text">تصميم التغليف لا يشمل تكلفة الطباعة.</span></li>
                 </ul>
             </section>
 
