@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض سعر - TechPlay | تيك بلاي</title>
+    
+    <!-- Google Fonts - IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../assets/style.css">
+    <style>
+        .payment-plan-card {
+            background: var(--white);
+            border: 1px solid var(--border-green);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin-top: 15px;
+        }
+        .payment-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--border-green);
+        }
+        .payment-row:last-child {
+            border-bottom: none;
+        }
+        .payment-label {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .payment-value {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .badge-custom {
+            background: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">تم النسخ بنجاح</div>
+
+    <!-- Top Bar -->
+    <header class="top-bar no-print">
+        <div class="top-bar-content">
+            <div class="brand">
+                <span class="brand-icon">⚙️</span>
+                <span class="brand-name">CUSTOM DEVELOPMENT</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Document Card -->
+    <main class="document-wrapper">
+        <div class="document-card" id="document-card">
+            
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-banner">
+                    <h1 class="hero-title">
+                        <span>عرض سعر مشروع</span><br>
+                        برمجة وتصميم متجر إلكتروني خاص
+                    </h1>
+                </div>
+            </section>
+
+            <!-- Invoice Meta Section -->
+            <section class="meta-section">
+                <div class="meta-single-card">
+                    <div class="meta-row">
+                        <span class="meta-label">رقم العرض:</span>
+                        <span class="meta-value" id="invoice-number">20260503073511</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">التاريخ:</span>
+                        <span class="meta-value">2026-05-03</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">العميل:</span>
+                        <span class="meta-value company-name">TechPlay | تيك بلاي</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">مدة التنفيذ:</span>
+                        <span class="meta-value">14 إلى 21 يوم عمل</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Service Description -->
+            <section class="scope-section">
+                <h2 class="section-title">وصف الخدمة</h2>
+                <div class="service-description">
+                    <p>
+                        خدمة متكاملة تشمل برمجة وتصميم متجر إلكتروني خاص لعلامة <strong>TechPlay | تيك بلاي</strong>، بفكرة وتجربة مشابهة لمتجر <strong>b4card.com</strong>، مع واجهة احترافية لعرض المنتجات الرقمية والبطاقات والاشتراكات، ونظام طلبات مخصص يرسل تفاصيل الطلب مباشرة إلى واتساب لاستكمال الدفع يدويًا، بدون بوابة دفع داخل المنصة في المرحلة الأولى.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Scope Section -->
+            <section class="scope-section">
+                <h2 class="section-title">تفاصيل العرض الفني</h2>
+                
+                <div class="scope-grid">
+                    <!-- Section 1 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🎨</span>
+                            <h3 class="scope-title">تصميم الواجهة وتجربة المستخدم</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item"><span class="item-bullet"></span><span class="item-name">تصميم واجهة احترافية مشابهة لفكرة b4card.com</span></li>
+                            <li class="scope-item"><span class="item-bullet"></span><span class="item-name">تصميم الصفحة الرئيسية بشكل واضح وسهل التصفح</span></li>
+                            <li class="scope-item"><span class="item-bullet"></span><span class="item-name">عرض الأقسام والمنتجات الرقمية بطريقة منظمة</span></li>
+                            <li class="scope-item"><span class="item-bullet"></span><span class="item-name">تجربة مستخدم متوافقة بالكامل مع الجوال والكمبيوتر</span></li>
+                            <li class="scope-item"><span class="item-bullet"></span><span class="item-name">بناء شكل بصري يعكس هوية TechPlay</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 2 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">💻</span>
+                            <h3 class="scope-title">برمجة المتجر الخاص</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item"><span class="item-bullet"></span><span class="item-name">برمجة خاصة بالكامل (خارج منصات المتاجر الجاهزة)</span></li>
+                            <li class="scope-item"><span class="item-bullet"></span><span class="item-name">بناء صفحات الأقسام والمنتجات وتفاصيل المنتج</span></li>
+                            <li class="scope-item"><span class="item-bullet"></span><span class="item-name">بناء سلة طلبات مخصصة ونموذج طلب ذكي</span></li>
+                            <li class="scope-item"><span class="item-bullet"></span><span class="item-name">تجهيز الكود ليكون قابلاً للتعديل والتطوير مستقبلاً</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 3 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">📲</span>
+                            <h3 class="scope-title">نظام الطلب عبر واتساب</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item"><span class="item-bullet"></span><span class="item-name">تجهيز رسالة واتساب تلقائية عند إتمام الطلب</span></li>
+                            <li class="scope-item"><span class="item-bullet"></span><span class="item-name">الرسالة تحتوي على (المنتج، الكمية، بيانات العميل)</span></li>
+                            <li class="scope-item"><span class="item-bullet"></span><span class="item-name">إرسال الطلب للرقم المخصص لاستكمال الدفع يدوياً</span></li>
+                            <li class="scope-item"><span class="item-bullet"></span><span class="item-name">تسهيل عملية الشراء السريع من الجوال</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 4 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">✅</span>
+                            <h3 class="scope-title">الاختبار والتسليم</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item"><span class="item-bullet"></span><span class="item-name">اختبار المتجر على كافة المتصفحات والأجهزة</span></li>
+                            <li class="scope-item"><span class="item-bullet"></span><span class="item-name">اختبار تجربة الطلب والتحويل إلى واتساب</span></li>
+                            <li class="scope-item"><span class="item-bullet"></span><span class="item-name">تسليم نسخة جاهزة للنشر مع شرح مبسط للتعديل</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section class="pricing-section">
+                <div class="pricing-box">
+                    <span class="pricing-label">إجمالي تكلفة المشروع</span>
+                    <div class="pricing-old-price">
+                        <span class="old-price">1200</span>
+                        <span class="currency-old">دولار</span>
+                    </div>
+                    <div class="pricing-amount">
+                        <span class="amount">1000</span>
+                        <span class="currency">دولار</span>
+                    </div>
+                    <p class="pricing-note">خصم خاص لعميل TechPlay</p>
+                </div>
+            </section>
+
+            <!-- Payment Plan Section -->
+            <section class="notes-section">
+                <h2 class="section-title">خطة الدفع</h2>
+                <div class="payment-plan-card">
+                    <div class="payment-row">
+                        <span class="payment-label">الدفعة الأولى (عند بداية العمل)</span>
+                        <span class="payment-value">500 دولار</span>
+                    </div>
+                    <div class="payment-row">
+                        <span class="payment-label">الدفعة الثانية (عند التسليم النهائي)</span>
+                        <span class="payment-value">500 دولار</span>
+                    </div>
+                </div>
+                <p class="workflow-note" style="margin-top: 15px; font-size: 13px; color: var(--text-muted);">
+                    * لا يبدأ التنفيذ إلا بعد سداد الدفعة الأولى واعتماد نطاق العمل.
+                </p>
+            </section>
+
+            <!-- Exclusions Section -->
+            <section class="notes-section">
+                <h2 class="section-title">غير مشمول في العرض</h2>
+                <ul class="scope-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px;">
+                    <li class="scope-item" style="border:none; padding: 2px 0;"><span class="item-bullet"></span><span class="item-name">بوابة دفع إلكترونية داخلية</span></li>
+                    <li class="scope-item" style="border:none; padding: 2px 0;"><span class="item-bullet"></span><span class="item-name">الربط مع API خارجي للموردين</span></li>
+                    <li class="scope-item" style="border:none; padding: 2px 0;"><span class="item-bullet"></span><span class="item-name">لوحة إدارة متقدمة</span></li>
+                    <li class="scope-item" style="border:none; padding: 2px 0;"><span class="item-bullet"></span><span class="item-name">تطبيق جوال (Native)</span></li>
+                    <li class="scope-item" style="border:none; padding: 2px 0;"><span class="item-bullet"></span><span class="item-name">الدومين والاستضافة المدفوعة</span></li>
+                    <li class="scope-item" style="border:none; padding: 2px 0;"><span class="item-bullet"></span><span class="item-name">تصميم الهوية البصرية</span></li>
+                </ul>
+            </section>
+
+            <!-- Important Notes -->
+            <section class="notes-section">
+                <h2 class="section-title">ملاحظات هامة</h2>
+                <div class="workflow-container">
+                    <ul class="workflow-list">
+                        <li class="workflow-item">
+                            <span class="step-number">1</span>
+                            <span class="step-text">المشروع <strong>برمجة خاصة</strong> وليس قالباً جاهزاً على منصات مثل سلة.</span>
+                        </li>
+                        <li class="workflow-item">
+                            <span class="step-number">2</span>
+                            <span class="step-text">نظام الطلب يعتمد على <strong>التحويل للواتساب</strong> لاستكمال الدفع يدوياً.</span>
+                        </li>
+                        <li class="workflow-item">
+                            <span class="step-number">3</span>
+                            <span class="step-text">أي ربط مستقبلي مع بوابات دفع أو API خارجي يتم تسعيره بشكل منفصل.</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer Actions -->
+    <footer class="no-print" style="text-align: center; padding: 20px 0 60px;">
+        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">شكراً لثقتكم بنا، نتطلع للعمل معكم.</p>
+    </footer>
+
+</body>
+</html>
