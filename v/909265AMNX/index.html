@@ -129,7 +129,7 @@
         .card-duration {
             font-size: 15px;
             color: var(--text-secondary);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -141,6 +141,7 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
+            margin-bottom: 20px;
         }
 
         .card-amount {
@@ -157,6 +158,35 @@
             display: inline-block;
             vertical-align: middle;
             margin-top: 8px;
+        }
+
+        /* Payment Terms Styling */
+        .payment-terms {
+            background: var(--white);
+            border: 1px solid var(--border-green);
+            border-radius: var(--radius-md);
+            padding: 12px;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .payment-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .payment-label {
+            font-weight: 500;
+        }
+
+        .payment-value {
+            font-weight: 700;
+            color: var(--primary);
         }
 
         /* Requirements Card */
@@ -412,6 +442,18 @@
                         <div class="card-price-row">
                             <span class="card-amount" id="price-amount">1450</span>
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Saudi_Riyal_Symbol.svg/1280px-Saudi_Riyal_Symbol.svg.png" alt="SAR" class="card-currency-img">
+                        </div>
+
+                        <!-- Payment Terms -->
+                        <div class="payment-terms">
+                            <div class="payment-row">
+                                <span class="payment-label">دفعة أولى (عند التعميد):</span>
+                                <span class="payment-value">50%</span>
+                            </div>
+                            <div class="payment-row">
+                                <span class="payment-label">دفعة أخيرة (عند التسليم):</span>
+                                <span class="payment-value">50%</span>
+                            </div>
                         </div>
                     </div>
                 </div>
