@@ -37,7 +37,7 @@
             margin-top: 20px;
         }
 
-        /* Toggle Switch */
+        /* Toggle Switch - RTL Fixed */
         .switch-wrapper {
             display: flex;
             align-items: center;
@@ -49,6 +49,7 @@
             user-select: none;
             width: 280px;
             border: 1px solid #e0e0e0;
+            direction: ltr; /* Keep slider logic simple with LTR */
         }
 
         .switch-option {
@@ -60,6 +61,7 @@
             z-index: 1;
             transition: color 0.3s ease;
             color: #666;
+            direction: rtl; /* Content inside is RTL */
         }
 
         .switch-option.active {
@@ -78,8 +80,9 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .switch-wrapper.fast .switch-slider {
-            transform: translateX(-100%);
+        /* Slider movement in LTR wrapper: 0 for left, 100% for right */
+        .switch-wrapper.fast-active .switch-slider {
+            transform: translateX(100%);
         }
 
         /* Single Pricing Card */
@@ -110,6 +113,7 @@
             font-weight: 700;
             white-space: nowrap;
             box-shadow: 0 4px 10px rgba(15, 92, 59, 0.2);
+            transition: background 0.3s ease;
         }
 
         .card-badge.economy {
@@ -462,20 +466,40 @@
                 }
             };
 
-            pricingSwitch.addEventListener('click', function() {
-                const isNormal = pricingSwitch.classList.toggle('fast');
-                const type = pricingSwitch.classList.contains('fast') ? 'fast' : 'normal';
-                
-                // Update active state
-                options.forEach(opt => opt.classList.remove('active'));
-                pricingSwitch.querySelector(`[data-type="${type}"]`).classList.add('active');
+            // Initial state: normal is active (slider at left: 0%)
+            let currentType = 'normal';
 
-                // Animate card content
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(10px)';
+            pricingSwitch.addEventListener('click', function(e) {
+                // Determine which option was clicked or just toggle
+                const clickedOption = e.target.closest('.switch-option');
+                if (clickedOption) {
+                    currentType = clickedOption.getAttribute('data-type');
+                } else {
+                    currentType = currentType === 'normal' ? 'fast' : 'normal';
+                }
+
+                // Update switch appearance
+                if (currentType === 'fast') {
+                    pricingSwitch.classList.add('fast-active');
+                } else {
+                    pricingSwitch.classList.remove('fast-active');
+                }
+
+                // Update active class on options
+                options.forEach(opt => {
+                    if (opt.getAttribute('data-type') === currentType) {
+                        opt.classList.add('active');
+                    } else {
+                        opt.classList.remove('active');
+                    }
+                });
+
+                // Update card content with animation
+                card.style.opacity = '0.5';
+                card.style.transform = 'scale(0.98)';
                 
                 setTimeout(() => {
-                    const currentData = data[type];
+                    const currentData = data[currentType];
                     badge.textContent = currentData.badge;
                     badge.className = `card-badge ${currentData.badgeClass}`;
                     title.textContent = currentData.title;
@@ -483,8 +507,8 @@
                     amount.textContent = currentData.amount;
                     
                     card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, 200);
+                    card.style.transform = 'scale(1)';
+                }, 150);
             });
         });
     </script>
