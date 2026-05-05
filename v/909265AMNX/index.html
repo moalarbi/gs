@@ -138,9 +138,9 @@
 
         .card-price-row {
             display: flex;
-            align-items: baseline;
+            align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .card-amount {
@@ -148,12 +148,15 @@
             font-weight: 800;
             color: var(--text-primary);
             letter-spacing: -1px;
+            line-height: 1;
         }
 
-        .card-currency {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--text-muted);
+        .card-currency-img {
+            height: 24px;
+            width: auto;
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: 8px;
         }
 
         /* Requirements Card */
@@ -213,6 +216,7 @@
             .hero-title { font-size: 18px; }
             .hero-title span { font-size: 22px; }
             .card-amount { font-size: 36px; }
+            .card-currency-img { height: 20px; }
             .pricing-card-single { padding: 30px 20px; }
             .switch-wrapper { width: 100%; max-width: 280px; }
         }
@@ -388,7 +392,7 @@
                         </div>
                         <div class="card-price-row">
                             <span class="card-amount" id="price-amount">1450</span>
-                            <span class="card-currency">⃁</span>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Saudi_Riyal_Symbol.svg/1280px-Saudi_Riyal_Symbol.svg.png" alt="SAR" class="card-currency-img">
                         </div>
                     </div>
                 </div>
