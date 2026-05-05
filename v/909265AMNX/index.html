@@ -49,7 +49,7 @@
             user-select: none;
             width: 280px;
             border: 1px solid #e0e0e0;
-            direction: ltr; /* Keep slider logic simple with LTR */
+            direction: ltr;
         }
 
         .switch-option {
@@ -61,7 +61,7 @@
             z-index: 1;
             transition: color 0.3s ease;
             color: #666;
-            direction: rtl; /* Content inside is RTL */
+            direction: rtl;
         }
 
         .switch-option.active {
@@ -80,7 +80,6 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        /* Slider movement in LTR wrapper: 0 for left, 100% for right */
         .switch-wrapper.fast-active .switch-slider {
             transform: translateX(100%);
         }
@@ -208,6 +207,15 @@
             border-radius: 6px;
             border-right: 3px solid var(--primary);
         }
+
+        /* Responsive Adjustments */
+        @media (max-width: 600px) {
+            .hero-title { font-size: 18px; }
+            .hero-title span { font-size: 22px; }
+            .card-amount { font-size: 36px; }
+            .pricing-card-single { padding: 30px 20px; }
+            .switch-wrapper { width: 100%; max-width: 280px; }
+        }
     </style>
 </head>
 <body>
@@ -233,7 +241,7 @@
                 <div class="hero-banner">
                     <h1 class="hero-title">
                         <span>فاتورة اتفاقية</span><br>
-                        تجهيز صفحات هبوط احترافية لمنتجات الديكور على منصة سلة
+                        انشاء وتدشين متجر احترافي على منصة سلة
                     </h1>
                 </div>
             </section>
@@ -265,7 +273,7 @@
                 <h2 class="section-title">وصف الخدمة</h2>
                 <div class="service-description">
                     <p>
-                        خدمة مخصصة لمكتب تصميم داخلي بدأ في توريد منتجات ديكورية ومنتجات مخصصة لمشاريع التصميم، وتشمل تجهيز صفحات هبوط احترافية لكل منتج داخل المتجر بحيث يكون رابط كل منتج واضحًا وسهل الإرسال للعملاء، مع تنظيم عرض المنتجات بطريقة تساعد العميل على فهم المنتج وطلبه بسهولة.
+                        خدمة متكاملة لإنشاء وتدشين متجر إلكتروني احترافي على منصة سلة، تشمل تجهيز كل صفحة منتج بوصف تسويقي مقنع وصور توضيحية إضافية تجعل صفحة المنتج تعمل كصفحة هبوط (Landing Page) متكاملة تهدف لإقناع العميل وتحويله لعملية الشراء باحترافية عالية.
                     </p>
                 </div>
             </section>
@@ -279,14 +287,14 @@
                     <div class="scope-card">
                         <div class="scope-header">
                             <span class="scope-icon">📄</span>
-                            <h3 class="scope-title">تجهيز صفحات المنتجات</h3>
+                            <h3 class="scope-title">تجهيز صفحات المنتجات الاحترافية</h3>
                         </div>
                         <ul class="scope-list">
-                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تجهيز صفحة هبوط احترافية لكل منتج</span></div></li>
-                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تنظيم محتوى المنتج بطريقة واضحة للعملاء</span></div></li>
-                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إبراز صورة المنتج، الاسم، الوصف، والمميزات</span></div></li>
-                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تجهيز رابط واضح لكل منتج يمكن إرساله للعملاء</span></div></li>
-                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تحسين ترتيب الصفحة بما يناسب منتجات الديكور</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تجهيز وصف احترافي لكل منتج يبرز القيمة والمميزات</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إضافة صور توضيحية وتصاميم داخل الوصف لتعزيز الإقناع</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تصميم صفحة المنتج لتظهر كصفحة هبوط متكاملة (Landing Page)</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تنظيم محتوى المنتج بطريقة بصرية مريحة وجذابة للعميل</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تحسين ترتيب العناصر لإقناع العميل وتحويله لعملية الشراء</span></div></li>
                         </ul>
                     </div>
 
@@ -420,17 +428,15 @@
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
                         </a>
+                        <a href="https://matjarak.vercel.app/" class="contact-item">
+                            <span>matjarak.vercel.app</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                        </a>
                     </div>
-                </div>
-                <div class="print-action-bottom no-print">
-                    <button class="btn btn-primary btn-large" onclick="window.print()">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6 9 6 2 18 2 18 9"></polyline>
-                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-                            <rect x="6" y="14" width="12" height="8"></rect>
-                        </svg>
-                        طباعة الفاتورة
-                    </button>
                 </div>
             </footer>
 
@@ -466,11 +472,9 @@
                 }
             };
 
-            // Initial state: normal is active (slider at left: 0%)
             let currentType = 'normal';
 
             pricingSwitch.addEventListener('click', function(e) {
-                // Determine which option was clicked or just toggle
                 const clickedOption = e.target.closest('.switch-option');
                 if (clickedOption) {
                     currentType = clickedOption.getAttribute('data-type');
@@ -478,14 +482,12 @@
                     currentType = currentType === 'normal' ? 'fast' : 'normal';
                 }
 
-                // Update switch appearance
                 if (currentType === 'fast') {
                     pricingSwitch.classList.add('fast-active');
                 } else {
                     pricingSwitch.classList.remove('fast-active');
                 }
 
-                // Update active class on options
                 options.forEach(opt => {
                     if (opt.getAttribute('data-type') === currentType) {
                         opt.classList.add('active');
@@ -494,7 +496,6 @@
                     }
                 });
 
-                // Update card content with animation
                 card.style.opacity = '0.5';
                 card.style.transform = 'scale(0.98)';
                 
