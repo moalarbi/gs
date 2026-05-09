@@ -16,6 +16,246 @@
     
     <!-- Styles -->
     <link rel="stylesheet" href="../../assets/style.css">
+
+    <style>
+        :root {
+            --primary: #0f5c3b;
+            --primary-light: rgba(15, 92, 59, 0.06);
+            --primary-medium: rgba(15, 92, 59, 0.12);
+            --border-green: rgba(15, 92, 59, 0.2);
+        }
+        
+        .hero-banner {
+            background: #0f5c3b;
+        }
+
+        /* Pricing Card & Toggle Styles */
+        .pricing-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .switch-wrapper {
+            display: flex;
+            align-items: center;
+            background: #f0f0f0;
+            padding: 4px;
+            border-radius: 50px;
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+            width: 280px;
+            border: 1px solid #e0e0e0;
+            direction: ltr;
+        }
+
+        .switch-option {
+            flex: 1;
+            text-align: center;
+            padding: 8px 0;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 1;
+            transition: color 0.3s ease;
+            color: #666;
+            direction: rtl;
+        }
+
+        .switch-option.active {
+            color: white;
+        }
+
+        .switch-slider {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: calc(50% - 4px);
+            height: calc(100% - 8px);
+            background: var(--primary);
+            border-radius: 50px;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .switch-wrapper.fast-active .switch-slider {
+            transform: translateX(100%);
+        }
+
+        .pricing-card-single {
+            background: var(--white);
+            border: 2px solid var(--primary);
+            border-radius: var(--radius-lg);
+            padding: 40px 30px;
+            text-align: center;
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+            background: linear-gradient(to bottom, var(--white), var(--primary-light));
+        }
+
+        .card-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            white-space: nowrap;
+            box-shadow: 0 4px 10px rgba(15, 92, 59, 0.2);
+            transition: background 0.3s ease;
+        }
+
+        .card-badge.economy {
+            background: #6b6b6b;
+        }
+
+        .card-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .card-duration {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .card-price-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .card-amount {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+
+        .card-currency-img {
+            height: 24px;
+            width: auto;
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: 8px;
+        }
+
+        .payment-terms {
+            background: var(--white);
+            border: 1px solid var(--border-green);
+            border-radius: var(--radius-md);
+            padding: 12px;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .payment-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .payment-label {
+            font-weight: 500;
+        }
+
+        .payment-value {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .requirements-card {
+            background: #fff;
+            border: 1px solid var(--border-green);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .requirements-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .requirements-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .requirements-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px dashed var(--border-color);
+            font-size: 14px;
+        }
+
+        .requirements-item:last-child {
+            border-bottom: none;
+        }
+
+        .requirement-bullet {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .guarantee-note {
+            margin-top: 20px;
+            background: #e8f5e9;
+            border: 1px solid #c8e6c9;
+            border-radius: var(--radius-md);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #2e7d32;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .guarantee-icon {
+            font-size: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .hero-title { font-size: 18px; }
+            .hero-title span { font-size: 22px; }
+            .card-amount { font-size: 36px; }
+            .card-currency-img { height: 20px; }
+            .pricing-card-single { padding: 30px 20px; }
+            .switch-wrapper { width: 100%; max-width: 280px; }
+        }
+    </style>
+
 </head>
 <body>
     <!-- Toast Notification -->
@@ -70,7 +310,6 @@
                 <h2 class="section-title">بنود الاتفاقية</h2>
                 
                 <div class="scope-grid">
-                    <!-- Card 1: تصميم وتطوير المتجر -->
                     <div class="scope-card">
                         <div class="scope-header">
                             <span class="scope-icon">🎨</span>
@@ -84,7 +323,6 @@
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تنظيم الأقسام</span></div></li>
                         </ul>
                     </div>
-                    <!-- Card 2: تجهيز المنتجات الرقمية -->
                     <div class="scope-card">
                         <div class="scope-header">
                             <span class="scope-icon">🎮</span>
@@ -98,7 +336,6 @@
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تحسين سهولة الشراء</span></div></li>
                         </ul>
                     </div>
-                    <!-- Card 3: تحسين الأداء والتحويل -->
                     <div class="scope-card">
                         <div class="scope-header">
                             <span class="scope-icon">📈</span>
@@ -112,7 +349,6 @@
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تحسين تجربة العميل</span></div></li>
                         </ul>
                     </div>
-                    <!-- Card 4: الإطلاق والمراجعة -->
                     <div class="scope-card">
                         <div class="scope-header">
                             <span class="scope-icon">🚀</span>
@@ -170,34 +406,86 @@
 
             <!-- Pricing Section -->
             
+            
+            <!-- Requirements Section -->
             <section class="scope-section">
-                <h2 class="section-title">متطلبات العمل</h2>
-                <div class="scope-card" style="width: 100%;">
-                    <div class="scope-header">
-                        <span class="scope-icon">🛠️</span>
-                        <h3 class="scope-title">المتطلبات الأساسية</h3>
-                    </div>
-                    <ul class="scope-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">اشتراك سلة برو</span></div></li>
-                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">سجل تجاري أو وثيقة عمل حر</span></div></li>
-                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">حساب بنكي</span></div></li>
-                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">شعار المتجر</span></div></li>
-                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">معلومات التواصل</span></div></li>
-                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">المنتجات الرقمية</span></div></li>
-                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">وسائل الدفع</span></div></li>
+                <div class="requirements-card">
+                    <h2 class="requirements-title">
+                        <span>🛠️</span>
+                        متطلبات الخدمة من طرف العميل
+                    </h2>
+                    <p style="font-size: 14px; margin-bottom: 15px;">حتى نبدأ التنفيذ بدون تأخير، نحتاج توفير المتطلبات التالية:</p>
+                    <ul class="requirements-list">
+                        <li class="requirements-item"><span class="requirement-bullet">•</span> اشتراك سلة برو</li>
+                        <li class="requirements-item"><span class="requirement-bullet">•</span> سجل تجاري أو وثيقة عمل حر</li>
+                        <li class="requirements-item"><span class="requirement-bullet">•</span> حساب بنكي</li>
+                        <li class="requirements-item"><span class="requirement-bullet">•</span> شعار المتجر</li>
+                        <li class="requirements-item"><span class="requirement-bullet">•</span> معلومات التواصل</li>
+                        <li class="requirements-item"><span class="requirement-bullet">•</span> المنتجات الرقمية</li>
+                        <li class="requirements-item"><span class="requirement-bullet">•</span> وسائل الدفع</li>
                     </ul>
                 </div>
             </section>
-<section class="pricing-section">
-                <div class="pricing-box">
-                    <span class="pricing-label">الاستثمار الشهري</span>
-                    <div class="pricing-amount">
-                        <span class="amount">{{price}}</span>
-                        <span class="currency">ريال سعودي</span>
+
+<!-- Pricing Section with Toggle -->
+            <section class="scope-section">
+                <h2 class="section-title">خيارات الاستثمار</h2>
+                <div class="pricing-container">
+                    <!-- Toggle Switch -->
+                    <div class="switch-wrapper" id="pricing-switch">
+                        <div class="switch-slider"></div>
+                        <div class="switch-option active" data-type="normal">إطلاق المتجر</div>
+                        <div class="switch-option" data-type="fast">إطلاق المتجر + التسويق</div>
                     </div>
-                    <p class="pricing-note">شهرياً – لمدة 30 يوم – قابل للتجديد تلقائياً</p>
+
+                    <!-- Single Pricing Card -->
+                    <div class="pricing-card-single" id="pricing-card">
+                        <div class="card-badge economy" id="price-badge">خيار التأسيس</div>
+                        <div class="card-title" id="price-title">إطلاق وتدشين متجر OPX</div>
+                        <div class="card-duration">
+                            <span>⏱️</span>
+                            <span id="price-duration">مدة التنفيذ: خلال 5 أيام عمل</span>
+                        </div>
+                        <div class="card-price-row">
+                            <span class="card-amount" id="price-amount">1500</span>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Saudi_Riyal_Symbol.svg/1280px-Saudi_Riyal_Symbol.svg.png" alt="SAR" class="card-currency-img">
+                        </div>
+
+                        <!-- Payment Terms -->
+                        <div class="payment-terms">
+                            <div class="payment-row">
+                                <span class="payment-label">دفعة أولى (عند التعميد):</span>
+                                <span class="payment-value">50%</span>
+                            </div>
+                            <div class="payment-row">
+                                <span class="payment-label">دفعة أخيرة (عند التسليم):</span>
+                                <span class="payment-value">50%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+            <!-- Notes Section (Exclusions) -->
+            <section class="notes-section">
+                <h2 class="section-title">غير مشمول في السعر</h2>
+                <ul class="notes-list">
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">اشتراك منصة سلة</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">ميزانية الإعلانات</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">التطبيقات المدفوعة</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">شراء الدومين</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">إدارة المتجر بعد التسليم</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">كتابة المحتوى الطويل</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">شراء المنتجات الرقمية</span></li>
+                </ul>
+            </section>
+
+                <div class="guarantee-note">
+                    <span class="guarantee-icon">🛡️</span>
+                    <span>تعديلات مجانية لمدة شهر كامل بعد تسليم المشروع لضمان رضاكم التام.</span>
                 </div>
             </section>
+
 
             <!-- Notes Section (Exclusions) -->
             <section class="notes-section">
@@ -260,6 +548,78 @@
     </main>
 
     <!-- Scripts -->
+    
     <script src="../../assets/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pricingSwitch = document.getElementById('pricing-switch');
+            const options = pricingSwitch.querySelectorAll('.switch-option');
+            const badge = document.getElementById('price-badge');
+            const title = document.getElementById('price-title');
+            const duration = document.getElementById('price-duration');
+            const amount = document.getElementById('price-amount');
+            const card = document.getElementById('pricing-card');
+
+            
+            const data = {
+                normal: {
+                    badge: 'خيار التأسيس',
+                    badgeClass: 'economy',
+                    title: 'إطلاق وتدشين متجر OPX',
+                    duration: 'مدة التنفيذ: خلال 5 أيام عمل',
+                    amount: '1500'
+                },
+                fast: {
+                    badge: 'الخيار الموصى به',
+                    badgeClass: '',
+                    title: 'إطلاق المتجر + التسويق لمدة شهر',
+                    duration: '5 أيام تنفيذ + إدارة تسويق لمدة شهر',
+                    amount: '2500'
+                }
+            };
+
+
+            let currentType = 'normal';
+
+            pricingSwitch.addEventListener('click', function(e) {
+                const clickedOption = e.target.closest('.switch-option');
+                if (clickedOption) {
+                    currentType = clickedOption.getAttribute('data-type');
+                } else {
+                    currentType = currentType === 'normal' ? 'fast' : 'normal';
+                }
+
+                if (currentType === 'fast') {
+                    pricingSwitch.classList.add('fast-active');
+                } else {
+                    pricingSwitch.classList.remove('fast-active');
+                }
+
+                options.forEach(opt => {
+                    if (opt.getAttribute('data-type') === currentType) {
+                        opt.classList.add('active');
+                    } else {
+                        opt.classList.remove('active');
+                    }
+                });
+
+                card.style.opacity = '0.5';
+                card.style.transform = 'scale(0.98)';
+                
+                setTimeout(() => {
+                    const currentData = data[currentType];
+                    badge.textContent = currentData.badge;
+                    badge.className = `card-badge ${currentData.badgeClass}`;
+                    title.textContent = currentData.title;
+                    duration.textContent = currentData.duration;
+                    amount.textContent = currentData.amount;
+                    
+                    card.style.opacity = '1';
+                    card.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+    </script>
+
 </body>
 </html>
