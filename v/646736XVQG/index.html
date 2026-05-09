@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فاتورة اتفاقية - لحوم بهجة</title>
+    
+    <!-- Google Fonts - IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">تم النسخ بنجاح</div>
+
+    <!-- Top Bar -->
+    <header class="top-bar no-print">
+        <div class="top-bar-content">
+            <div class="brand">
+                <span class="brand-icon">⛳</span>
+                <span class="brand-name">GOLF STUDIO</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Document Card -->
+    <main class="document-wrapper">
+        <div class="document-card" id="document-card">
+            
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-banner">
+                    <h1 class="hero-title">
+                        <span>فاتورة اتفاقية</span><br>
+                        إدارة حملات إعلانية ممولة لمتجر لحوم بهجة
+                    </h1>
+                    <p class="hero-description">إدارة احترافية للحملات الإعلانية بهدف زيادة الطلبات والوصول للعملاء المستهدفين وتحسين نتائج المتجر بشكل مستمر.</p>
+                </div>
+            </section>
+
+            <!-- Invoice Meta Section -->
+            <section class="meta-section">
+                <div class="meta-single-card">
+                    <div class="meta-row">
+                        <span class="meta-label">رقم الفاتورة:</span>
+                        <span class="meta-value" id="invoice-number">646736XVQG</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">تاريخ الفاتورة:</span>
+                        <span class="meta-value">09 مايو 2026</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">المقدمة إلى:</span>
+                        <span class="meta-value company-name">لحوم بهجة</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">مدة التنفيذ:</span>
+                        <span class="meta-value">30 يوم إدارة إعلانية</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scope Section -->
+            <section class="scope-section">
+                <h2 class="section-title">بنود الاتفاقية</h2>
+                
+                <div class="scope-grid">
+                    <!-- Scope Card 1: Setup -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">⚙️</span>
+                            <h3 class="scope-title">إعداد الحملات الإعلانية</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إعداد Meta Ads</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إعداد TikTok Ads</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إعداد الحملات البيعية</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تجهيز الجماهير</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تجهيز Pixel والتتبع</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Scope Card 2: Content -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🎨</span>
+                            <h3 class="scope-title">إنتاج المحتوى الإعلاني</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">كتابة النصوص الإعلانية</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تجهيز الأفكار التسويقية</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تصميم بنرات إعلانية</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحسين المحتوى الإعلاني</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تجهيز Hook احترافي</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Scope Card 3: Optimization -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">📈</span>
+                            <h3 class="scope-title">التحسين والمتابعة</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">متابعة الأداء يوميًا</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحسين الإعلانات</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إيقاف الحملات الضعيفة</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحسين ROAS</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إعادة الاستهداف</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Scope Card 4: Strategy -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">📋</span>
+                            <h3 class="scope-title">التقارير والاستراتيجية</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تقارير دورية</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحليل الأداء</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">اقتراحات تطوير</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحسين الاستهداف</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تطوير الحملات تدريجيًا</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section class="pricing-section">
+                <div class="pricing-container">
+                    <h2 class="section-title">تفاصيل الاستثمار</h2>
+                    <div class="pricing-box">
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">إدارة الحملات الإعلانية لمتجر لحوم بهجة</h3>
+                        </div>
+                        <div class="pricing-body">
+                            <div class="price-row before">
+                                <span class="price-label">السعر السابق:</span>
+                                <span class="price-value">3500 ريال</span>
+                            </div>
+                            <div class="price-row after">
+                                <span class="price-label">السعر الحالي:</span>
+                                <div class="price-amount">
+                                    <span class="amount">2000</span>
+                                    <span class="currency">ريال / شهريًا</span>
+                                </div>
+                            </div>
+                            <div class="price-meta">
+                                <span class="meta-item">مدة العقد: 30 يوم إدارة إعلانية</span>
+                            </div>
+                        </div>
+                        <div class="payment-terms">
+                            <h4 class="terms-title">شروط الدفع:</h4>
+                            <ul class="terms-list">
+                                <li>50% عند البداية</li>
+                                <li>50% بعد إطلاق الحملات</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Notes Section (Exclusions) -->
+            <section class="notes-section">
+                <h2 class="section-title">غير مشمول في السعر</h2>
+                <ul class="notes-list">
+                    <li class="note-item">
+                        <span class="note-bullet">•</span>
+                        <span class="note-text">الميزانية الإعلانية</span>
+                    </li>
+                    <li class="note-item">
+                        <span class="note-bullet">•</span>
+                        <span class="note-text">تصوير المنتجات</span>
+                    </li>
+                    <li class="note-item">
+                        <span class="note-bullet">•</span>
+                        <span class="note-text">إنتاج فيديوهات احترافية</span>
+                    </li>
+                    <li class="note-item">
+                        <span class="note-bullet">•</span>
+                        <span class="note-text">المؤثرين</span>
+                    </li>
+                    <li class="note-item">
+                        <span class="note-bullet">•</span>
+                        <span class="note-text">رسوم التطبيقات الخارجية</span>
+                    </li>
+                    <li class="note-item">
+                        <span class="note-bullet">•</span>
+                        <span class="note-text">رسوم منصة سلة</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Footer -->
+            <footer class="document-footer">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <span class="footer-brand-name">محمد العربي</span>
+                    </div>
+                    <div class="footer-contact">
+                        <a href="https://wa.me/966580702445" class="contact-item">
+                            <span>+966580702445</span>
+                        </a>
+                        <a href="https://matjarak.vercel.app/" class="contact-item">
+                            <span>matjarak.vercel.app</span>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <script>
+        // Simple script to handle toast
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+    </script>
+</body>
+</html>
