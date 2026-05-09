@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج متطلبات منصة الكورسات</title>
+    
+    <!-- Google Fonts - IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ═══════════════════════════════════════════════════════════════════
+           Course Intake Form - Styles
+           ═══════════════════════════════════════════════════════════════════ */
+
+        /* CSS Variables */
+        :root {
+            --primary: #0f5c3b;
+            --primary-light: rgba(15, 92, 59, 0.06);
+            --primary-medium: rgba(15, 92, 59, 0.12);
+            --background: #f7faf8;
+            --white: #ffffff;
+            --text-primary: #1a1a1a;
+            --text-secondary: #4a4a4a;
+            --text-muted: #6b6b6b;
+            --border-color: #e0e0e0;
+            --border-green: rgba(15, 92, 59, 0.2);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 14px;
+            --error-color: #d32f2f;
+        }
+
+        /* Reset & Base */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            direction: rtl;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════
+           Top Bar
+           ═══════════════════════════════════════════════════════════════════ */
+        .top-bar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            padding: 12px 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .top-bar-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .brand-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+        }
+
+        .brand-description {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════
+           Hero Section
+           ═══════════════════════════════════════════════════════════════════ */
+        .hero-section {
+            background: var(--primary);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .hero-title {
+            color: var(--white);
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .hero-description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 15px;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════
+           Info Card
+           ═══════════════════════════════════════════════════════════════════ */
+        .info-card {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 15px;
+        }
+
+        .info-box {
+            background: var(--primary-light);
+            border: 1px solid var(--border-green);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .info-text {
+            font-size: 15px;
+            color: var(--text-primary);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════
+           Progress Bar
+           ═══════════════════════════════════════════════════════════════════ */
+        .progress-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 15px;
+        }
+
+        .progress-container {
+            background: var(--white);
+            border: 1px solid var(--border-green);
+            border-radius: var(--radius-md);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .progress-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            min-width: 60px;
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 8px;
+            background: var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--primary);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .progress-percentage {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            min-width: 40px;
+            text-align: left;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════
+           Form Container
+           ═══════════════════════════════════════════════════════════════════ */
+        .form-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 15px 40px;
+        }
+
+        .form-section {
+            background: var(--white);
+            border: 1px solid var(--border-green);
+            border-radius: var(--radius-md);
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border-green);
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════
+           Form Fields
+           ═══════════════════════════════════════════════════════════════════ */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .form-label.required::after {
+            content: " *";
+            color: var(--error-color);
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 14px;
+            color: var(--text-primary);
+            background: var(--white);
+            transition: all 0.2s ease;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+
+        .form-input.error,
+        .form-select.error,
+        .form-textarea.error {
+            border-color: var(--error-color);
+            background: rgba(211, 47, 47, 0.02);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════
+           Radio & Checkbox
+           ═══════════════════════════════════════════════════════════════════ */
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .radio-item,
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .radio-item:hover,
+        .checkbox-item:hover {
+            background: var(--primary-light);
+        }
+
+        .radio-input,
+        .checkbox-input {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--primary);
+        }
+
+        .radio-label,
+        .checkbox-label {
+            font-size: 14px;
+            color: var(--text-primary);
+            cursor: pointer;
+            flex: 1;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════
+           Error Message
+           ═══════════════════════════════════════════════════════════════════ */
+        .error-message {
+            display: none;
+            font-size: 12px;
+            color: var(--error-color);
+            margin-top: 6px;
+            padding: 8px 10px;
+            background: rgba(211, 47, 47, 0.05);
+            border-radius: var(--radius-sm);
+            border-left: 3px solid var(--error-color);
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════
+           Summary Preview
+           ═══════════════════════════════════════════════════════════════════ */
+        .summary-section {
+            background: var(--primary-light);
+            border: 2px solid var(--border-green);
+            border-radius: var(--radius-md);
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .summary-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .summary-item {
+            background: var(--white);
+            border: 1px solid var(--border-green);
+            border-radius: var(--radius-sm);
+            padding: 12px;
+        }
+
+        .summary-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .summary-value {
+            font-size: 14px;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════
+           Buttons
+           ═══════════════════════════════════════════════════════════════════ */
+        .button-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border: none;
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            background: #0d4f32;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-light);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════
+           Toast Notification
+           ═══════════════════════════════════════════════════════════════════ */
+        .toast {
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-20px);
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+        }
+
+        .toast.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .toast.error {
+            background: var(--error-color);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════
+           Responsive
+           ═══════════════════════════════════════════════════════════════════ */
+        @media (max-width: 600px) {
+            .hero-title {
+                font-size: 22px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .form-section {
+                padding: 20px;
+            }
+
+            .section-title {
+                font-size: 16px;
+            }
+
+            .progress-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .progress-label {
+                min-width: auto;
+            }
+
+            .progress-percentage {
+                min-width: auto;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <div class="top-bar-content">
+            <div class="brand">
+                <span class="brand-name">محمد العربي</span>
+                <span class="brand-description">نموذج متطلبات منصة الكورسات</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1 class="hero-title">نموذج متطلبات منصة الكورسات</h1>
+        <p class="hero-description">جاوب على الأسئلة التالية عشان نقدر نحدد نطاق العمل بدقة ونجهز لك عرض سعر واضح لمنصة كورسات مرتبطة بسلة.</p>
+    </section>
+
+    <!-- Info Card -->
+    <section class="info-card">
+        <div class="info-box">
+            <p class="info-text">هذا النموذج يساعدنا نفهم عدد الكورسات، طريقة عرض المحتوى، آلية الربط مع سلة، ومستوى الحماية المطلوب قبل تجهيز عرض السعر.</p>
+        </div>
+    </section>
+
+    <!-- Progress Bar -->
+    <section class="progress-section">
+        <div class="progress-container">
+            <span class="progress-label">تقدم النموذج</span>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span class="progress-percentage" id="progressPercentage">0%</span>
+        </div>
+    </section>
+
+    <!-- Form -->
+    <form id="intakeForm" class="form-wrapper">
+        
+        <!-- Section 1: Client Data -->
+        <div class="form-section">
+            <div class="section-header">
+                <span class="section-icon">👤</span>
+                <h2 class="section-title">بيانات العميل</h2>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required">اسم العميل</label>
+                <input type="text" name="clientName" class="form-input" placeholder="أدخل اسمك الكامل" required>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required">رقم الجوال</label>
+                <input type="tel" name="phoneNumber" class="form-input" placeholder="0501234567" required>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required">اسم المشروع أو البراند</label>
+                <input type="text" name="projectName" class="form-input" placeholder="أدخل اسم مشروعك" required>
+                <div class="error-message"></div>
+            </div>
+        </div>
+
+        <!-- Section 2: Course Content -->
+        <div class="form-section">
+            <div class="section-header">
+                <span class="section-icon">📚</span>
+                <h2 class="section-title">معلومات الكورسات والمحتوى</h2>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required">كم عدد الكورسات عند الإطلاق؟</label>
+                <input type="number" name="courseCount" class="form-input" placeholder="مثال: 5" min="1" required>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required">كم عدد الدروس داخل كل كورس تقريبًا؟</label>
+                <input type="text" name="lessonsPerCourse" class="form-input" placeholder="مثال: 10-15 درس" required>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required">كم مدة الفيديوهات تقريبًا؟</label>
+                <select name="videoDuration" class="form-select" required>
+                    <option value="">اختر المدة</option>
+                    <option value="less-than-1h">أقل من ساعة لكل كورس</option>
+                    <option value="1-3h">من 1 إلى 3 ساعات لكل كورس</option>
+                    <option value="3-6h">من 3 إلى 6 ساعات لكل كورس</option>
+                    <option value="more-than-6h">أكثر من 6 ساعات لكل كورس</option>
+                    <option value="not-defined">غير محدد حاليًا</option>
+                </select>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required">هل الفيديوهات جاهزة؟</label>
+                <div class="radio-group">
+                    <label class="radio-item">
+                        <input type="radio" name="videosReady" value="yes" class="radio-input" required>
+                        <span class="radio-label">نعم، جاهزة</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="videosReady" value="in-progress" class="radio-input">
+                        <span class="radio-label">لا، تحت التجهيز</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="videosReady" value="partial" class="radio-input">
+                        <span class="radio-label">بعضها جاهز</span>
+                    </label>
+                </div>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required">وين مخزنة الفيديوهات حاليًا؟</label>
+                <select name="videoStorage" class="form-select" required>
+                    <option value="">اختر مكان التخزين</option>
+                    <option value="not-stored">غير مخزنة حتى الآن</option>
+                    <option value="google-drive">Google Drive</option>
+                    <option value="youtube">YouTube غير مدرج</option>
+                    <option value="vimeo">Vimeo</option>
+                    <option value="bunny-stream">Bunny Stream</option>
+                    <option value="cloudflare">Cloudflare Stream</option>
+                    <option value="other">أخرى</option>
+                </select>
+                <div class="error-message"></div>
+            </div>
+        </div>
+
+        <!-- Section 3: Domain & Salla -->
+        <div class="form-section">
+            <div class="section-header">
+                <span class="section-icon">🌐</span>
+                <h2 class="section-title">سلة والدومين</h2>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required">هل عندك دومين؟</label>
+                <div class="radio-group">
+                    <label class="radio-item">
+                        <input type="radio" name="hasDomain" value="yes" class="radio-input" required>
+                        <span class="radio-label">نعم</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="hasDomain" value="no" class="radio-input">
+                        <span class="radio-label">لا</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="hasDomain" value="need-recommendation" class="radio-input">
+                        <span class="radio-label">أحتاج ترشيح دومين</span>
+                    </label>
+                </div>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required">هل عندك اشتراك سلة؟</label>
+                <div class="radio-group">
+                    <label class="radio-item">
+                        <input type="radio" name="hasSalla" value="yes" class="radio-input" required>
+                        <span class="radio-label">نعم</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="hasSalla" value="no" class="radio-input">
+                        <span class="radio-label">لا</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="hasSalla" value="need-help" class="radio-input">
+                        <span class="radio-label">أحتاج أختار الباقة المناسبة</span>
+                    </label>
+                </div>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required">هل كل كورس بيكون منتج مستقل في سلة؟</label>
+                <div class="radio-group">
+                    <label class="radio-item">
+                        <input type="radio" name="courseAsProduct" value="yes" class="radio-input" required>
+                        <span class="radio-label">نعم</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="courseAsProduct" value="no" class="radio-input">
+                        <span class="radio-label">لا</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="courseAsProduct" value="unsure" class="radio-input">
+                        <span class="radio-label">غير متأكد وأحتاج استشارة</span>
+                    </label>
+                </div>
+                <div class="error-message"></div>
+            </div>
+        </div>
+
+        <!-- Section 4: Automation -->
+        <div class="form-section">
+            <div class="section-header">
+                <span class="section-icon">⚡</span>
+                <h2 class="section-title">الأتمتة بعد الشراء</h2>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required">هل تحتاج إرسال إيميل/واتساب تلقائي بعد الشراء؟</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="autoEmail" value="email" class="checkbox-input">
+                        <span class="checkbox-label">إيميل تلقائي</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="autoWhatsapp" value="whatsapp" class="checkbox-input">
+                        <span class="checkbox-label">واتساب تلقائي</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="autoBoth" value="both" class="checkbox-input">
+                        <span class="checkbox-label">الاثنين</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="autoNone" value="none" class="checkbox-input">
+                        <span class="checkbox-label">لا أحتاج</span>
+                    </label>
+                </div>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required">هل تحتاج شهادات إتمام؟</label>
+                <div class="radio-group">
+                    <label class="radio-item">
+                        <input type="radio" name="certificates" value="yes" class="radio-input" required>
+                        <span class="radio-label">نعم</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="certificates" value="no" class="radio-input">
+                        <span class="radio-label">لا</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="certificates" value="later" class="radio-input">
+                        <span class="radio-label">لاحقًا</span>
+                    </label>
+                </div>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required">هل تحتاج اختبارات؟</label>
+                <div class="radio-group">
+                    <label class="radio-item">
+                        <input type="radio" name="quizzes" value="yes" class="radio-input" required>
+                        <span class="radio-label">نعم</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="quizzes" value="no" class="radio-input">
+                        <span class="radio-label">لا</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="quizzes" value="later" class="radio-input">
+                        <span class="radio-label">لاحقًا</span>
+                    </label>
+                </div>
+                <div class="error-message"></div>
+            </div>
+        </div>
+
+        <!-- Section 5: Security & Permissions -->
+        <div class="form-section">
+            <div class="section-header">
+                <span class="section-icon">🔒</span>
+                <h2 class="section-title">الحماية والصلاحيات</h2>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required">هل تحتاج ملفات PDF مرفقة؟</label>
+                <div class="radio-group">
+                    <label class="radio-item">
+                        <input type="radio" name="pdfAttachments" value="yes" class="radio-input" required>
+                        <span class="radio-label">نعم</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="pdfAttachments" value="no" class="radio-input">
+                        <span class="radio-label">لا</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="pdfAttachments" value="maybe" class="radio-input">
+                        <span class="radio-label">ربما</span>
+                    </label>
+                </div>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required">هل تحتاج منع تحميل الملفات أيضًا؟</label>
+                <div class="radio-group">
+                    <label class="radio-item">
+                        <input type="radio" name="preventDownload" value="yes" class="radio-input" required>
+                        <span class="radio-label">نعم، مهم جدًا</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="preventDownload" value="no" class="radio-input">
+                        <span class="radio-label">لا</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="preventDownload" value="unsure" class="radio-input">
+                        <span class="radio-label">غير متأكد</span>
+                    </label>
+                </div>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required">هل فيه أكثر من مشرف؟</label>
+                <div class="radio-group">
+                    <label class="radio-item">
+                        <input type="radio" name="multipleAdmins" value="yes" class="radio-input" required>
+                        <span class="radio-label">نعم</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="multipleAdmins" value="no" class="radio-input">
+                        <span class="radio-label">لا</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="multipleAdmins" value="later" class="radio-input">
+                        <span class="radio-label">لاحقًا</span>
+                    </label>
+                </div>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required">هل تبي لوحة تقارير للطلاب والمشاهدات؟</label>
+                <div class="radio-group">
+                    <label class="radio-item">
+                        <input type="radio" name="analytics" value="yes" class="radio-input" required>
+                        <span class="radio-label">نعم</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="analytics" value="no" class="radio-input">
+                        <span class="radio-label">لا</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="analytics" value="later" class="radio-input">
+                        <span class="radio-label">لاحقًا</span>
+                    </label>
+                </div>
+                <div class="error-message"></div>
+            </div>
+        </div>
+
+        <!-- Section 6: Additional Notes -->
+        <div class="form-section">
+            <div class="section-header">
+                <span class="section-icon">📝</span>
+                <h2 class="section-title">ملاحظات إضافية</h2>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">ملاحظات إضافية</label>
+                <textarea name="additionalNotes" class="form-textarea" placeholder="أضف أي ملاحظات أو متطلبات إضافية..."></textarea>
+                <div class="error-message"></div>
+            </div>
+        </div>
+
+        <!-- Summary Preview -->
+        <div class="summary-section" id="summarySection" style="display: none;">
+            <h3 class="summary-title">✓ مراجعة سريعة</h3>
+            <div class="summary-grid" id="summaryGrid"></div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="button-group">
+            <button type="submit" class="btn btn-primary" id="submitBtn">إرسال الإجابات عبر واتساب</button>
+        </div>
+    </form>
+
+    <script>
+        const form = document.getElementById('intakeForm');
+        const progressFill = document.getElementById('progressFill');
+        const progressPercentage = document.getElementById('progressPercentage');
+        const submitBtn = document.getElementById('submitBtn');
+        const toast = document.getElementById('toast');
+        const summarySection = document.getElementById('summarySection');
+        const summaryGrid = document.getElementById('summaryGrid');
+
+        // Required fields
+        const requiredFields = [
+            'clientName', 'phoneNumber', 'projectName', 'courseCount', 'lessonsPerCourse',
+            'videoDuration', 'videosReady', 'videoStorage', 'hasDomain', 'hasSalla',
+            'courseAsProduct', 'certificates', 'quizzes', 'pdfAttachments', 'preventDownload',
+            'multipleAdmins', 'analytics'
+        ];
+
+        // Update progress bar
+        function updateProgress() {
+            let filledCount = 0;
+            requiredFields.forEach(fieldName => {
+                const field = form.elements[fieldName];
+                if (field) {
+                    if (field.type === 'radio') {
+                        const radioGroup = form.querySelectorAll(`input[name="${fieldName}"]`);
+                        if (Array.from(radioGroup).some(r => r.checked)) filledCount++;
+                    } else if (field.type === 'checkbox') {
+                        // Skip checkboxes for progress calculation
+                    } else if (field.value.trim() !== '') {
+                        filledCount++;
+                    }
+                }
+            });
+
+            const percentage = Math.round((filledCount / requiredFields.length) * 100);
+            progressFill.style.width = percentage + '%';
+            progressPercentage.textContent = percentage + '%';
+        }
+
+        // Validate form
+        function validateForm() {
+            let isValid = true;
+            const errorMessages = form.querySelectorAll('.error-message');
+            errorMessages.forEach(msg => msg.classList.remove('show'));
+
+            requiredFields.forEach(fieldName => {
+                const field = form.elements[fieldName];
+                if (field) {
+                    let isEmpty = false;
+                    if (field.type === 'radio') {
+                        const radioGroup = form.querySelectorAll(`input[name="${fieldName}"]`);
+                        isEmpty = !Array.from(radioGroup).some(r => r.checked);
+                        if (isEmpty) {
+                            const errorMsg = radioGroup[0].closest('.form-group').querySelector('.error-message');
+                            if (errorMsg) {
+                                errorMsg.textContent = 'هذا الحقل مطلوب';
+                                errorMsg.classList.add('show');
+                            }
+                            isValid = false;
+                        }
+                    } else if (field.value.trim() === '') {
+                        const errorMsg = field.closest('.form-group').querySelector('.error-message');
+                        if (errorMsg) {
+                            errorMsg.textContent = 'هذا الحقل مطلوب';
+                            errorMsg.classList.add('show');
+                        }
+                        isValid = false;
+                    }
+                }
+            });
+
+            return isValid;
+        }
+
+        // Build summary
+        function buildSummary() {
+            const summaryData = [];
+            const formData = new FormData(form);
+
+            const summaryFields = [
+                { name: 'clientName', label: 'الاسم' },
+                { name: 'phoneNumber', label: 'الجوال' },
+                { name: 'projectName', label: 'المشروع' },
+                { name: 'courseCount', label: 'عدد الكورسات' }
+            ];
+
+            summaryFields.forEach(field => {
+                const value = formData.get(field.name);
+                if (value) {
+                    summaryGrid.innerHTML += `
+                        <div class="summary-item">
+                            <div class="summary-label">${field.label}</div>
+                            <div class="summary-value">${value}</div>
+                        </div>
+                    `;
+                }
+            });
+
+            summarySection.style.display = 'block';
+        }
+
+        // Build WhatsApp message
+        function buildWhatsAppMessage() {
+            const formData = new FormData(form);
+            
+            let message = `طلب دراسة مشروع منصة كورسات مرتبطة بسلة\n\n`;
+            message += `بيانات العميل:\n`;
+            message += `- الاسم: ${formData.get('clientName')}\n`;
+            message += `- رقم الجوال: ${formData.get('phoneNumber')}\n`;
+            message += `- اسم المشروع: ${formData.get('projectName')}\n\n`;
+
+            message += `تفاصيل الكورسات:\n`;
+            message += `- عدد الكورسات عند الإطلاق: ${formData.get('courseCount')}\n`;
+            message += `- عدد الدروس داخل كل كورس: ${formData.get('lessonsPerCourse')}\n`;
+            message += `- مدة الفيديوهات: ${formData.get('videoDuration')}\n`;
+            message += `- هل الفيديوهات جاهزة: ${formData.get('videosReady')}\n`;
+            message += `- مكان تخزين الفيديوهات: ${formData.get('videoStorage')}\n\n`;
+
+            message += `إعدادات سلة والدومين:\n`;
+            message += `- هل يوجد دومين: ${formData.get('hasDomain')}\n`;
+            message += `- هل يوجد اشتراك سلة: ${formData.get('hasSalla')}\n`;
+            message += `- هل كل كورس منتج مستقل في سلة: ${formData.get('courseAsProduct')}\n\n`;
+
+            message += `الأتمتة والتفعيل:\n`;
+            message += `- إرسال إيميل/واتساب بعد الشراء: ${formData.get('autoEmail') || formData.get('autoWhatsapp') || formData.get('autoBoth') || formData.get('autoNone') || 'لم يتم التحديد'}\n`;
+            message += `- شهادات إتمام: ${formData.get('certificates')}\n`;
+            message += `- اختبارات: ${formData.get('quizzes')}\n`;
+            message += `- ملفات PDF: ${formData.get('pdfAttachments')}\n`;
+            message += `- منع تحميل الملفات: ${formData.get('preventDownload')}\n`;
+            message += `- أكثر من مشرف: ${formData.get('multipleAdmins')}\n`;
+            message += `- لوحة تقارير: ${formData.get('analytics')}\n\n`;
+
+            if (formData.get('additionalNotes')) {
+                message += `ملاحظات إضافية:\n${formData.get('additionalNotes')}\n`;
+            }
+
+            return message;
+        }
+
+        // Show toast
+        function showToast(message, isError = false) {
+            toast.textContent = message;
+            toast.classList.add('show');
+            if (isError) {
+                toast.classList.add('error');
+            } else {
+                toast.classList.remove('error');
+            }
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Handle form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            if (!validateForm()) {
+                showToast('يرجى ملء جميع الحقول المطلوبة', true);
+                const firstError = form.querySelector('.error-message.show');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                return;
+            }
+
+            buildSummary();
+            const message = buildWhatsAppMessage();
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/966537311886?text=${encodedMessage}`;
+
+            showToast('جاري فتح واتساب...');
+            setTimeout(() => {
+                window.open(whatsappUrl, '_blank');
+            }, 500);
+        });
+
+        // Update progress on input change
+        form.addEventListener('change', updateProgress);
+        form.addEventListener('input', updateProgress);
+
+        // Initial progress update
+        updateProgress();
+    </script>
+</body>
+</html>
