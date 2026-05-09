@@ -24,235 +24,40 @@
             --primary-medium: rgba(15, 92, 59, 0.12);
             --border-green: rgba(15, 92, 59, 0.2);
         }
-        
-        .hero-banner {
-            background: #0f5c3b;
-        }
-
-        /* Pricing Card & Toggle Styles */
-        .pricing-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 25px;
-            margin-top: 20px;
-        }
-
-        .switch-wrapper {
-            display: flex;
-            align-items: center;
-            background: #f0f0f0;
-            padding: 4px;
-            border-radius: 50px;
-            position: relative;
-            cursor: pointer;
-            user-select: none;
-            width: 280px;
-            border: 1px solid #e0e0e0;
-            direction: ltr;
-        }
-
-        .switch-option {
-            flex: 1;
-            text-align: center;
-            padding: 8px 0;
-            font-size: 14px;
-            font-weight: 600;
-            z-index: 1;
-            transition: color 0.3s ease;
-            color: #666;
-            direction: rtl;
-        }
-
-        .switch-option.active {
-            color: white;
-        }
-
-        .switch-slider {
-            position: absolute;
-            top: 4px;
-            left: 4px;
-            width: calc(50% - 4px);
-            height: calc(100% - 8px);
-            background: var(--primary);
-            border-radius: 50px;
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .switch-wrapper.fast-active .switch-slider {
-            transform: translateX(100%);
-        }
-
-        .pricing-card-single {
-            background: var(--white);
-            border: 2px solid var(--primary);
-            border-radius: var(--radius-lg);
-            padding: 40px 30px;
-            text-align: center;
-            width: 100%;
-            max-width: 450px;
-            position: relative;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-md);
-            background: linear-gradient(to bottom, var(--white), var(--primary-light));
-        }
-
-        .card-badge {
-            position: absolute;
-            top: -14px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary);
-            color: white;
-            padding: 6px 20px;
-            border-radius: 30px;
-            font-size: 13px;
-            font-weight: 700;
-            white-space: nowrap;
-            box-shadow: 0 4px 10px rgba(15, 92, 59, 0.2);
-            transition: background 0.3s ease;
-        }
-
-        .card-badge.economy {
-            background: #6b6b6b;
-        }
-
-        .card-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 12px;
-        }
-
-        .card-duration {
-            font-size: 15px;
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .card-price-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-
-        .card-amount {
-            font-size: 48px;
-            font-weight: 800;
-            color: var(--text-primary);
-            letter-spacing: -1px;
-            line-height: 1;
-        }
-
-        .card-currency-img {
-            height: 24px;
-            width: auto;
-            display: inline-block;
-            vertical-align: middle;
-            margin-top: 8px;
-        }
-
-        .payment-terms {
-            background: var(--white);
-            border: 1px solid var(--border-green);
-            border-radius: var(--radius-md);
-            padding: 12px;
-            margin-top: 10px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .payment-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 13px;
-            color: var(--text-secondary);
-        }
-
-        .payment-label {
-            font-weight: 500;
-        }
-
-        .payment-value {
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .requirements-card {
-            background: #fff;
-            border: 1px solid var(--border-green);
-            border-radius: var(--radius-md);
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        .requirements-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .requirements-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .requirements-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 0;
-            border-bottom: 1px dashed var(--border-color);
-            font-size: 14px;
-        }
-
-        .requirements-item:last-child {
-            border-bottom: none;
-        }
-
-        .requirement-bullet {
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        .guarantee-note {
-            margin-top: 20px;
-            background: #e8f5e9;
-            border: 1px solid #c8e6c9;
-            border-radius: var(--radius-md);
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: #2e7d32;
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        .guarantee-icon {
-            font-size: 20px;
-        }
-
+        .hero-banner { background: #0f5c3b; }
+        .pricing-container { display: flex; flex-direction: column; align-items: center; gap: 25px; margin-top: 20px; }
+        .switch-wrapper { display: flex; align-items: center; background: #f0f0f0; padding: 4px; border-radius: 50px; position: relative; cursor: pointer; user-select: none; width: 280px; border: 1px solid #e0e0e0; direction: ltr; }
+        .switch-option { flex: 1; text-align: center; padding: 8px 0; font-size: 14px; font-weight: 600; z-index: 1; transition: color 0.3s ease; color: #666; direction: rtl; }
+        .switch-option.active { color: white; }
+        .switch-slider { position: absolute; top: 4px; left: 4px; width: calc(50% - 4px); height: calc(100% - 8px); background: var(--primary); border-radius: 50px; transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .switch-wrapper.fast-active .switch-slider { transform: translateX(100%); }
+        .pricing-card-single { background: var(--white); border: 2px solid var(--primary); border-radius: var(--radius-lg); padding: 40px 30px; text-align: center; width: 100%; max-width: 450px; position: relative; transition: all 0.3s ease; box-shadow: var(--shadow-md); background: linear-gradient(to bottom, var(--white), var(--primary-light)); }
+        .card-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 6px 20px; border-radius: 30px; font-size: 13px; font-weight: 700; white-space: nowrap; box-shadow: 0 4px 10px rgba(15, 92, 59, 0.2); }
+        .card-badge.economy { background: #6b6b6b; }
+        .card-title { font-size: 22px; font-weight: 700; color: var(--primary); margin-bottom: 12px; }
+        .card-duration { font-size: 15px; color: var(--text-secondary); margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .card-price-row { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 20px; }
+        .card-amount { font-size: 48px; font-weight: 800; color: var(--text-primary); letter-spacing: -1px; line-height: 1; }
+        .card-currency-img { height: 24px; width: auto; display: inline-block; vertical-align: middle; margin-top: 8px; }
+        .payment-terms { background: var(--white); border: 1px solid var(--border-green); border-radius: var(--radius-md); padding: 12px; margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
+        .payment-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--text-secondary); }
+        .payment-label { font-weight: 500; }
+        .payment-value { font-weight: 700; color: var(--primary); }
+        .requirements-card { background: #fff; border: 1px solid var(--border-green); border-radius: var(--radius-md); padding: 20px; margin-top: 20px; }
+        .requirements-title { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .requirements-list { list-style: none; padding: 0; }
+        .requirements-item { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px dashed var(--border-color); font-size: 14px; }
+        .requirements-item:last-child { border-bottom: none; }
+        .guarantee-note { margin-top: 20px; background: #e8f5e9; border: 1px solid #c8e6c9; border-radius: var(--radius-md); padding: 15px; display: flex; align-items: center; gap: 12px; color: #2e7d32; font-weight: 600; font-size: 14px; }
+        .guarantee-icon { font-size: 20px; }
+        .value-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+        .value-card { background: #fff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; transition: all 0.3s ease; }
+        .value-card:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: var(--shadow-md); }
+        .value-icon { font-size: 24px; margin-bottom: 10px; display: block; }
+        .value-title { font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+        .value-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
         @media (max-width: 600px) {
-            .hero-title { font-size: 18px; }
-            .hero-title span { font-size: 22px; }
-            .card-amount { font-size: 36px; }
-            .card-currency-img { height: 20px; }
-            .pricing-card-single { padding: 30px 20px; }
-            .switch-wrapper { width: 100%; max-width: 280px; }
+            .hero-title { font-size: 18px; } .hero-title span { font-size: 22px; } .card-amount { font-size: 36px; } .card-currency-img { height: 20px; } .pricing-card-single { padding: 30px 20px; } .switch-wrapper { width: 100%; max-width: 280px; } .value-cards-grid { grid-template-columns: 1fr; }
         }
     </style>
 
@@ -266,7 +71,7 @@
         <div class="top-bar-content">
             <div class="brand">
                 <span class="brand-icon">⛳</span>
-                <span class="brand-name">GOLF STUDIO</span>
+                <span class="brand-name">محمد العربي</span>
             </div>
         </div>
     </header>
@@ -278,8 +83,7 @@
             <!-- Hero Section -->
             <section class="hero-section">
                 <div class="hero-banner">
-                    <h1 class="hero-title"><span>فاتورة اتفاقية</span><br>
-                        إطلاق وتدشين متجر ألعاب وبطاقات رقمية احترافي على منصة سلة</h1>
+                    <h1 class="hero-title"><span>فاتورة اتفاقية</span><br>إطلاق وتدشين متجر ألعاب وبطاقات رقمية احترافي على منصة سلة</h1>
                 </div>
             </section>
 
@@ -306,7 +110,300 @@
             </section>
 
             <!-- Scope Section -->
-            
+            <section class="scope-section">
+                <h2 class="section-title">بنود الاتفاقية</h2>
+                
+                <div class="scope-grid">
+                    <!-- Scope Card 1: TikTok -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">📱</span>
+                            <h3 class="scope-title">إدارة التواجد الرقمي (TikTok)</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <!-- الاستراتيجية والتخطيط -->
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[الاستراتيجية والتخطيط]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إعداد استراتيجية التواجد الرقمي (مرة واحدة عند بدء التعاقد)</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحديد محاور المحتوى (Content Pillars)</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحديد هوية الرسائل ونبرة العلامة التجارية</span>
+                                </div>
+                            </li>
+                            <!-- إنتاج المحتوى -->
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[إنتاج المحتوى]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">كتابة 9 سكريبت شهريًا</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إنتاج 9 فيديوهات احترافية باستخدام تقنيات الذكاء الاصطناعي بما يتناسب مع هوية العلامة التجارية</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحسين الوصف والكلمات المفتاحية</span>
+                                </div>
+                            </li>
+                            <!-- التحليل والتحسين -->
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[التحليل والتحسين]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">متابعة الأداء بشكل دوري</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحسين المحتوى بناءً على النتائج</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تقرير أداء شهري (تقرير واحد)</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Scope Card 2: Instagram -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">📸</span>
+                            <h3 class="scope-title">إدارة التواجد الرقمي (Instagram)</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <!-- الاستراتيجية والتخطيط -->
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[الاستراتيجية والتخطيط]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إعداد استراتيجية التواجد الرقمي</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إعداد خطة المحتوى الشهرية</span>
+                                </div>
+                            </li>
+                            <!-- إنتاج المحتوى النصي -->
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[إنتاج المحتوى النصي]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">كتابة 9 منشورات شهريًا (Hook + Caption + CTA)</span>
+                                </div>
+                            </li>
+                            <!-- التصميمات البصرية -->
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[التصميمات البصرية]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تصميم 9 منشورات ثابتة أو كاروسيل شهريًا</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تصميم Cover مخصص للريلز</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">توحيد الهوية البصرية للحساب</span>
+                                </div>
+                            </li>
+                            <!-- الفيديو -->
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[الفيديو]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إنتاج 9 فيديوهات احترافية باستخدام تقنيات الذكاء الاصطناعي بما يتناسب مع هوية العلامة التجارية</span>
+                                </div>
+                            </li>
+                            <!-- التحليل -->
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[التحليل]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تقرير أداء شهري</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">توصيات تطوير شهرية</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Scope Card 3: Campaigns -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🎯</span>
+                            <h3 class="scope-title">إدارة الحملات التسويقية (Snapchat – TikTok)</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <!-- التخطيط والإعداد -->
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[التخطيط والإعداد]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إعداد استراتيجية الحملة التسويقية (ملخص تنفيذي)</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إعداد وربط حسابات الإعلانات</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إعداد Pixel وأدوات التتبع</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">بناء هيكل الحملة داخل المنصات</span>
+                                </div>
+                            </li>
+                            <!-- إنتاج المحتوى الإعلاني -->
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[إنتاج المحتوى الإعلاني]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إنتاج 5 إعلانات TikTok</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إنتاج 5 إعلانات Snapchat</span>
+                                    <span class="item-count">(إجمالي 10 إعلانات شهريًا)</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name sub-detail">يشمل كل إعلان: الفكرة الإبداعية، السكريبت، النص الإعلاني المخصص، تصميم الصورة أو إنتاج الفيديو</span>
+                                </div>
+                            </li>
+                            <!-- الإدارة والتحسين -->
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[الإدارة والتحسين]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إطلاق الحملة ومتابعتها</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحسين الأداء داخل المنصة</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">ضبط الميزانية وتوزيعها</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إيقاف الإعلانات الضعيفة وتعزيز الإعلانات الأفضل</span>
+                                </div>
+                            </li>
+                            <!-- التقارير -->
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[التقارير]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تقرير أداء شهري</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">ملخص النتائج والتوصيات</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
             <!-- Workflow Section -->
             <section class="workflow-section">
@@ -350,86 +447,6 @@
 
             <!-- Pricing Section -->
             
-            
-            <!-- Requirements Section -->
-            <section class="scope-section">
-                <div class="requirements-card">
-                    <h2 class="requirements-title">
-                        <span>🛠️</span>
-                        متطلبات الخدمة من طرف العميل
-                    </h2>
-                    <p style="font-size: 14px; margin-bottom: 15px;">حتى نبدأ التنفيذ بدون تأخير، نحتاج توفير المتطلبات التالية:</p>
-                    <ul class="requirements-list">
-                        <li class="requirements-item"><span class="requirement-bullet">•</span> اشتراك سلة برو</li>
-                        <li class="requirements-item"><span class="requirement-bullet">•</span> سجل تجاري أو وثيقة عمل حر</li>
-                        <li class="requirements-item"><span class="requirement-bullet">•</span> حساب بنكي</li>
-                        <li class="requirements-item"><span class="requirement-bullet">•</span> شعار المتجر</li>
-                        <li class="requirements-item"><span class="requirement-bullet">•</span> معلومات التواصل</li>
-                        <li class="requirements-item"><span class="requirement-bullet">•</span> المنتجات الرقمية</li>
-                        <li class="requirements-item"><span class="requirement-bullet">•</span> وسائل الدفع</li>
-                    </ul>
-                </div>
-            </section>
-
-<!-- Pricing Section with Toggle -->
-            <section class="scope-section">
-                <h2 class="section-title">خيارات الاستثمار</h2>
-                <div class="pricing-container">
-                    <!-- Toggle Switch -->
-                    <div class="switch-wrapper" id="pricing-switch">
-                        <div class="switch-slider"></div>
-                        <div class="switch-option active" data-type="normal">إطلاق المتجر</div>
-                        <div class="switch-option" data-type="fast">إطلاق المتجر + التسويق</div>
-                    </div>
-
-                    <!-- Single Pricing Card -->
-                    <div class="pricing-card-single" id="pricing-card">
-                        <div class="card-badge economy" id="price-badge">خيار التأسيس</div>
-                        <div class="card-title" id="price-title">إطلاق وتدشين متجر OPX</div>
-                        <div class="card-duration">
-                            <span>⏱️</span>
-                            <span id="price-duration">مدة التنفيذ: خلال 5 أيام عمل</span>
-                        </div>
-                        <div class="card-price-row">
-                            <span class="card-amount" id="price-amount">1500</span>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Saudi_Riyal_Symbol.svg/1280px-Saudi_Riyal_Symbol.svg.png" alt="SAR" class="card-currency-img">
-                        </div>
-
-                        <!-- Payment Terms -->
-                        <div class="payment-terms">
-                            <div class="payment-row">
-                                <span class="payment-label">دفعة أولى (عند التعميد):</span>
-                                <span class="payment-value">50%</span>
-                            </div>
-                            <div class="payment-row">
-                                <span class="payment-label">دفعة أخيرة (عند التسليم):</span>
-                                <span class="payment-value">50%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                
-            <!-- Notes Section (Exclusions) -->
-            <section class="notes-section">
-                <h2 class="section-title">غير مشمول في السعر</h2>
-                <ul class="notes-list">
-                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">اشتراك منصة سلة</span></li>
-                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">ميزانية الإعلانات</span></li>
-                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">التطبيقات المدفوعة</span></li>
-                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">شراء الدومين</span></li>
-                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">إدارة المتجر بعد التسليم</span></li>
-                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">كتابة المحتوى الطويل</span></li>
-                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">شراء المنتجات الرقمية</span></li>
-                </ul>
-            </section>
-
-                <div class="guarantee-note">
-                    <span class="guarantee-icon">🛡️</span>
-                    <span>تعديلات مجانية لمدة شهر كامل بعد تسليم المشروع لضمان رضاكم التام.</span>
-                </div>
-            </section>
-
 
             <!-- Notes Section (Exclusions) -->
             <section class="notes-section">
@@ -450,24 +467,24 @@
             <footer class="document-footer">
                 <div class="footer-content">
                     <div class="footer-brand">
-                        <span class="footer-brand-name">GOLF STUDIO</span>
+                        <span class="footer-brand-name">محمد العربي</span>
                     </div>
                     <div class="footer-contact">
                         <a href="https://wa.me/966537311886" class="contact-item">
-                            <span>0537311886</span>
+                            <span>+966580702445</span>
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                             </svg>
                         </a>
-                        <a href="mailto:Golf.Studio.Adv@gmail.com" class="contact-item">
-                            <span>Golf.Studio.Adv@gmail.com</span>
+                        <a href="mailto:matjarak.vercel.app" class="contact-item">
+                            <span>matjarak.vercel.app</span>
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
                         </a>
-                        <a href="https://www.Golf-Studio.umso.co" target="_blank" rel="noopener" class="contact-item">
-                            <span>www.Golf-Studio.umso.co</span>
+                        <a href="https://matjarak.vercel.app" target="_blank" rel="noopener" class="contact-item">
+                            <span>matjarak.vercel.app</span>
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <circle cx="12" cy="12" r="10"></circle>
                                 <line x1="2" y1="12" x2="22" y2="12"></line>
@@ -504,7 +521,6 @@
             const amount = document.getElementById('price-amount');
             const card = document.getElementById('pricing-card');
 
-            
             const data = {
                 normal: {
                     badge: 'خيار التأسيس',
@@ -521,7 +537,6 @@
                     amount: '2500'
                 }
             };
-
 
             let currentType = 'normal';
 
