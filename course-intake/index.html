@@ -577,33 +577,7 @@
     <!-- Form -->
     <form id="intakeForm" class="form-wrapper">
         
-        <!-- Section 1: Client Data -->
-        <div class="form-section">
-            <div class="section-header">
-                <span class="section-icon">👤</span>
-                <h2 class="section-title">بيانات العميل</h2>
-            </div>
-
-            <div class="form-group">
-                <label class="form-label required">اسم العميل</label>
-                <input type="text" name="clientName" class="form-input" placeholder="أدخل اسمك الكامل" required>
-                <div class="error-message"></div>
-            </div>
-
-            <div class="form-group">
-                <label class="form-label required">رقم الجوال</label>
-                <input type="tel" name="phoneNumber" class="form-input" placeholder="0501234567" required>
-                <div class="error-message"></div>
-            </div>
-
-            <div class="form-group">
-                <label class="form-label required">اسم المشروع أو البراند</label>
-                <input type="text" name="projectName" class="form-input" placeholder="أدخل اسم مشروعك" required>
-                <div class="error-message"></div>
-            </div>
-        </div>
-
-        <!-- Section 2: Course Content -->
+        <!-- Section 1: Course Content -->
         <div class="form-section">
             <div class="section-header">
                 <span class="section-icon">📚</span>
@@ -639,15 +613,15 @@
                 <label class="form-label required">هل الفيديوهات جاهزة؟</label>
                 <div class="radio-group">
                     <label class="radio-item">
-                        <input type="radio" name="videosReady" value="yes" class="radio-input" required>
+                        <input type="radio" name="videosReady" value="نعم، جاهزة" class="radio-input" required>
                         <span class="radio-label">نعم، جاهزة</span>
                     </label>
                     <label class="radio-item">
-                        <input type="radio" name="videosReady" value="in-progress" class="radio-input">
+                        <input type="radio" name="videosReady" value="لا، تحت التجهيز" class="radio-input">
                         <span class="radio-label">لا، تحت التجهيز</span>
                     </label>
                     <label class="radio-item">
-                        <input type="radio" name="videosReady" value="partial" class="radio-input">
+                        <input type="radio" name="videosReady" value="بعضها جاهز" class="radio-input">
                         <span class="radio-label">بعضها جاهز</span>
                     </label>
                 </div>
@@ -658,84 +632,19 @@
                 <label class="form-label required">وين مخزنة الفيديوهات حاليًا؟</label>
                 <select name="videoStorage" class="form-select" required>
                     <option value="">اختر مكان التخزين</option>
-                    <option value="not-stored">غير مخزنة حتى الآن</option>
-                    <option value="google-drive">Google Drive</option>
-                    <option value="youtube">YouTube غير مدرج</option>
-                    <option value="vimeo">Vimeo</option>
-                    <option value="bunny-stream">Bunny Stream</option>
-                    <option value="cloudflare">Cloudflare Stream</option>
-                    <option value="other">أخرى</option>
+                    <option value="غير مخزنة حتى الآن">غير مخزنة حتى الآن</option>
+                    <option value="Google Drive">Google Drive</option>
+                    <option value="YouTube غير مدرج">YouTube غير مدرج</option>
+                    <option value="Vimeo">Vimeo</option>
+                    <option value="Bunny Stream">Bunny Stream</option>
+                    <option value="Cloudflare Stream">Cloudflare Stream</option>
+                    <option value="أخرى">أخرى</option>
                 </select>
                 <div class="error-message"></div>
             </div>
         </div>
 
-        <!-- Section 3: Domain & Salla -->
-        <div class="form-section">
-            <div class="section-header">
-                <span class="section-icon">🌐</span>
-                <h2 class="section-title">سلة والدومين</h2>
-            </div>
-
-            <div class="form-group">
-                <label class="form-label required">هل عندك دومين؟</label>
-                <div class="radio-group">
-                    <label class="radio-item">
-                        <input type="radio" name="hasDomain" value="yes" class="radio-input" required>
-                        <span class="radio-label">نعم</span>
-                    </label>
-                    <label class="radio-item">
-                        <input type="radio" name="hasDomain" value="no" class="radio-input">
-                        <span class="radio-label">لا</span>
-                    </label>
-                    <label class="radio-item">
-                        <input type="radio" name="hasDomain" value="need-recommendation" class="radio-input">
-                        <span class="radio-label">أحتاج ترشيح دومين</span>
-                    </label>
-                </div>
-                <div class="error-message"></div>
-            </div>
-
-            <div class="form-group">
-                <label class="form-label required">هل عندك اشتراك سلة؟</label>
-                <div class="radio-group">
-                    <label class="radio-item">
-                        <input type="radio" name="hasSalla" value="yes" class="radio-input" required>
-                        <span class="radio-label">نعم</span>
-                    </label>
-                    <label class="radio-item">
-                        <input type="radio" name="hasSalla" value="no" class="radio-input">
-                        <span class="radio-label">لا</span>
-                    </label>
-                    <label class="radio-item">
-                        <input type="radio" name="hasSalla" value="need-help" class="radio-input">
-                        <span class="radio-label">أحتاج أختار الباقة المناسبة</span>
-                    </label>
-                </div>
-                <div class="error-message"></div>
-            </div>
-
-            <div class="form-group">
-                <label class="form-label required">هل كل كورس بيكون منتج مستقل في سلة؟</label>
-                <div class="radio-group">
-                    <label class="radio-item">
-                        <input type="radio" name="courseAsProduct" value="yes" class="radio-input" required>
-                        <span class="radio-label">نعم</span>
-                    </label>
-                    <label class="radio-item">
-                        <input type="radio" name="courseAsProduct" value="no" class="radio-input">
-                        <span class="radio-label">لا</span>
-                    </label>
-                    <label class="radio-item">
-                        <input type="radio" name="courseAsProduct" value="unsure" class="radio-input">
-                        <span class="radio-label">غير متأكد وأحتاج استشارة</span>
-                    </label>
-                </div>
-                <div class="error-message"></div>
-            </div>
-        </div>
-
-        <!-- Section 4: Automation -->
+        <!-- Section 2: Automation -->
         <div class="form-section">
             <div class="section-header">
                 <span class="section-icon">⚡</span>
@@ -746,19 +655,19 @@
                 <label class="form-label required">هل تحتاج إرسال إيميل/واتساب تلقائي بعد الشراء؟</label>
                 <div class="checkbox-group">
                     <label class="checkbox-item">
-                        <input type="checkbox" name="autoEmail" value="email" class="checkbox-input">
+                        <input type="checkbox" name="automation" value="إيميل تلقائي" class="checkbox-input">
                         <span class="checkbox-label">إيميل تلقائي</span>
                     </label>
                     <label class="checkbox-item">
-                        <input type="checkbox" name="autoWhatsapp" value="whatsapp" class="checkbox-input">
+                        <input type="checkbox" name="automation" value="واتساب تلقائي" class="checkbox-input">
                         <span class="checkbox-label">واتساب تلقائي</span>
                     </label>
                     <label class="checkbox-item">
-                        <input type="checkbox" name="autoBoth" value="both" class="checkbox-input">
+                        <input type="checkbox" name="automation" value="الاثنين" class="checkbox-input">
                         <span class="checkbox-label">الاثنين</span>
                     </label>
                     <label class="checkbox-item">
-                        <input type="checkbox" name="autoNone" value="none" class="checkbox-input">
+                        <input type="checkbox" name="automation" value="لا أحتاج" class="checkbox-input">
                         <span class="checkbox-label">لا أحتاج</span>
                     </label>
                 </div>
@@ -769,15 +678,15 @@
                 <label class="form-label required">هل تحتاج شهادات إتمام؟</label>
                 <div class="radio-group">
                     <label class="radio-item">
-                        <input type="radio" name="certificates" value="yes" class="radio-input" required>
+                        <input type="radio" name="certificates" value="نعم" class="radio-input" required>
                         <span class="radio-label">نعم</span>
                     </label>
                     <label class="radio-item">
-                        <input type="radio" name="certificates" value="no" class="radio-input">
+                        <input type="radio" name="certificates" value="لا" class="radio-input">
                         <span class="radio-label">لا</span>
                     </label>
                     <label class="radio-item">
-                        <input type="radio" name="certificates" value="later" class="radio-input">
+                        <input type="radio" name="certificates" value="لاحقًا" class="radio-input">
                         <span class="radio-label">لاحقًا</span>
                     </label>
                 </div>
@@ -788,15 +697,15 @@
                 <label class="form-label required">هل تحتاج اختبارات؟</label>
                 <div class="radio-group">
                     <label class="radio-item">
-                        <input type="radio" name="quizzes" value="yes" class="radio-input" required>
+                        <input type="radio" name="quizzes" value="نعم" class="radio-input" required>
                         <span class="radio-label">نعم</span>
                     </label>
                     <label class="radio-item">
-                        <input type="radio" name="quizzes" value="no" class="radio-input">
+                        <input type="radio" name="quizzes" value="لا" class="radio-input">
                         <span class="radio-label">لا</span>
                     </label>
                     <label class="radio-item">
-                        <input type="radio" name="quizzes" value="later" class="radio-input">
+                        <input type="radio" name="quizzes" value="لاحقًا" class="radio-input">
                         <span class="radio-label">لاحقًا</span>
                     </label>
                 </div>
@@ -804,7 +713,7 @@
             </div>
         </div>
 
-        <!-- Section 5: Security & Permissions -->
+        <!-- Section 3: Security & Permissions -->
         <div class="form-section">
             <div class="section-header">
                 <span class="section-icon">🔒</span>
@@ -815,15 +724,15 @@
                 <label class="form-label required">هل تحتاج ملفات PDF مرفقة؟</label>
                 <div class="radio-group">
                     <label class="radio-item">
-                        <input type="radio" name="pdfAttachments" value="yes" class="radio-input" required>
+                        <input type="radio" name="pdfAttachments" value="نعم" class="radio-input" required>
                         <span class="radio-label">نعم</span>
                     </label>
                     <label class="radio-item">
-                        <input type="radio" name="pdfAttachments" value="no" class="radio-input">
+                        <input type="radio" name="pdfAttachments" value="لا" class="radio-input">
                         <span class="radio-label">لا</span>
                     </label>
                     <label class="radio-item">
-                        <input type="radio" name="pdfAttachments" value="maybe" class="radio-input">
+                        <input type="radio" name="pdfAttachments" value="ربما" class="radio-input">
                         <span class="radio-label">ربما</span>
                     </label>
                 </div>
@@ -834,15 +743,15 @@
                 <label class="form-label required">هل تحتاج منع تحميل الملفات أيضًا؟</label>
                 <div class="radio-group">
                     <label class="radio-item">
-                        <input type="radio" name="preventDownload" value="yes" class="radio-input" required>
+                        <input type="radio" name="preventDownload" value="نعم، مهم جدًا" class="radio-input" required>
                         <span class="radio-label">نعم، مهم جدًا</span>
                     </label>
                     <label class="radio-item">
-                        <input type="radio" name="preventDownload" value="no" class="radio-input">
+                        <input type="radio" name="preventDownload" value="لا" class="radio-input">
                         <span class="radio-label">لا</span>
                     </label>
                     <label class="radio-item">
-                        <input type="radio" name="preventDownload" value="unsure" class="radio-input">
+                        <input type="radio" name="preventDownload" value="غير متأكد" class="radio-input">
                         <span class="radio-label">غير متأكد</span>
                     </label>
                 </div>
@@ -853,15 +762,15 @@
                 <label class="form-label required">هل فيه أكثر من مشرف؟</label>
                 <div class="radio-group">
                     <label class="radio-item">
-                        <input type="radio" name="multipleAdmins" value="yes" class="radio-input" required>
+                        <input type="radio" name="multipleAdmins" value="نعم" class="radio-input" required>
                         <span class="radio-label">نعم</span>
                     </label>
                     <label class="radio-item">
-                        <input type="radio" name="multipleAdmins" value="no" class="radio-input">
+                        <input type="radio" name="multipleAdmins" value="لا" class="radio-input">
                         <span class="radio-label">لا</span>
                     </label>
                     <label class="radio-item">
-                        <input type="radio" name="multipleAdmins" value="later" class="radio-input">
+                        <input type="radio" name="multipleAdmins" value="لاحقًا" class="radio-input">
                         <span class="radio-label">لاحقًا</span>
                     </label>
                 </div>
@@ -872,15 +781,15 @@
                 <label class="form-label required">هل تبي لوحة تقارير للطلاب والمشاهدات؟</label>
                 <div class="radio-group">
                     <label class="radio-item">
-                        <input type="radio" name="analytics" value="yes" class="radio-input" required>
+                        <input type="radio" name="analytics" value="نعم" class="radio-input" required>
                         <span class="radio-label">نعم</span>
                     </label>
                     <label class="radio-item">
-                        <input type="radio" name="analytics" value="no" class="radio-input">
+                        <input type="radio" name="analytics" value="لا" class="radio-input">
                         <span class="radio-label">لا</span>
                     </label>
                     <label class="radio-item">
-                        <input type="radio" name="analytics" value="later" class="radio-input">
+                        <input type="radio" name="analytics" value="لاحقًا" class="radio-input">
                         <span class="radio-label">لاحقًا</span>
                     </label>
                 </div>
@@ -888,7 +797,7 @@
             </div>
         </div>
 
-        <!-- Section 6: Additional Notes -->
+        <!-- Section 4: Additional Notes -->
         <div class="form-section">
             <div class="section-header">
                 <span class="section-icon">📝</span>
@@ -923,11 +832,10 @@
         const summarySection = document.getElementById('summarySection');
         const summaryGrid = document.getElementById('summaryGrid');
 
-        // Required fields
+        // Required fields (removed client data and domain fields)
         const requiredFields = [
-            'clientName', 'phoneNumber', 'projectName', 'courseCount', 'lessonsPerCourse',
-            'videoDuration', 'videosReady', 'videoStorage', 'hasDomain', 'hasSalla',
-            'courseAsProduct', 'certificates', 'quizzes', 'pdfAttachments', 'preventDownload',
+            'courseCount', 'lessonsPerCourse', 'videoDuration', 'videosReady', 'videoStorage', 
+            'certificates', 'quizzes', 'pdfAttachments', 'preventDownload',
             'multipleAdmins', 'analytics'
         ];
 
@@ -940,15 +848,18 @@
                     if (field.type === 'radio') {
                         const radioGroup = form.querySelectorAll(`input[name="${fieldName}"]`);
                         if (Array.from(radioGroup).some(r => r.checked)) filledCount++;
-                    } else if (field.type === 'checkbox') {
-                        // Skip checkboxes for progress calculation
-                    } else if (field.value.trim() !== '') {
+                    } else if (field.value && field.value.trim() !== '') {
                         filledCount++;
                     }
                 }
             });
 
-            const percentage = Math.round((filledCount / requiredFields.length) * 100);
+            // Special handling for checkbox (at least one or none)
+            const checkboxes = form.querySelectorAll('input[name="automation"]:checked');
+            if (checkboxes.length > 0) filledCount++;
+            
+            const totalToFill = requiredFields.length + 1; // +1 for automation
+            const percentage = Math.round((filledCount / totalToFill) * 100);
             progressFill.style.width = percentage + '%';
             progressPercentage.textContent = percentage + '%';
         }
@@ -974,7 +885,7 @@
                             }
                             isValid = false;
                         }
-                    } else if (field.value.trim() === '') {
+                    } else if (!field.value || field.value.trim() === '') {
                         const errorMsg = field.closest('.form-group').querySelector('.error-message');
                         if (errorMsg) {
                             errorMsg.textContent = 'هذا الحقل مطلوب';
@@ -985,19 +896,27 @@
                 }
             });
 
+            // Validate automation checkboxes
+            const automationChecked = form.querySelectorAll('input[name="automation"]:checked');
+            if (automationChecked.length === 0) {
+                const errorMsg = form.querySelector('input[name="automation"]').closest('.form-group').querySelector('.error-message');
+                errorMsg.textContent = 'يرجى اختيار خيار واحد على الأقل';
+                errorMsg.classList.add('show');
+                isValid = false;
+            }
+
             return isValid;
         }
 
         // Build summary
         function buildSummary() {
-            const summaryData = [];
+            summaryGrid.innerHTML = '';
             const formData = new FormData(form);
 
             const summaryFields = [
-                { name: 'clientName', label: 'الاسم' },
-                { name: 'phoneNumber', label: 'الجوال' },
-                { name: 'projectName', label: 'المشروع' },
-                { name: 'courseCount', label: 'عدد الكورسات' }
+                { name: 'courseCount', label: 'عدد الكورسات' },
+                { name: 'videoDuration', label: 'مدة الفيديوهات' },
+                { name: 'videosReady', label: 'جاهزية الفيديوهات' }
             ];
 
             summaryFields.forEach(field => {
@@ -1020,27 +939,21 @@
             const formData = new FormData(form);
             
             let message = `طلب دراسة مشروع منصة كورسات مرتبطة بسلة\n\n`;
-            message += `بيانات العميل:\n`;
-            message += `- الاسم: ${formData.get('clientName')}\n`;
-            message += `- رقم الجوال: ${formData.get('phoneNumber')}\n`;
-            message += `- اسم المشروع: ${formData.get('projectName')}\n\n`;
 
-            message += `تفاصيل الكورسات:\n`;
+            message += `تفاصيل الكورسات والمحتوى:\n`;
             message += `- عدد الكورسات عند الإطلاق: ${formData.get('courseCount')}\n`;
             message += `- عدد الدروس داخل كل كورس: ${formData.get('lessonsPerCourse')}\n`;
             message += `- مدة الفيديوهات: ${formData.get('videoDuration')}\n`;
             message += `- هل الفيديوهات جاهزة: ${formData.get('videosReady')}\n`;
             message += `- مكان تخزين الفيديوهات: ${formData.get('videoStorage')}\n\n`;
 
-            message += `إعدادات سلة والدومين:\n`;
-            message += `- هل يوجد دومين: ${formData.get('hasDomain')}\n`;
-            message += `- هل يوجد اشتراك سلة: ${formData.get('hasSalla')}\n`;
-            message += `- هل كل كورس منتج مستقل في سلة: ${formData.get('courseAsProduct')}\n\n`;
-
+            const automation = Array.from(form.querySelectorAll('input[name="automation"]:checked')).map(cb => cb.value).join(', ');
             message += `الأتمتة والتفعيل:\n`;
-            message += `- إرسال إيميل/واتساب بعد الشراء: ${formData.get('autoEmail') || formData.get('autoWhatsapp') || formData.get('autoBoth') || formData.get('autoNone') || 'لم يتم التحديد'}\n`;
+            message += `- إرسال إيميل/واتساب بعد الشراء: ${automation}\n`;
             message += `- شهادات إتمام: ${formData.get('certificates')}\n`;
-            message += `- اختبارات: ${formData.get('quizzes')}\n`;
+            message += `- اختبارات: ${formData.get('quizzes')}\n\n`;
+
+            message += `الحماية والصلاحيات:\n`;
             message += `- ملفات PDF: ${formData.get('pdfAttachments')}\n`;
             message += `- منع تحميل الملفات: ${formData.get('preventDownload')}\n`;
             message += `- أكثر من مشرف: ${formData.get('multipleAdmins')}\n`;
