@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فاتورة اتفاقية - GOLF STUDIO</title>
+    
+    <!-- Google Fonts - IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">تم النسخ بنجاح</div>
+
+    <!-- Top Bar -->
+    <header class="top-bar no-print">
+        <div class="top-bar-content">
+            <div class="brand">
+                <span class="brand-icon">⛳</span>
+                <span class="brand-name">GOLF STUDIO</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Document Card -->
+    <main class="document-wrapper">
+        <div class="document-card" id="document-card">
+            
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-banner">
+                    <h1 class="hero-title">
+                        <span>فاتورة اتفاقية</span><br>
+                        إطلاق وتدشين منصة تعليمية رقمية احترافية
+                    </h1>
+                    <p class="hero-desc" style="margin-top: 15px; font-size: 1.1rem; color: var(--text-secondary); max-width: 600px;">
+تصميم متجر إلكتروني احترافي على منصة سلة مع تجهيز مجتمع متدربين خاص وتنظيم الهوية الرقمية لإطلاق المشروع بشكل احترافي ومتوافق مع الجوال.
+</p>
+                </div>
+            </section>
+
+            <!-- Invoice Meta Section -->
+            <section class="meta-section">
+                <div class="meta-single-card">
+                    <div class="meta-row">
+                        <span class="meta-label">رقم الفاتورة:</span>
+                        <span class="meta-value" id="invoice-number">002406</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">تاريخ الفاتورة:</span>
+                        <span class="meta-value">10 مايو 2026</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">المقدمة إلى:</span>
+                        <span class="meta-value company-name">العميل الكريم</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">مدة التنفيذ:</span>
+                        <span class="meta-value">30 يوم</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scope Section -->
+            <section class="scope-section">
+                <h2 class="section-title">بنود الاتفاقية</h2>
+                
+                
+                <div class="scope-grid">
+                    <!-- Scope Card 1 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🛒</span>
+                            <h3 class="scope-title">إنشاء وتدشين المتجر الإلكتروني</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تصميم متجر احترافي على منصة سلة</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تجهيز واجهة حديثة ومتوافقة مع الجوال</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">ترتيب صفحات الكورسات والمنتجات</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تجهيز صفحات السياسات والتواصل</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تحسين تجربة المستخدم داخل المتجر</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تجهيز المتجر للإطلاق بشكل احترافي</span></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Scope Card 2 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🎨</span>
+                            <h3 class="scope-title">إنشاء الهوية الرقمية والسوشيال ميديا</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">إنشاء حسابات السوشيال ميديا</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تنسيق الحسابات بشكل احترافي</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">توحيد الهوية البصرية</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تجهيز صور البروفايل والبنرات</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">ربط الحسابات بالمتجر</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تجهيز الشكل العام للبراند</span></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Scope Card 3 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">👥</span>
+                            <h3 class="scope-title">تجهيز مجتمع المتدربين</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">إنشاء مجتمع خاص للمتدربين على تيليجرام</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تنظيم صلاحيات الدخول للأعضاء</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">إعداد القنوات والمجموعات بشكل احترافي</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تجهيز نظام مناسب للمحتوى التعليمي المدفوع</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تحسين إدارة الأعضاء والمتدربين</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تسهيل وصول الطلاب للمحتوى</span></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Scope Card 4 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🛡️</span>
+                            <h3 class="scope-title">الحماية والتنظيم</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تنظيم صلاحيات الوصول للمحتوى</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تقييد الوصول للمشتركين فقط</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">إعداد بيئة خاصة للطلاب</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تحسين إدارة الأعضاء</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تنظيم تجربة المستخدم داخل المجتمع</span></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Workflow Section -->
+            
+            <section class="workflow-section">
+                <h2 class="section-title">المزايا الإضافية ضمن الاتفاقية</h2>
+                <div class="workflow-container">
+                    <ul class="workflow-list">
+                        <li class="workflow-item">
+                            <span class="step-number">1</span>
+                            <span class="step-text">متابعة الإطلاق مع الإدارة</span>
+                        </li>
+                        <li class="workflow-item">
+                            <span class="step-number">2</span>
+                            <span class="step-text">المساعدة في تنظيم المحتوى</span>
+                        </li>
+                        <li class="workflow-item">
+                            <span class="step-number">3</span>
+                            <span class="step-text">استشارة تشغيلية قبل الإطلاق</span>
+                        </li>
+                        <li class="workflow-item">
+                            <span class="step-number">4</span>
+                            <span class="step-text">المساعدة في ترتيب رحلة العميل</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+
+            <!-- Pricing Section -->
+            <section class="pricing-section">
+                <div class="pricing-box">
+                    <span class="pricing-label">تكلفة تأسيس وإطلاق المنصة</span>
+                    <div class="pricing-amount">
+                        <span class="amount">2000</span>
+                        <span class="currency">ريال سعودي</span>
+                    </div>
+                    <p class="pricing-note">يشمل تصميم المتجر، تجهيز المجتمع، إنشاء الحسابات، وتجهيز الهوية الرقمية للإطلاق.</p>
+                </div>
+            </section>
+
+            <!-- Notes Section (Exclusions) -->
+            <section class="notes-section">
+                <h2 class="section-title">غير مشمول في السعر</h2>
+                
+                <ul class="notes-list">
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">اشتراك منصة سلة</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">الدومين</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">الحملات الإعلانية</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">إنتاج وتصوير الكورسات</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">كتابة المحتوى التعليمي</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">إدارة السوشيال ميديا المستمرة</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">أي أدوات أو خدمات خارجية مدفوعة</span></li>
+                </ul>
+
+            </section>
+
+            <!-- Footer -->
+            <footer class="document-footer">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <span class="footer-brand-name">GOLF STUDIO</span>
+                    </div>
+                    <div class="footer-contact">
+                        <a href="https://wa.me/966537311886" class="contact-item">
+                            <span>0537311886</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </a>
+                        <a href="mailto:Golf.Studio.Adv@gmail.com" class="contact-item">
+                            <span>Golf.Studio.Adv@gmail.com</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                        <a href="https://www.Golf-Studio.umso.co" target="_blank" rel="noopener" class="contact-item">
+                            <span>www.Golf-Studio.umso.co</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="print-action-bottom no-print">
+                    <button class="btn btn-primary btn-large" onclick="printDocument()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                            <rect x="6" y="14" width="12" height="8"></rect>
+                        </svg>
+                        طباعة الفاتورة
+                    </button>
+                </div>
+            </footer>
+
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../assets/script.js"></script>
+</body>
+</html>
