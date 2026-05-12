@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فاتورة اتفاقية - ترياق | TIRYAQ</title>
+    
+    <!-- Google Fonts - IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">تم النسخ بنجاح</div>
+
+    <!-- Top Bar -->
+    <header class="top-bar no-print">
+        <div class="top-bar-content">
+            <div class="brand">
+                <span class="brand-icon">🍼</span>
+                <span class="brand-name">ترياق | TIRYAQ</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Document Card -->
+    <main class="document-wrapper">
+        <div class="document-card" id="document-card">
+            
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-banner">
+                    <h1 class="hero-title">
+                        <span>فاتورة اتفاقية</span><br>
+                        تجهيز وتدشين متجر ترياق على منصة سلة
+                    </h1>
+                    <p class="hero-description" style="margin-top: 15px; color: rgba(255,255,255,0.9); font-size: 1.1rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                        حل متكامل لإنشاء متجر احترافي متخصص في مستلزمات الأطفال، مع تحسين تجربة العميل وتجهيز المتجر للنمو والتسويق بشكل احترافي.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Invoice Meta Section -->
+            <section class="meta-section">
+                <div class="meta-single-card">
+                    <div class="meta-row">
+                        <span class="meta-label">رقم الفاتورة:</span>
+                        <span class="meta-value" id="invoice-number">356113</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">تاريخ الفاتورة:</span>
+                        <span class="meta-value">12 مايو 2026</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">المقدمة إلى:</span>
+                        <span class="meta-value company-name">ترياق | TIRYAQ</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">مدة التنفيذ:</span>
+                        <span class="meta-value">3 إلى 5 أيام عمل</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scope Section -->
+            <section class="scope-section">
+                <h2 class="section-title">بنود الاتفاقية</h2>
+                
+                <div class="scope-grid">
+                    <!-- Section 1: Setup -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🏗️</span>
+                            <h3 class="scope-title">تجهيز وتدشين المتجر</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تصميم واجهة احترافية مناسبة لمجال الأطفال</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تجهيز الصفحة الرئيسية بشكل مرتب وسهل</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تنظيم أقسام الحليب والحفائظ والمستلزمات</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تحسين تجربة العميل داخل المتجر</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تحسين التصفح من الجوال</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إعداد الصفحات الأساسية (من نحن - تواصل معنا - السياسات)</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">ضبط البنرات الرئيسية</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تحسين ظهور المنتجات داخل المتجر</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تجهيز المتجر ليكون جاهزًا للإطلاق</span></div></li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 2: Products -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">📦</span>
+                            <h3 class="scope-title">تنظيم المنتجات وتجربة العميل</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">ترتيب المنتجات داخل التصنيفات</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تحسين عرض المنتجات</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تجهيز صور المنتجات بالمقاسات المناسبة</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تحسين وضوح الأسعار والمعلومات</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تنظيم مسار الشراء</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تجهيز المتجر ليكون مريح للأمهات والعملاء</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">ضبط تجربة التصفح السريعة</span></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Marketing Packages Section -->
+            <section class="scope-section">
+                <h2 class="section-title">الباقات التسويقية الشهرية</h2>
+                <div class="pricing-grid">
+                    <!-- Package 1 -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-plan">التسويق بالمحتوى</h3>
+                            <div class="pricing-price">1000<span class="currency">ريال / شهرياً</span></div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>كتابة محتوى تسويقي احترافي</li>
+                            <li>تجهيز أفكار المحتوى</li>
+                            <li>تحسين ظهور البراند</li>
+                            <li>تنسيق المحتوى للسوشيال ميديا</li>
+                            <li>بناء هوية بصرية موحدة للمحتوى</li>
+                            <li>تحسين التفاعل مع الجمهور</li>
+                        </ul>
+                    </div>
+                    <!-- Package 2 -->
+                    <div class="pricing-card featured">
+                        <div class="pricing-header">
+                            <h3 class="pricing-plan">التسويق الإعلاني الممول</h3>
+                            <div class="pricing-price">1000<span class="currency">ريال / شهرياً</span></div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>إدارة الحملات الإعلانية</li>
+                            <li>تحسين الاستهداف</li>
+                            <li>متابعة النتائج</li>
+                            <li>تحسين التحويل والمبيعات</li>
+                            <li>اختبار الإعلانات</li>
+                            <li>تقارير الأداء الشهرية</li>
+                        </ul>
+                        <div style="margin-top: 10px; font-size: 0.8rem; color: #666;">* ميزانية الإعلانات غير مشمولة</div>
+                    </div>
+                    <!-- Package 3 -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-plan">تحسين محركات البحث SEO</h3>
+                            <div class="pricing-price">1000<span class="currency">ريال / شهرياً</span></div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>تحسين ظهور المتجر في جوجل</li>
+                            <li>تحسين صفحات المنتجات</li>
+                            <li>تحسين الكلمات المفتاحية</li>
+                            <li>تحسين سرعة وأداء الصفحات</li>
+                            <li>تحسين العناوين والوصف</li>
+                            <li>تحسين الأرشفة والظهور العضوي</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Pricing Card -->
+            <section class="meta-section">
+                <h2 class="section-title">تكلفة تجهيز وتدشين متجر ترياق</h2>
+                <div class="meta-single-card" style="text-align: center; padding: 40px;">
+                    <div style="text-decoration: line-through; color: #888; font-size: 1.2rem; margin-bottom: 10px;">1500 ريال</div>
+                    <div style="font-size: 3rem; font-weight: 700; color: var(--primary-color);">1100 ريال</div>
+                    <p style="margin-top: 20px; color: #555; line-height: 1.6;">
+                        يشمل تصميم وتجهيز المتجر، ترتيب المنتجات، تجهيز الصفحات الأساسية، تحسين تجربة العميل، وتجهيز المتجر للإطلاق على منصة سلة.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Requirements Section -->
+            <section class="scope-section">
+                <h2 class="section-title">متطلبات الخدمة من طرف العميل</h2>
+                <div class="scope-card" style="width: 100%;">
+                    <ul class="scope-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">صلاحية الدخول إلى متجر سلة</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">اشتراك سلة مفعل</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">الشعار والهوية البصرية</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">صور المنتجات</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">أسماء المنتجات والأسعار</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">التصنيفات المطلوبة</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">روابط حسابات السوشيال ميديا</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">الدومين في حال توفره</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">أي متجر مرجعي يعجب العميل</span></div></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Not Included Section -->
+            <section class="scope-section">
+                <h2 class="section-title">غير مشمول في السعر</h2>
+                <div class="scope-card" style="background: #fdf2f2; border-color: #fecaca;">
+                    <ul class="scope-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px;">
+                        <li class="scope-item"><span class="item-bullet" style="background: #ef4444;"></span><div class="item-content"><span class="item-name">اشتراك منصة سلة</span></div></li>
+                        <li class="scope-item"><span class="item-bullet" style="background: #ef4444;"></span><div class="item-content"><span class="item-name">شراء الدومين</span></div></li>
+                        <li class="scope-item"><span class="item-bullet" style="background: #ef4444;"></span><div class="item-content"><span class="item-name">التطبيقات المدفوعة داخل سلة</span></div></li>
+                        <li class="scope-item"><span class="item-bullet" style="background: #ef4444;"></span><div class="item-content"><span class="item-name">ميزانية الإعلانات</span></div></li>
+                        <li class="scope-item"><span class="item-bullet" style="background: #ef4444;"></span><div class="item-content"><span class="item-name">التصوير الاحترافي</span></div></li>
+                        <li class="scope-item"><span class="item-bullet" style="background: #ef4444;"></span><div class="item-content"><span class="item-name">إدارة المتجر بعد التسليم</span></div></li>
+                        <li class="scope-item"><span class="item-bullet" style="background: #ef4444;"></span><div class="item-content"><span class="item-name">كتابة محتوى المنتجات بالكامل من الصفر</span></div></li>
+                        <li class="scope-item"><span class="item-bullet" style="background: #ef4444;"></span><div class="item-content"><span class="item-name">الشحن والتوصيل</span></div></li>
+                        <li class="scope-item"><span class="item-bullet" style="background: #ef4444;"></span><div class="item-content"><span class="item-name">أي تطوير برمجي خاص</span></div></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Footer Section -->
+            <footer class="document-footer">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h4 class="footer-title">تواصل معنا</h4>
+                        <p class="footer-text">نحن هنا لدعم نمو متجرك وتوسعه الرقمي.</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-title">ترياق | TIRYAQ</h4>
+                        <p class="footer-text">متخصصون في مستلزمات الأطفال والنمو الصحي.</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2026 جميع الحقوق محفوظة لمتجر ترياق</p>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons no-print">
+            <button class="btn btn-secondary" onclick="window.print()">
+                <span class="btn-icon">🖨️</span>
+                طباعة الفاتورة
+            </button>
+            <button class="btn btn-primary" id="download-pdf">
+                <span class="btn-icon">📄</span>
+                تحميل PDF
+            </button>
+            <button class="btn btn-share" id="share-link">
+                <span class="btn-icon">🔗</span>
+                نسخ الرابط
+            </button>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../assets/script.js"></script>
+    <script>
+        // PDF Download functionality
+        document.getElementById('download-pdf').addEventListener('click', async function() {
+            const { jsPDF } = window.jspdf;
+            const element = document.getElementById('document-card');
+            
+            try {
+                const canvas = await html2canvas(element, {
+                    scale: 2,
+                    useCORS: true,
+                    logging: false,
+                    backgroundColor: '#f8fafc'
+                });
+                
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const imgProps = pdf.getImageProperties(imgData);
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+                
+                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+                pdf.save('فاتورة_ترياق_356113.pdf');
+            } catch (error) {
+                console.error('Error generating PDF:', error);
+            }
+        });
+
+        // Share link functionality
+        document.getElementById('share-link').addEventListener('click', function() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 3000);
+            });
+        });
+    </script>
+</body>
+</html>
