@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض سعر متكامل - ترياق | TIRYAQ</title>
+    
+    <!-- Google Fonts - IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../assets/style.css">
+    <style>
+        :root {
+            --primary-color: #004d40;
+            --accent-color: #c5a059;
+            --bg-light: #f4f7f6;
+        }
+        .invoice-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            page-break-inside: avoid;
+        }
+        .section-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        .price-tag {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 20px 0;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 1.1rem;
+            margin-left: 10px;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div id="toast" class="toast">تم النسخ بنجاح</div>
+
+    <header class="top-bar no-print">
+        <div class="top-bar-content">
+            <div class="brand">
+                <span class="brand-icon">🍼</span>
+                <span class="brand-name">ترياق | TIRYAQ</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="document-wrapper">
+        <div class="document-card" id="document-card">
+            
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-banner">
+                    <h1 class="hero-title">
+                        <span>عرض سعر استراتيجي</span><br>
+                        التحول الرقمي والنمو لمتجر ترياق
+                    </h1>
+                    <div class="meta-row" style="justify-content: center; color: white; margin-top: 20px;">
+                        <span>رقم العرض: 624800</span>
+                        <span style="margin: 0 20px;">|</span>
+                        <span>التاريخ: 12 مايو 2026</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 1: Store Setup -->
+            <div class="invoice-section">
+                <span class="section-badge">المرحلة الأولى</span>
+                <h2 style="color: var(--primary-color); margin-bottom: 20px;">1. تجهيز وإطلاق المتجر على منصة سلة</h2>
+                <div class="grid-2">
+                    <div>
+                        <h4 style="margin-bottom: 10px;">نطاق العمل:</h4>
+                        <ul class="scope-list">
+                            <li class="scope-item"><span class="item-bullet"></span>تأسيس المتجر وتفعيل الثيم الاحترافي</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تصميم الهوية البصرية والبنرات</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تنظيم أقسام الحليب والحفائظ والمستلزمات</li>
+                            <li class="scope-item"><span class="item-bullet"></span>ضبط إعدادات الشحن والدفع الآلي</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تحسين تجربة العميل (UX) للجوال</li>
+                        </ul>
+                    </div>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 10px; text-align: center;">
+                        <div class="old-price">1500 ريال</div>
+                        <div class="price-tag">1100 ريال</div>
+                        <p style="font-size: 0.9rem; color: #666;">دفعة واحدة - شامل التجهيز الكامل</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Paid Ads -->
+            <div class="invoice-section">
+                <span class="section-badge">المرحلة الثانية</span>
+                <h2 style="color: var(--primary-color); margin-bottom: 20px;">2. إدارة التسويق الإعلاني الممول</h2>
+                <div class="grid-2">
+                    <div>
+                        <h4 style="margin-bottom: 10px;">نطاق العمل:</h4>
+                        <ul class="scope-list">
+                            <li class="scope-item"><span class="item-bullet"></span>إدارة حملات (Snapchat, TikTok, Instagram)</li>
+                            <li class="scope-item"><span class="item-bullet"></span>استهداف دقيق للأمهات والمهتمين</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تحسين معدل التحويل والمبيعات</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تقارير أداء أسبوعية وشهرية</li>
+                        </ul>
+                    </div>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 10px; text-align: center;">
+                        <div class="price-tag">1000 ريال <span style="font-size: 1rem; color: #666;">/ شهرياً</span></div>
+                        <p style="font-size: 0.8rem; color: #e74c3c;">* ميزانية الإعلانات يحددها العميل</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Content Marketing -->
+            <div class="invoice-section">
+                <span class="section-badge">المرحلة الثالثة</span>
+                <h2 style="color: var(--primary-color); margin-bottom: 20px;">3. التسويق بالمحتوى وصناعة البراند</h2>
+                <div class="grid-2">
+                    <div>
+                        <h4 style="margin-bottom: 10px;">نطاق العمل:</h4>
+                        <ul class="scope-list">
+                            <li class="scope-item"><span class="item-bullet"></span>كتابة محتوى تسويقي تفاعلي</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تصميم منشورات السوشيال ميديا</li>
+                            <li class="scope-item"><span class="item-bullet"></span>بناء ثقة العملاء عبر المحتوى التعليمي</li>
+                            <li class="scope-item"><span class="item-bullet"></span>إدارة التفاعل والردود</li>
+                        </ul>
+                    </div>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 10px; text-align: center;">
+                        <div class="price-tag">1000 ريال <span style="font-size: 1rem; color: #666;">/ شهرياً</span></div>
+                        <p style="font-size: 0.9rem; color: #666;">يشمل التصاميم وكتابة المحتوى</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: SEO -->
+            <div class="invoice-section">
+                <span class="section-badge">المرحلة الرابعة</span>
+                <h2 style="color: var(--primary-color); margin-bottom: 20px;">4. تصدر محركات البحث (SEO)</h2>
+                <div class="grid-2">
+                    <div>
+                        <h4 style="margin-bottom: 10px;">نطاق العمل:</h4>
+                        <ul class="scope-list">
+                            <li class="scope-item"><span class="item-bullet"></span>تحسين ظهور المنتجات في جوجل</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تحسين الكلمات المفتاحية للمتجر</li>
+                            <li class="scope-item"><span class="item-bullet"></span>أرشفة الصفحات وتسريع الموقع</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تحسين وصف المنتجات للبحث</li>
+                        </ul>
+                    </div>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 10px; text-align: center;">
+                        <div class="price-tag">1000 ريال <span style="font-size: 1rem; color: #666;">/ شهرياً</span></div>
+                        <p style="font-size: 0.9rem; color: #666;">نمو عضوي مستدام طويل الأمد</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Requirements & Terms -->
+            <div class="grid-2" style="margin-top: 40px;">
+                <div class="invoice-section" style="margin-bottom: 0;">
+                    <h3 style="margin-bottom: 15px;">🛠️ متطلبات العمل</h3>
+                    <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.8;">
+                        <li>• صلاحية دخول لمتجر سلة</li>
+                        <li>• الشعار والهوية البصرية</li>
+                        <li>• صور وبيانات المنتجات</li>
+                        <li>• روابط التواصل الاجتماعي</li>
+                    </ul>
+                </div>
+                <div class="invoice-section" style="margin-bottom: 0; background: #fff5f5;">
+                    <h3 style="margin-bottom: 15px;">🚫 غير مشمول</h3>
+                    <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.8;">
+                        <li>• رسوم اشتراك منصة سلة</li>
+                        <li>• قيمة شراء الدومين</li>
+                        <li>• ميزانية الحملات الإعلانية</li>
+                        <li>• التصوير الفوتوغرافي للمنتجات</li>
+                    </ul>
+                </div>
+            </div>
+
+            <footer class="document-footer" style="margin-top: 50px;">
+                <div class="footer-bottom">
+                    <p>© 2026 جميع الحقوق محفوظة لمتجر ترياق | TIRYAQ</p>
+                </div>
+            </footer>
+        </div>
+
+        <div class="action-buttons no-print">
+            <button class="btn btn-secondary" onclick="window.print()">🖨️ طباعة</button>
+            <button class="btn btn-primary" id="download-pdf">📄 تحميل PDF</button>
+            <button class="btn btn-share" id="share-link">🔗 نسخ الرابط</button>
+        </div>
+    </main>
+
+    <script src="../../assets/script.js"></script>
+    <script>
+        document.getElementById('download-pdf').addEventListener('click', async function() {
+            const { jsPDF } = window.jspdf;
+            const element = document.getElementById('document-card');
+            try {
+                const canvas = await html2canvas(element, { scale: 2, useCORS: true });
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+                pdf.save('عرض_سعر_ترياق_624800.pdf');
+            } catch (e) { console.error(e); }
+        });
+        document.getElementById('share-link').addEventListener('click', function() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                const t = document.getElementById('toast');
+                t.classList.add('show');
+                setTimeout(() => t.classList.remove('show'), 3000);
+            });
+        });
+    </script>
+</body>
+</html>
