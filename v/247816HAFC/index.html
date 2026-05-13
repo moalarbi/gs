@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فاتورة اتفاقية - ترياق | TIRYAQ</title>
+    <title>عرض سعر متكامل - ميلودي | Melody</title>
     
     <!-- Google Fonts - IBM Plex Sans Arabic -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,22 +16,73 @@
     
     <!-- Styles -->
     <link rel="stylesheet" href="../../assets/style.css">
+    <style>
+        :root {
+            --primary-color: #004d40;
+            --accent-color: #c5a059;
+            --bg-light: #f4f7f6;
+        }
+        .invoice-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            page-break-inside: avoid;
+        }
+        .section-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        .price-tag {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 20px 0;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 1.1rem;
+            margin-left: 10px;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+        .note-important {
+            background: #fff8e1;
+            border-right: 4px solid #f59e0b;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #78350f;
+            margin-top: 12px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Toast Notification -->
     <div id="toast" class="toast">تم النسخ بنجاح</div>
 
-    <!-- Top Bar -->
     <header class="top-bar no-print">
         <div class="top-bar-content">
             <div class="brand">
-                <span class="brand-icon">🍫</span>
-                <span class="brand-name">ترياق | TIRYAQ</span>
+                <span class="brand-icon">🎵</span>
+                <span class="brand-name">ميلودي | Melody</span>
             </div>
         </div>
     </header>
 
-    <!-- Main Document Card -->
     <main class="document-wrapper">
         <div class="document-card" id="document-card">
             
@@ -39,627 +90,181 @@
             <section class="hero-section">
                 <div class="hero-banner">
                     <h1 class="hero-title">
-                        <span>فاتورة اتفاقية</span><br>
-                        تجهيز وإطلاق متجر ترياق للشوكولاتة والكاكاو الفاخر
+                        <span>عرض سعر استراتيجي</span><br>
+                        التحول الرقمي والنمو لمتجر ميلودي للشوكولاتة والكاكاو الفاخر
                     </h1>
-                </div>
-            </section>
-
-            <!-- Invoice Meta Section -->
-            <section class="meta-section">
-                <div class="meta-single-card">
-                    <div class="meta-row">
-                        <span class="meta-label">رقم الفاتورة:</span>
-                        <span class="meta-value" id="invoice-number">247816</span>
-                    </div>
-                    <div class="meta-row">
-                        <span class="meta-label">تاريخ الفاتورة:</span>
-                        <span class="meta-value">13 مايو 2026</span>
-                    </div>
-                    <div class="meta-row">
-                        <span class="meta-label">المقدمة إلى:</span>
-                        <span class="meta-value company-name">ترياق | TIRYAQ</span>
-                    </div>
-                    <div class="meta-row">
-                        <span class="meta-label">مدة التنفيذ:</span>
-                        <span class="meta-value">من 5 إلى 10 أيام عمل</span>
+                    <div class="meta-row" style="justify-content: center; color: white; margin-top: 20px;">
+                        <span>رقم العرض: 247816</span>
+                        <span style="margin: 0 20px;">|</span>
+                        <span>التاريخ: 13 مايو 2026</span>
                     </div>
                 </div>
             </section>
 
-            <!-- Scope Section -->
-            <section class="scope-section">
-                <h2 class="section-title">بنود الاتفاقية</h2>
-                
-                <div class="scope-grid">
-                    <!-- Scope Card 1: Store Setup -->
-                    <div class="scope-card">
-                        <div class="scope-header">
-                            <span class="scope-icon">🛍️</span>
-                            <h3 class="scope-title">تجهيز وتدشين المتجر الإلكتروني</h3>
-                        </div>
+            <!-- Section 1: Store Setup -->
+            <div class="invoice-section">
+                <span class="section-badge">المرحلة الأولى</span>
+                <h2 style="color: var(--primary-color); margin-bottom: 20px;">1. تجهيز وتدشين المتجر الإلكتروني</h2>
+                <div class="grid-2">
+                    <div>
+                        <h4 style="margin-bottom: 10px;">نطاق العمل:</h4>
                         <ul class="scope-list">
-                            <!-- التصميم والإعداد -->
-                            <li class="scope-item group-header">
-                                <div class="item-content">
-                                    <span class="item-name group-title">[التصميم والإعداد]</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">تصميم واجهة احترافية فاخرة تناسب منتجات الشوكولاتة</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">تجهيز الصفحة الرئيسية بشكل Premium</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">تنظيم الأقسام والتصنيفات</span>
-                                </div>
-                            </li>
-                            <!-- تجهيز المنتجات -->
-                            <li class="scope-item group-header">
-                                <div class="item-content">
-                                    <span class="item-name group-title">[تجهيز المنتجات]</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">تجهيز صفحات المنتجات</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">تحسين تجربة العميل (UX)</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">تحسين التصفح عبر الجوال</span>
-                                </div>
-                            </li>
-                            <!-- السياسات والإطلاق -->
-                            <li class="scope-item group-header">
-                                <div class="item-content">
-                                    <span class="item-name group-title">[السياسات والإطلاق]</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">إعداد صفحات السياسات</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">تجهيز المتجر للإطلاق الرسمي</span>
-                                </div>
-                            </li>
+                            <li class="scope-item"><span class="item-bullet"></span>تصميم واجهة احترافية فاخرة تناسب منتجات الشوكولاتة</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تجهيز الصفحة الرئيسية بشكل Premium</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تنظيم الأقسام والتصنيفات</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تجهيز صفحات المنتجات</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تحسين تجربة العميل (UX)</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تحسين التصفح عبر الجوال</li>
+                            <li class="scope-item"><span class="item-bullet"></span>إعداد صفحات السياسات</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تجهيز المتجر للإطلاق الرسمي</li>
                         </ul>
                     </div>
-
-                    <!-- Scope Card 2: Delivery & Operations -->
-                    <div class="scope-card">
-                        <div class="scope-header">
-                            <span class="scope-icon">🚚</span>
-                            <h3 class="scope-title">الربط مع خدمات التوصيل والتشغيل</h3>
-                        </div>
-                        <ul class="scope-list">
-                            <!-- دراسة وتقييم -->
-                            <li class="scope-item group-header">
-                                <div class="item-content">
-                                    <span class="item-name group-title">[دراسة وتقييم]</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">دراسة أفضل حلول التوصيل المبرد</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">ترشيح وربط خدمات التوصيل السريع</span>
-                                </div>
-                            </li>
-                            <!-- التجهيز والربط -->
-                            <li class="scope-item group-header">
-                                <div class="item-content">
-                                    <span class="item-name group-title">[التجهيز والربط]</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">تجهيز المتجر لاستقبال الطلبات المبردة</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">إعداد خيارات التوصيل السريع</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">ربط شركات التوصيل مع منصة سلة</span>
-                                </div>
-                            </li>
-                            <!-- تحسين التجربة -->
-                            <li class="scope-item group-header">
-                                <div class="item-content">
-                                    <span class="item-name group-title">[تحسين التجربة]</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">تحسين تجربة العميل وقت الطلب والتوصيل</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name sub-detail">ملاحظة مهمة: لن يتم الاعتماد على شركات شحن بطيئة للمنتجات المبردة، سيتم التركيز على التوصيل السريع داخل نفس اليوم أو خلال ساعات محددة</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Scope Card 3: Content & Social Media -->
-                    <div class="scope-card">
-                        <div class="scope-header">
-                            <span class="scope-icon">📱</span>
-                            <h3 class="scope-title">إدارة المحتوى والسوشيال ميديا</h3>
-                        </div>
-                        <ul class="scope-list">
-                            <!-- التخطيط والاستراتيجية -->
-                            <li class="scope-item group-header">
-                                <div class="item-content">
-                                    <span class="item-name group-title">[التخطيط والاستراتيجية]</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">إنشاء خطة محتوى احترافية</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">تحديد محاور المحتوى والهوية البصرية</span>
-                                </div>
-                            </li>
-                            <!-- إنتاج المحتوى -->
-                            <li class="scope-item group-header">
-                                <div class="item-content">
-                                    <span class="item-name group-title">[إنتاج المحتوى]</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">تصميم محتوى احترافي للسوشيال ميديا</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">كتابة الكابشن التسويقي</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">تجهيز أفكار الريلز والفيديوهات</span>
-                                </div>
-                            </li>
-                            <!-- الإدارة والتطوير -->
-                            <li class="scope-item group-header">
-                                <div class="item-content">
-                                    <span class="item-name group-title">[الإدارة والتطوير]</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">تنسيق الانستقرام وتحسين الهوية</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">بناء حضور احترافي للعلامة التجارية</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Scope Card 4: Professional Photography -->
-                    <div class="scope-card">
-                        <div class="scope-header">
-                            <span class="scope-icon">📸</span>
-                            <h3 class="scope-title">التصوير الاحترافي للمنتجات</h3>
-                        </div>
-                        <ul class="scope-list">
-                            <!-- التصوير -->
-                            <li class="scope-item group-header">
-                                <div class="item-content">
-                                    <span class="item-name group-title">[جلسة التصوير]</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">تصوير المنتجات بشكل احترافي</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">تصوير Lifestyle مع الخلفيات الفاخرة</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">تصوير إعلاني احترافي</span>
-                                </div>
-                            </li>
-                            <!-- التعديل والإخراج -->
-                            <li class="scope-item group-header">
-                                <div class="item-content">
-                                    <span class="item-name group-title">[التعديل والإخراج]</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">تعديل وتحسين الصور</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">تجهيز صور المتجر بجودة عالية</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">تجهيز صور الحملات الإعلانية</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">إخراج بصري فاخر يناسب منتجات الشوكولاتة</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Scope Card 5: Advertising Campaigns -->
-                    <div class="scope-card">
-                        <div class="scope-header">
-                            <span class="scope-icon">🎯</span>
-                            <h3 class="scope-title">إدارة الحملات الإعلانية</h3>
-                        </div>
-                        <ul class="scope-list">
-                            <!-- التخطيط والإعداد -->
-                            <li class="scope-item group-header">
-                                <div class="item-content">
-                                    <span class="item-name group-title">[التخطيط والإعداد]</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">إنشاء استراتيجية الحملات الإعلانية</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">إعداد وربط حسابات الإعلانات</span>
-                                </div>
-                            </li>
-                            <!-- الإدارة والتحسين -->
-                            <li class="scope-item group-header">
-                                <div class="item-content">
-                                    <span class="item-name group-title">[الإدارة والتحسين]</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">إنشاء وإدارة الحملات</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">تحسين الاستهداف والنتائج</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">إعادة الاستهداف (Retargeting)</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">متابعة الأداء اليومية</span>
-                                </div>
-                            </li>
-                            <!-- التقارير -->
-                            <li class="scope-item group-header">
-                                <div class="item-content">
-                                    <span class="item-name group-title">[التقارير والتحليل]</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">التقارير الشهرية</span>
-                                </div>
-                            </li>
-                            <li class="scope-item">
-                                <span class="item-bullet"></span>
-                                <div class="item-content">
-                                    <span class="item-name">تحسين النتائج بناءً على البيانات</span>
-                                </div>
-                            </li>
-                        </ul>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 10px; text-align: center;">
+                        <div class="price-tag">2500 ريال</div>
+                        <p style="font-size: 0.9rem; color: #666;">دفعة واحدة - شامل التجهيز الكامل</p>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <!-- Pricing Section - 4 Packages -->
-            <section class="pricing-section">
-                <h2 class="section-title">الباقات والأسعار</h2>
-                
-                <div class="pricing-grid">
-                    <!-- Package 1: Store Setup -->
-                    <div class="pricing-card">
-                        <div class="pricing-header">
-                            <h3 class="pricing-title">تجهيز وتدشين المتجر</h3>
-                        </div>
-                        <div class="pricing-body">
-                            <div class="pricing-amount">
-                                <span class="amount">2500</span>
-                                <span class="currency">ريال</span>
-                            </div>
-                            <p class="pricing-note">دفعة واحدة - شامل التجهيز الكامل</p>
-                            <ul class="pricing-features">
-                                <li><span class="feature-bullet">•</span> تصميم المتجر</li>
-                                <li><span class="feature-bullet">•</span> تنظيم المنتجات</li>
-                                <li><span class="feature-bullet">•</span> تجهيز الصفحات</li>
-                                <li><span class="feature-bullet">•</span> الربط مع الشحن</li>
-                                <li><span class="feature-bullet">•</span> تحسين تجربة العميل</li>
-                                <li><span class="feature-bullet">•</span> تجهيز الإطلاق</li>
-                            </ul>
+            <!-- Section 2: Delivery & Operations -->
+            <div class="invoice-section">
+                <span class="section-badge">المرحلة الثانية</span>
+                <h2 style="color: var(--primary-color); margin-bottom: 20px;">2. الربط مع خدمات التوصيل والتشغيل</h2>
+                <div class="grid-2">
+                    <div>
+                        <h4 style="margin-bottom: 10px;">نطاق العمل:</h4>
+                        <ul class="scope-list">
+                            <li class="scope-item"><span class="item-bullet"></span>دراسة أفضل حلول التوصيل المبرد</li>
+                            <li class="scope-item"><span class="item-bullet"></span>ترشيح وربط خدمات التوصيل السريع</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تجهيز المتجر لاستقبال الطلبات المبردة</li>
+                            <li class="scope-item"><span class="item-bullet"></span>إعداد خيارات التوصيل السريع</li>
+                            <li class="scope-item"><span class="item-bullet"></span>ربط شركات التوصيل مع منصة سلة</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تحسين تجربة العميل وقت الطلب والتوصيل</li>
+                        </ul>
+                        <div class="note-important">
+                            ملاحظة مهمة: لن يتم الاعتماد على شركات شحن بطيئة للمنتجات المبردة، سيتم التركيز على التوصيل السريع داخل نفس اليوم أو خلال ساعات محددة
                         </div>
                     </div>
-
-                    <!-- Package 2: Content Management -->
-                    <div class="pricing-card">
-                        <div class="pricing-header">
-                            <h3 class="pricing-title">إدارة المحتوى والسوشيال ميديا</h3>
-                        </div>
-                        <div class="pricing-body">
-                            <div class="pricing-amount">
-                                <span class="amount">2000</span>
-                                <span class="currency">ريال شهريًا</span>
-                            </div>
-                            <p class="pricing-note">إدارة شاملة للمحتوى والسوشيال ميديا</p>
-                            <ul class="pricing-features">
-                                <li><span class="feature-bullet">•</span> إدارة المحتوى</li>
-                                <li><span class="feature-bullet">•</span> التصميم</li>
-                                <li><span class="feature-bullet">•</span> الكابشن</li>
-                                <li><span class="feature-bullet">•</span> التخطيط الشهري</li>
-                                <li><span class="feature-bullet">•</span> تنسيق الهوية</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Package 3: Photography Session -->
-                    <div class="pricing-card">
-                        <div class="pricing-header">
-                            <h3 class="pricing-title">جلسة تصوير احترافية</h3>
-                        </div>
-                        <div class="pricing-body">
-                            <div class="pricing-amount">
-                                <span class="amount">1800</span>
-                                <span class="currency">ريال</span>
-                            </div>
-                            <p class="pricing-note">جلسة تصوير متكاملة للمنتجات</p>
-                            <ul class="pricing-features">
-                                <li><span class="feature-bullet">•</span> تصوير المنتجات</li>
-                                <li><span class="feature-bullet">•</span> تعديل الصور</li>
-                                <li><span class="feature-bullet">•</span> تجهيز صور الإعلانات</li>
-                                <li><span class="feature-bullet">•</span> تسليم بجودة عالية</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Package 4: Advertising Management -->
-                    <div class="pricing-card">
-                        <div class="pricing-header">
-                            <h3 class="pricing-title">إدارة الحملات الإعلانية</h3>
-                        </div>
-                        <div class="pricing-body">
-                            <div class="pricing-amount">
-                                <span class="amount">1500</span>
-                                <span class="currency">ريال شهريًا</span>
-                            </div>
-                            <p class="pricing-note">إدارة شاملة للحملات الإعلانية</p>
-                            <ul class="pricing-features">
-                                <li><span class="feature-bullet">•</span> إدارة الحملات</li>
-                                <li><span class="feature-bullet">•</span> تحسين النتائج</li>
-                                <li><span class="feature-bullet">•</span> التقارير</li>
-                                <li><span class="feature-bullet">•</span> المتابعة اليومية</li>
-                            </ul>
-                        </div>
-                        <div class="pricing-footer">
-                            <p class="pricing-disclaimer">ملاحظة: ميزانية الإعلانات غير مشمولة</p>
-                        </div>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 10px; text-align: center;">
+                        <div class="price-tag" style="font-size: 1.3rem; color: #666; font-weight: 500;">مشمول مع المرحلة الأولى</div>
+                        <p style="font-size: 0.9rem; color: #888;">ضمن باقة تجهيز المتجر</p>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <!-- Requirements Section -->
-            <section class="requirements-section">
-                <div class="requirements-card">
-                    <div class="requirements-header">
-                        <span class="requirements-icon">🛠️</span>
-                        <h2 class="requirements-title">متطلبات البدء من طرف العميل</h2>
+            <!-- Section 3: Content & Social Media -->
+            <div class="invoice-section">
+                <span class="section-badge">المرحلة الثالثة</span>
+                <h2 style="color: var(--primary-color); margin-bottom: 20px;">3. إدارة المحتوى والسوشيال ميديا</h2>
+                <div class="grid-2">
+                    <div>
+                        <h4 style="margin-bottom: 10px;">نطاق العمل:</h4>
+                        <ul class="scope-list">
+                            <li class="scope-item"><span class="item-bullet"></span>إنشاء خطة محتوى احترافية</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تحديد محاور المحتوى والهوية البصرية</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تصميم محتوى احترافي للسوشيال ميديا</li>
+                            <li class="scope-item"><span class="item-bullet"></span>كتابة الكابشن التسويقي</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تجهيز أفكار الريلز والفيديوهات</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تنسيق الانستقرام وتحسين الهوية</li>
+                            <li class="scope-item"><span class="item-bullet"></span>بناء حضور احترافي للعلامة التجارية</li>
+                        </ul>
                     </div>
-                    <ul class="requirements-list">
-                        <li class="requirement-item">
-                            <span class="requirement-bullet">•</span>
-                            <span class="requirement-text">السجل التجاري</span>
-                        </li>
-                        <li class="requirement-item">
-                            <span class="requirement-bullet">•</span>
-                            <span class="requirement-text">الهوية</span>
-                        </li>
-                        <li class="requirement-item">
-                            <span class="requirement-bullet">•</span>
-                            <span class="requirement-text">شهادة الآيبان</span>
-                        </li>
-                        <li class="requirement-item">
-                            <span class="requirement-bullet">•</span>
-                            <span class="requirement-text">شعار وهوية البراند</span>
-                        </li>
-                        <li class="requirement-item">
-                            <span class="requirement-bullet">•</span>
-                            <span class="requirement-text">صور المنتجات</span>
-                        </li>
-                        <li class="requirement-item">
-                            <span class="requirement-bullet">•</span>
-                            <span class="requirement-text">تفاصيل الأسعار</span>
-                        </li>
-                        <li class="requirement-item">
-                            <span class="requirement-bullet">•</span>
-                            <span class="requirement-text">حساب سلة</span>
-                        </li>
-                        <li class="requirement-item">
-                            <span class="requirement-bullet">•</span>
-                            <span class="requirement-text">الدومين</span>
-                        </li>
-                        <li class="requirement-item">
-                            <span class="requirement-bullet">•</span>
-                            <span class="requirement-text">معلومات التواصل</span>
-                        </li>
-                        <li class="requirement-item">
-                            <span class="requirement-bullet">•</span>
-                            <span class="requirement-text">تفاصيل التوصيل الحالية</span>
-                        </li>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 10px; text-align: center;">
+                        <div class="price-tag">2000 ريال <span style="font-size: 1rem; color: #666;">/ شهرياً</span></div>
+                        <p style="font-size: 0.9rem; color: #666;">إدارة شاملة للمحتوى والسوشيال ميديا</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Professional Photography -->
+            <div class="invoice-section">
+                <span class="section-badge">المرحلة الرابعة</span>
+                <h2 style="color: var(--primary-color); margin-bottom: 20px;">4. التصوير الاحترافي للمنتجات</h2>
+                <div class="grid-2">
+                    <div>
+                        <h4 style="margin-bottom: 10px;">نطاق العمل:</h4>
+                        <ul class="scope-list">
+                            <li class="scope-item"><span class="item-bullet"></span>تصوير المنتجات بشكل احترافي</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تصوير Lifestyle مع الخلفيات الفاخرة</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تصوير إعلاني احترافي</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تعديل وتحسين الصور</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تجهيز صور المتجر بجودة عالية</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تجهيز صور الحملات الإعلانية</li>
+                            <li class="scope-item"><span class="item-bullet"></span>إخراج بصري فاخر يناسب منتجات الشوكولاتة</li>
+                        </ul>
+                    </div>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 10px; text-align: center;">
+                        <div class="price-tag">1800 ريال</div>
+                        <p style="font-size: 0.9rem; color: #666;">جلسة تصوير متكاملة للمنتجات</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5: Advertising Campaigns -->
+            <div class="invoice-section">
+                <span class="section-badge">المرحلة الخامسة</span>
+                <h2 style="color: var(--primary-color); margin-bottom: 20px;">5. إدارة الحملات الإعلانية</h2>
+                <div class="grid-2">
+                    <div>
+                        <h4 style="margin-bottom: 10px;">نطاق العمل:</h4>
+                        <ul class="scope-list">
+                            <li class="scope-item"><span class="item-bullet"></span>إنشاء استراتيجية الحملات الإعلانية</li>
+                            <li class="scope-item"><span class="item-bullet"></span>إعداد وربط حسابات الإعلانات</li>
+                            <li class="scope-item"><span class="item-bullet"></span>إنشاء وإدارة الحملات</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تحسين الاستهداف والنتائج</li>
+                            <li class="scope-item"><span class="item-bullet"></span>إعادة الاستهداف (Retargeting)</li>
+                            <li class="scope-item"><span class="item-bullet"></span>متابعة الأداء اليومية</li>
+                            <li class="scope-item"><span class="item-bullet"></span>التقارير الشهرية</li>
+                            <li class="scope-item"><span class="item-bullet"></span>تحسين النتائج بناءً على البيانات</li>
+                        </ul>
+                    </div>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 10px; text-align: center;">
+                        <div class="price-tag">1500 ريال <span style="font-size: 1rem; color: #666;">/ شهرياً</span></div>
+                        <p style="font-size: 0.8rem; color: #e74c3c;">* ميزانية الإعلانات يحددها العميل</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Requirements & Exclusions -->
+            <div class="grid-2" style="margin-top: 40px;">
+                <div class="invoice-section" style="margin-bottom: 0;">
+                    <h3 style="margin-bottom: 15px;">🛠️ متطلبات البدء من طرف العميل</h3>
+                    <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.8;">
+                        <li>• السجل التجاري</li>
+                        <li>• الهوية</li>
+                        <li>• شهادة الآيبان</li>
+                        <li>• شعار وهوية البراند</li>
+                        <li>• صور المنتجات</li>
+                        <li>• تفاصيل الأسعار</li>
+                        <li>• حساب سلة</li>
+                        <li>• الدومين</li>
+                        <li>• معلومات التواصل</li>
+                        <li>• تفاصيل التوصيل الحالية</li>
                     </ul>
                 </div>
-            </section>
-
-            <!-- Notes Section (Exclusions) -->
-            <section class="notes-section">
-                <h2 class="section-title">غير مشمول في السعر</h2>
-                <ul class="notes-list">
-                    <li class="note-item">
-                        <span class="note-bullet">•</span>
-                        <span class="note-text">اشتراك منصة سلة</span>
-                    </li>
-                    <li class="note-item">
-                        <span class="note-bullet">•</span>
-                        <span class="note-text">ميزانية الإعلانات</span>
-                    </li>
-                    <li class="note-item">
-                        <span class="note-bullet">•</span>
-                        <span class="note-text">التطبيقات المدفوعة</span>
-                    </li>
-                    <li class="note-item">
-                        <span class="note-bullet">•</span>
-                        <span class="note-text">تكاليف شركات الشحن</span>
-                    </li>
-                    <li class="note-item">
-                        <span class="note-bullet">•</span>
-                        <span class="note-text">التغليف والطباعة</span>
-                    </li>
-                    <li class="note-item">
-                        <span class="note-bullet">•</span>
-                        <span class="note-text">شراء الدومين</span>
-                    </li>
-                    <li class="note-item">
-                        <span class="note-bullet">•</span>
-                        <span class="note-text">أي تطوير برمجي خاص</span>
-                    </li>
-                    <li class="note-item">
-                        <span class="note-bullet">•</span>
-                        <span class="note-text">تكاليف المؤثرين</span>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Footer -->
-            <footer class="document-footer">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <span class="footer-brand-name">ترياق | TIRYAQ</span>
-                    </div>
-                    <div class="footer-contact">
-                        <a href="https://wa.me/966537311886" class="contact-item">
-                            <span>0537311886</span>
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                        </a>
-                        <a href="mailto:info@tiryaq.com" class="contact-item">
-                            <span>info@tiryaq.com</span>
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </a>
-                        <a href="https://www.tiryaq.com" target="_blank" rel="noopener" class="contact-item">
-                            <span>www.tiryaq.com</span>
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="2" y1="12" x2="22" y2="12"></line>
-                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                            </svg>
-                        </a>
-                    </div>
+                <div class="invoice-section" style="margin-bottom: 0; background: #fff5f5;">
+                    <h3 style="margin-bottom: 15px;">🚫 غير مشمول في السعر</h3>
+                    <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.8;">
+                        <li>• اشتراك منصة سلة</li>
+                        <li>• ميزانية الإعلانات</li>
+                        <li>• التطبيقات المدفوعة</li>
+                        <li>• تكاليف شركات الشحن</li>
+                        <li>• التغليف والطباعة</li>
+                        <li>• شراء الدومين</li>
+                        <li>• أي تطوير برمجي خاص</li>
+                        <li>• تكاليف المؤثرين</li>
+                    </ul>
                 </div>
-                <div class="print-action-bottom no-print">
-                    <button class="btn btn-primary btn-large" onclick="printDocument()">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6 9 6 2 18 2 18 9"></polyline>
-                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-                            <rect x="6" y="14" width="12" height="8"></rect>
-                        </svg>
-                        طباعة الفاتورة
-                    </button>
+            </div>
+
+            <footer class="document-footer" style="margin-top: 50px;">
+                <div class="footer-bottom">
+                    <p>© 2026 جميع الحقوق محفوظة لميلودي | Melody</p>
                 </div>
             </footer>
-
         </div>
     </main>
 
-    <!-- Scripts -->
     <script src="../../assets/script.js"></script>
 </body>
 </html>
