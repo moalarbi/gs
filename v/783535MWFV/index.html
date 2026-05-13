@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض سعر - ميلودي | MELODI</title>
+    
+    <!-- Google Fonts - IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">تم النسخ بنجاح</div>
+
+    <!-- Top Bar -->
+    <header class="top-bar no-print">
+        <div class="top-bar-content">
+            <div class="brand">
+                <span class="brand-icon">🍫</span>
+                <span class="brand-name">ميلودي | MELODI</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Document Card -->
+    <main class="document-wrapper">
+        <div class="document-card" id="document-card">
+            
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-banner">
+                    <h1 class="hero-title">
+                        <span>عرض سعر متكامل</span><br>
+                        تجهيز وإطلاق متجر ميلودي للشوكولاتة الفاخرة
+                    </h1>
+                </div>
+            </section>
+
+            <!-- Invoice Meta Section -->
+            <section class="meta-section">
+                <div class="meta-single-card">
+                    <div class="meta-row">
+                        <span class="meta-label">رقم العرض:</span>
+                        <span class="meta-value" id="invoice-number">783535</span>
+                        <span class="meta-separator">|</span>
+                        <span class="meta-label">التاريخ:</span>
+                        <span class="meta-value">13 مايو 2026</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scope Section - Phase by Phase -->
+            <section class="scope-section">
+                
+                <!-- Phase 1 -->
+                <div class="phase-container">
+                    <div class="phase-badge">المرحلة الأولى</div>
+                    <div class="phase-card">
+                        <div class="phase-number">1.</div>
+                        <div class="phase-content">
+                            <h3 class="phase-title">تجهيز وإطلاق المتجر على منصة سلة</h3>
+                            <div class="phase-body">
+                                <div class="phase-left">
+                                    <h4 class="phase-subtitle">نطاق العمل:</h4>
+                                    <ul class="phase-list">
+                                        <li>تأسيس المتجر وتفعيل الثيم الاحترافي</li>
+                                        <li>تصميم الهوية البصرية والبنرات</li>
+                                        <li>تنظيم أقسام المنتجات والتصنيفات</li>
+                                        <li>ضبط إعدادات الشحن والدفع الآلي</li>
+                                        <li>تحسين تجربة العميل (UX) للجوال</li>
+                                    </ul>
+                                </div>
+                                <div class="phase-right">
+                                    <div class="price-original">1500 ريال</div>
+                                    <div class="price-main">1100 ريال</div>
+                                    <div class="price-note">دفعة واحدة - شامل التجهيز الكامل</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="phase-container">
+                    <div class="phase-badge">المرحلة الثانية</div>
+                    <div class="phase-card">
+                        <div class="phase-number">2.</div>
+                        <div class="phase-content">
+                            <h3 class="phase-title">إدارة التسويق الإعلاني الممول</h3>
+                            <div class="phase-body">
+                                <div class="phase-left">
+                                    <h4 class="phase-subtitle">نطاق العمل:</h4>
+                                    <ul class="phase-list">
+                                        <li>إدارة حملات (Snapchat, TikTok, Instagram)</li>
+                                        <li>استهداف دقيق للعملاء المهتمين</li>
+                                        <li>تحسين معدل التحويل والمبيعات</li>
+                                        <li>تقارير أداء أسبوعية وشهرية</li>
+                                    </ul>
+                                </div>
+                                <div class="phase-right">
+                                    <div class="price-main">1000 ريال / شهرياً</div>
+                                    <div class="price-note">* ميزانية الإعلانات يحددها العميل</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="phase-container">
+                    <div class="phase-badge">المرحلة الثالثة</div>
+                    <div class="phase-card">
+                        <div class="phase-number">3.</div>
+                        <div class="phase-content">
+                            <h3 class="phase-title">التسويق بالمحتوى وصناعة البراند</h3>
+                            <div class="phase-body">
+                                <div class="phase-left">
+                                    <h4 class="phase-subtitle">نطاق العمل:</h4>
+                                    <ul class="phase-list">
+                                        <li>كتابة محتوى تسويقي تفاعلي</li>
+                                        <li>تصميم منشورات السوشيال ميديا</li>
+                                        <li>بناء ثقة العملاء عبر المحتوى التعليمي</li>
+                                        <li>إدارة التفاعل والردود</li>
+                                    </ul>
+                                </div>
+                                <div class="phase-right">
+                                    <div class="price-main">1000 ريال / شهرياً</div>
+                                    <div class="price-note">يشمل التصاميم وكتابة المحتوى</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 4 -->
+                <div class="phase-container">
+                    <div class="phase-badge">المرحلة الرابعة</div>
+                    <div class="phase-card">
+                        <div class="phase-number">4.</div>
+                        <div class="phase-content">
+                            <h3 class="phase-title">تصدر محركات البحث (SEO)</h3>
+                            <div class="phase-body">
+                                <div class="phase-left">
+                                    <h4 class="phase-subtitle">نطاق العمل:</h4>
+                                    <ul class="phase-list">
+                                        <li>تحسين ظهور المنتجات في جوجل</li>
+                                        <li>تحسين الكلمات المفتاحية للمتجر</li>
+                                        <li>أرشفة الصفحات وتسريع الموقع</li>
+                                        <li>تحسين وصف المنتجات للبحث</li>
+                                    </ul>
+                                </div>
+                                <div class="phase-right">
+                                    <div class="price-main">1000 ريال / شهرياً</div>
+                                    <div class="price-note">نمو عضوي مستدام طويل الأمد</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Requirements Section -->
+            <section class="requirements-section">
+                <div class="requirements-card">
+                    <div class="requirements-header">
+                        <span class="requirements-icon">🛠️</span>
+                        <h2 class="requirements-title">متطلبات العمل</h2>
+                    </div>
+                    <ul class="requirements-list">
+                        <li class="requirement-item">
+                            <span class="requirement-bullet">•</span>
+                            <span class="requirement-text">صلاحية دخول لمتجر سلة</span>
+                        </li>
+                        <li class="requirement-item">
+                            <span class="requirement-bullet">•</span>
+                            <span class="requirement-text">الشعار والهوية البصرية</span>
+                        </li>
+                        <li class="requirement-item">
+                            <span class="requirement-bullet">•</span>
+                            <span class="requirement-text">صور وبيانات المنتجات</span>
+                        </li>
+                        <li class="requirement-item">
+                            <span class="requirement-bullet">•</span>
+                            <span class="requirement-text">روابط التواصل الاجتماعي</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Notes Section (Exclusions) -->
+            <section class="notes-section">
+                <div class="notes-card">
+                    <div class="notes-header">
+                        <span class="notes-icon">🚫</span>
+                        <h2 class="notes-title">غير مشمول</h2>
+                    </div>
+                    <ul class="notes-list">
+                        <li class="note-item">
+                            <span class="note-bullet">•</span>
+                            <span class="note-text">رسوم اشتراك منصة سلة</span>
+                        </li>
+                        <li class="note-item">
+                            <span class="note-bullet">•</span>
+                            <span class="note-text">قيمة شراء الدومين</span>
+                        </li>
+                        <li class="note-item">
+                            <span class="note-bullet">•</span>
+                            <span class="note-text">ميزانية الحملات الإعلانية</span>
+                        </li>
+                        <li class="note-item">
+                            <span class="note-bullet">•</span>
+                            <span class="note-text">التصوير الفوتوغرافي للمنتجات</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="document-footer">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <span class="footer-brand-name">ميلودي | MELODI</span>
+                    </div>
+                    <div class="footer-contact">
+                        <a href="https://wa.me/966537311886" class="contact-item">
+                            <span>0537311886</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </a>
+                        <a href="mailto:info@melodi.com" class="contact-item">
+                            <span>info@melodi.com</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                        <a href="https://www.melodi.com" target="_blank" rel="noopener" class="contact-item">
+                            <span>www.melodi.com</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="print-action-bottom no-print">
+                    <button class="btn btn-primary btn-large" onclick="printDocument()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                            <rect x="6" y="14" width="12" height="8"></rect>
+                        </svg>
+                        طباعة العرض
+                    </button>
+                </div>
+            </footer>
+
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../assets/script.js"></script>
+</body>
+</html>
