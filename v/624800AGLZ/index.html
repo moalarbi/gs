@@ -206,32 +206,8 @@
                 </div>
             </footer>
         </div>
-
-
     </main>
 
     <script src="../../assets/script.js"></script>
-    <script>
-        document.getElementById('download-pdf').addEventListener('click', async function() {
-            const { jsPDF } = window.jspdf;
-            const element = document.getElementById('document-card');
-            try {
-                const canvas = await html2canvas(element, { scale: 2, useCORS: true });
-                const imgData = canvas.toDataURL('image/png');
-                const pdf = new jsPDF('p', 'mm', 'a4');
-                const pdfWidth = pdf.internal.pageSize.getWidth();
-                const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-                pdf.save('عرض_سعر_ترياق_624800.pdf');
-            } catch (e) { console.error(e); }
-        });
-        document.getElementById('share-link').addEventListener('click', function() {
-            navigator.clipboard.writeText(window.location.href).then(() => {
-                const t = document.getElementById('toast');
-                t.classList.add('show');
-                setTimeout(() => t.classList.remove('show'), 3000);
-            });
-        });
-    </script>
 </body>
 </html>
