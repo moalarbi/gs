@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فاتورة اتفاقية - رزان استايل</title>
+    
+    <!-- Google Fonts - IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">تم النسخ بنجاح</div>
+
+    <!-- Top Bar -->
+    <header class="top-bar no-print">
+        <div class="top-bar-content">
+            <div class="brand">
+                <span class="brand-icon">⛳</span>
+                <span class="brand-name">GOLF STUDIO</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Document Card -->
+    <main class="document-wrapper">
+        <div class="document-card" id="document-card">
+            
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-banner">
+                    <h1 class="hero-title">
+                        <span>فاتورة اتفاقية</span><br>
+                        تجهيز وتدشين متجر رزان استايل على منصة سلة
+                    </h1>
+                    <p class="hero-subtitle" style="margin-top: 15px; opacity: 0.9; font-size: 1.1rem;">
+                        حل سريع ومتكامل لتجهيز متجر رقمي خفيف وجاهز لاستقبال أول طلب، مع تصميم شعار بسيط وتجربة شراء سهلة وواضحة للعميل.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Invoice Meta Section -->
+            <section class="meta-section">
+                <div class="meta-single-card">
+                    <div class="meta-row">
+                        <span class="meta-label">رقم الفاتورة:</span>
+                        <span class="meta-value" id="invoice-number">314841</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">تاريخ الفاتورة:</span>
+                        <span class="meta-value">19 مايو 2026</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">المقدمة إلى:</span>
+                        <span class="meta-value company-name">رزان استايل</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">مدة التنفيذ:</span>
+                        <span class="meta-value">3 إلى 5 أيام عمل</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scope Section -->
+            <section class="scope-section">
+                <h2 class="section-title">بنود الاتفاقية</h2>
+                
+                <div class="scope-grid">
+                    <!-- Section 1 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🎨</span>
+                            <h3 class="scope-title">تصميم وتطوير واجهة المتجر</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تصميم واجهة بسيطة وخفيفة تناسب متجر منتج رقمي</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">ترتيب الصفحة الرئيسية بشكل واضح وسهل</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تحسين تجربة التصفح من الجوال</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تصميم واجهة غير مزدحمة حتى لا تثقل على العميل</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">الاستلهام من المتجر المرجعي بدون نسخه حرفيًا</span></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 2 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🛒</span>
+                            <h3 class="scope-title">تجهيز المنتج وتجربة الشراء</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">إعداد المنتج الرقمي داخل المتجر</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">ترتيب معلومات المنتج بشكل واضح</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تجهيز صفحة المنتج لاستقبال الطلبات</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تحسين مسار الشراء داخل المتجر</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">التأكد من وضوح خطوات الطلب للعميل</span></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 3 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">✨</span>
+                            <h3 class="scope-title">تجهيز الهوية الأساسية والشعار</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تصميم شعار بسيط لمتجر رزان استايل</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">اختيار ألوان وخطوط مناسبة</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">توحيد شكل المتجر بصريًا</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تجهيز هوية أولية مناسبة للانطلاق</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تحسين الشكل العام للبراند</span></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 4 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🚀</span>
+                            <h3 class="scope-title">الإطلاق والمراجعة النهائية</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">مراجعة المتجر قبل التسليم</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">اختبار المتجر على الجوال والكمبيوتر</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">التأكد من جاهزية المنتج</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">التأكد من وضوح روابط التواصل والطلب</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تسليم المتجر بشكل جاهز لاستقبال أول طلب</span></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section class="pricing-section">
+                <h2 class="section-title">تكلفة تجهيز وتدشين متجر رزان استايل</h2>
+                <div class="pricing-card">
+                    <div class="price-header">
+                        <div class="price-main">
+                            <span class="price-amount">850</span>
+                            <span class="price-currency">ريال سعودي</span>
+                        </div>
+                        <div class="price-original">1500 ريال</div>
+                    </div>
+                    <p class="price-description">
+                        يشمل تجهيز متجر خفيف على منصة سلة، تصميم شعار بسيط، إعداد المنتج الرقمي، تحسين تجربة الشراء، وتجهيز المتجر لاستقبال أول طلب.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Requirements Section -->
+            <section class="requirements-section">
+                <h2 class="section-title">متطلبات الخدمة من طرف العميل</h2>
+                <div class="requirements-card">
+                    <ul class="requirements-list">
+                        <li>صلاحية الدخول إلى متجر سلة</li>
+                        <li>السجل التجاري أو وثيقة العمل الحر</li>
+                        <li>شهادة الآيبان إن وجدت</li>
+                        <li>تفاصيل المنتج الرقمي</li>
+                        <li>صور أو ملفات المنتج إن وجدت</li>
+                        <li>السعر النهائي للمنتج</li>
+                        <li>بيانات التواصل الخاصة بالمتجر</li>
+                        <li>أي حسابات سوشيال ميديا حالية إن وجدت</li>
+                        <li>المتجر المرجعي: <a href="https://durastyl.com" target="_blank" style="color: inherit;">durastyl.com</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Exclusions Section -->
+            <section class="exclusions-section" style="margin-top: 40px;">
+                <h2 class="section-title">غير مشمول في السعر</h2>
+                <div class="exclusions-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                    <div class="exclusion-item" style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border-right: 3px solid #ff4d4d; font-size: 0.95rem;">اشتراك منصة سلة</div>
+                    <div class="exclusion-item" style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border-right: 3px solid #ff4d4d; font-size: 0.95rem;">شراء الدومين</div>
+                    <div class="exclusion-item" style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border-right: 3px solid #ff4d4d; font-size: 0.95rem;">القوالب والتطبيقات المدفوعة</div>
+                    <div class="exclusion-item" style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border-right: 3px solid #ff4d4d; font-size: 0.95rem;">الحملات الإعلانية</div>
+                    <div class="exclusion-item" style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border-right: 3px solid #ff4d4d; font-size: 0.95rem;">إدارة المتجر بعد التسليم</div>
+                    <div class="exclusion-item" style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border-right: 3px solid #ff4d4d; font-size: 0.95rem;">تصميم هوية بصرية كاملة</div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer Actions -->
+    <footer class="footer-actions no-print">
+        <button class="btn btn-secondary" onclick="window.print()">
+            <span>🖨️</span> طباعة الفاتورة
+        </button>
+        <button class="btn btn-primary" onclick="copyUrl()">
+            <span>🔗</span> نسخ الرابط
+        </button>
+    </footer>
+
+    <script>
+        function copyUrl() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 3000);
+            });
+        }
+    </script>
+</body>
+</html>
