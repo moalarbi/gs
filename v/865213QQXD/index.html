@@ -137,6 +137,41 @@
             </footer>
         </div>
     </main>
-    <script src="../../assets/script.js"></script>
+    <div class="bottom-actions no-print">
+        <button onclick="window.print()" class="action-btn primary-btn">
+            <span class="btn-icon">🖨️</span>
+            طباعة العرض
+        </button>
+        <button id="download-pdf" class="action-btn secondary-btn">
+            <span class="btn-icon">📄</span>
+            تحميل PDF
+        </button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        document.getElementById('download-pdf').addEventListener('click', async function() {
+            const btn = this;
+            btn.disabled = true;
+            btn.innerHTML = 'جاري التحميل...';
+            try {
+                const element = document.getElementById('document-card');
+                const canvas = await html2canvas(element, { scale: 2, useCORS: true, backgroundColor: '#ffffff' });
+                const imgData = canvas.toDataURL('image/png');
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+                pdf.save('عرض-سعر-متجر-خدمات-إلكترونية.pdf');
+            } catch (error) {
+                console.error('PDF Error:', error);
+                alert('حدث خطأ أثناء تحميل الملف');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<span class="btn-icon">📄</span> تحميل PDF';
+            }
+        });
+    </script>
 </body>
 </html>
