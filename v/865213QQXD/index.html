@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض سعر - متجر خدمات إلكترونية</title>
+    
+    <!-- Google Fonts - IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">تم النسخ بنجاح</div>
+
+    <!-- Top Bar -->
+    <header class="top-bar no-print">
+        <div class="top-bar-content">
+            <div class="brand">
+                <span class="brand-icon">⛳</span>
+                <span class="brand-name">GOLF STUDIO</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Document Card -->
+    <main class="document-wrapper">
+        <div class="document-card" id="document-card">
+            
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-banner">
+                    <h1 class="hero-title">
+                        <span>عرض سعر</span><br>
+                        إطلاق وتدشين متجر خدمات إلكترونية على منصة سلة
+                    </h1>
+                </div>
+            </section>
+
+            <!-- Invoice Meta Section -->
+            <section class="meta-section">
+                <div class="meta-single-card">
+                    <div class="meta-row">
+                        <span class="meta-label">رقم الفاتورة:</span>
+                        <span class="meta-value" id="invoice-number">865213</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">تاريخ الفاتورة:</span>
+                        <span class="meta-value">19 مايو 2026</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">المقدمة إلى:</span>
+                        <span class="meta-value company-name">متجر خدمات إلكترونية</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">مدة التنفيذ:</span>
+                        <span class="meta-value">4 إلى 6 أيام عمل</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Description Section -->
+            <section class="scope-section">
+                <h2 class="section-title">وصف الخدمة</h2>
+                <div class="description-card" style="background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 24px; line-height: 1.8; color: var(--text-secondary);">
+                    خدمة متكاملة لتجهيز وتدشين متجر إلكتروني احترافي على منصة سلة مخصص لبيع الخدمات الإلكترونية، يشمل تجهيز المتجر بالكامل، ضبط الإعدادات الأساسية، تجهيز الصفحات الرئيسية، تحسين تجربة العميل، وربط المتجر بشكل احترافي ليكون جاهزًا لاستقبال أول طلب بشكل رسمي وموثق.
+                </div>
+            </section>
+
+            <!-- Scope Section -->
+            <section class="scope-section">
+                <h2 class="section-title">تفاصيل الخدمة</h2>
+                
+                <div class="scope-grid">
+                    <!-- Section 1 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🎨</span>
+                            <h3 class="scope-title">تصميم وتجهيز واجهة المتجر</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تصميم واجهة احترافية مناسبة للخدمات الإلكترونية</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تجهيز الصفحة الرئيسية بشكل واضح وسهل</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تحسين تجربة المستخدم على الجوال</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تنظيم أقسام الخدمات بشكل مرتب</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تحسين شكل المتجر ليتناسب مع الهوية الحالية</span></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 2 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">⚙️</span>
+                            <h3 class="scope-title">تجهيز المتجر والإعدادات الأساسية</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تجهيز إعدادات متجر سلة بالكامل</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">إعداد صفحات السياسات والتواصل</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">ضبط إعدادات الطلبات والدفع</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تجهيز المتجر لاستقبال العملاء</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">مراجعة الإعدادات الأساسية قبل الإطلاق</span></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 3 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🔗</span>
+                            <h3 class="scope-title">التوثيق وربط المتجر</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تجهيز المتجر لعملية التوثيق</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">المساعدة في ربط المتجر بمنصة الأعمال</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">المساعدة في تجهيز بيانات التوثيق المطلوبة</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">مراجعة البيانات الرسمية قبل الرفع</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">توضيح خطوات التفعيل والتوثيق للعميل</span></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 4 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">✅</span>
+                            <h3 class="scope-title">المراجعة والتسليم</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">مراجعة المتجر قبل التسليم</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">اختبار التصفح من الجوال والكمبيوتر</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">التأكد من وضوح الخدمات داخل المتجر</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">التأكد من جاهزية روابط التواصل</span></div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content"><span class="item-name">تسليم المتجر بشكل جاهز للإطلاق</span></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Requirements Section -->
+            <section class="scope-section">
+                <h2 class="section-title">متطلبات الخدمة من طرف العميل</h2>
+                <div class="scope-card" style="width: 100%;">
+                    <ul class="scope-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px;">
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">السجل التجاري</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">حساب أبشر / نفاذ</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">شهادة الآيبان</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">الشعار والهوية البصرية</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">معلومات الخدمات الإلكترونية</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">بيانات التواصل الخاصة بالمتجر</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">بريد إلكتروني رسمي للمتجر</span></div></li>
+                        <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">صلاحية الدخول إلى متجر سلة</span></div></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Not Included Section -->
+            <section class="scope-section">
+                <h2 class="section-title">غير مشمول في السعر</h2>
+                <div class="scope-card" style="width: 100%; border-color: #ff4d4d22;">
+                    <ul class="scope-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px;">
+                        <li class="scope-item"><span class="item-bullet" style="background: #ff4d4d;"></span><div class="item-content"><span class="item-name">اشتراك منصة سلة</span></div></li>
+                        <li class="scope-item"><span class="item-bullet" style="background: #ff4d4d;"></span><div class="item-content"><span class="item-name">رسوم الدومين</span></div></li>
+                        <li class="scope-item"><span class="item-bullet" style="background: #ff4d4d;"></span><div class="item-content"><span class="item-name">التطبيقات المدفوعة داخل سلة</span></div></li>
+                        <li class="scope-item"><span class="item-bullet" style="background: #ff4d4d;"></span><div class="item-content"><span class="item-name">الحملات الإعلانية</span></div></li>
+                        <li class="scope-item"><span class="item-bullet" style="background: #ff4d4d;"></span><div class="item-content"><span class="item-name">إدارة المتجر بعد التسليم</span></div></li>
+                        <li class="scope-item"><span class="item-bullet" style="background: #ff4d4d;"></span><div class="item-content"><span class="item-name">كتابة المحتوى التسويقي بالكامل</span></div></li>
+                        <li class="scope-item"><span class="item-bullet" style="background: #ff4d4d;"></span><div class="item-content"><span class="item-name">تصميم هوية بصرية جديدة</span></div></li>
+                        <li class="scope-item"><span class="item-bullet" style="background: #ff4d4d;"></span><div class="item-content"><span class="item-name">أي تطوير برمجي خاص خارج إمكانيات سلة</span></div></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section class="pricing-section">
+                <h2 class="section-title">تكلفة إطلاق وتدشين المتجر</h2>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-main">
+                            <span class="currency">ريال</span>
+                            <span class="amount">950</span>
+                        </div>
+                        <div class="pricing-original" style="text-decoration: line-through; color: var(--text-secondary); font-size: 1.1rem; margin-top: 5px;">
+                            1500 ريال
+                        </div>
+                    </div>
+                    <div class="pricing-details">
+                        <p>يشمل تجهيز متجر احترافي للخدمات الإلكترونية، إعداد الصفحات الأساسية، تحسين تجربة المستخدم، وتجهيز المتجر بشكل رسمي للإطلاق والتوثيق.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer Section -->
+            <footer class="document-footer">
+                <div class="footer-content">
+                    <p>شكراً لثقتكم بنا. نحن نتطلع للعمل معكم وتحقيق نجاحات مشتركة.</p>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <!-- Bottom Actions -->
+    <div class="bottom-actions no-print">
+        <button onclick="window.print()" class="action-btn primary-btn">
+            <span class="btn-icon">🖨️</span>
+            طباعة العرض
+        </button>
+        <button id="download-pdf" class="action-btn secondary-btn">
+            <span class="btn-icon">📄</span>
+            تحميل PDF
+        </button>
+    </div>
+
+    <script>
+        // PDF Download Logic
+        document.getElementById('download-pdf').addEventListener('click', async function() {
+            const btn = this;
+            btn.disabled = true;
+            btn.innerHTML = 'جاري التحميل...';
+            
+            try {
+                const element = document.getElementById('document-card');
+                const canvas = await html2canvas(element, {
+                    scale: 2,
+                    useCORS: true,
+                    logging: false,
+                    backgroundColor: '#0a0a0a'
+                });
+                
+                const imgData = canvas.toDataURL('image/png');
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                
+                const imgProps = pdf.getImageProperties(imgData);
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+                
+                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+                pdf.save('عرض-سعر-متجر-خدمات-إلكترونية.pdf');
+            } catch (error) {
+                console.error('PDF Error:', error);
+                alert('حدث خطأ أثناء تحميل الملف');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<span class="btn-icon">📄</span> تحميل PDF';
+            }
+        });
+    </script>
+</body>
+</html>
