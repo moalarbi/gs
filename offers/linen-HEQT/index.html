@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مقترح تأسيس وإطلاق علامة جلابيات لينن</title>
+    <meta name="description" content="مقترح تأسيس وإطلاق علامة جلابيات لينن من الفكرة إلى الإطلاق.">
+    <style>
+        :root {
+            --ink: #252321;
+            --muted: #625d55;
+            --soft: #8a8176;
+            --paper: #fbfaf6;
+            --surface: #fffdf8;
+            --sand: #ded2bd;
+            --sand-soft: #f2ece1;
+            --olive: #59614d;
+            --line: #ded7ca;
+            --line-strong: #c7baa4;
+            --white: #ffffff;
+            --shadow: 0 14px 34px rgba(37, 35, 33, 0.07);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background: var(--paper);
+        }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            background:
+                linear-gradient(180deg, rgba(251, 250, 246, 0.94), rgba(251, 250, 246, 1)),
+                repeating-linear-gradient(90deg, rgba(222, 210, 189, 0.2) 0, rgba(222, 210, 189, 0.2) 1px, transparent 1px, transparent 112px);
+            font-family: "IBM Plex Sans Arabic", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.85;
+            text-rendering: geometricPrecision;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        button,
+        a.button {
+            min-height: 44px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            padding: 12px 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            font: inherit;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+        }
+
+        button:hover,
+        a.button:hover {
+            transform: translateY(-1px);
+        }
+
+        button:focus-visible,
+        a.button:focus-visible {
+            outline: 3px solid rgba(89, 97, 77, 0.24);
+            outline-offset: 3px;
+        }
+
+        .button-primary {
+            background: var(--ink);
+            color: var(--white);
+            border-color: var(--ink);
+        }
+
+        .button-secondary {
+            background: var(--surface);
+            color: var(--ink);
+            border-color: var(--line-strong);
+        }
+
+        .button-accent {
+            background: var(--olive);
+            color: var(--white);
+            border-color: var(--olive);
+        }
+
+        .button-icon {
+            width: 18px;
+            height: 18px;
+            flex: 0 0 auto;
+        }
+
+        .page {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        .top-actions,
+        .bottom-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 18px 0;
+        }
+
+        .brand-mark {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--muted);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .brand-line {
+            width: 34px;
+            height: 1px;
+            background: var(--line-strong);
+            display: inline-block;
+        }
+
+        .action-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .proposal {
+            background: rgba(255, 253, 248, 0.96);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+        }
+
+        .hero {
+            min-height: 430px;
+            display: grid;
+            align-items: end;
+            padding: clamp(36px, 7vw, 76px);
+            border-bottom: 1px solid var(--line);
+            background:
+                linear-gradient(135deg, rgba(222, 210, 189, 0.44), rgba(255, 253, 248, 0.34) 42%, rgba(89, 97, 77, 0.09)),
+                var(--surface);
+        }
+
+        .eyebrow {
+            margin: 0 0 18px;
+            color: var(--olive);
+            font-size: 0.95rem;
+            font-weight: 800;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin-top: 0;
+        }
+
+        h1 {
+            max-width: 760px;
+            margin-bottom: 18px;
+            font-size: clamp(2.4rem, 6vw, 5.35rem);
+            line-height: 1.18;
+            font-weight: 800;
+        }
+
+        .hero-intro {
+            max-width: 780px;
+            margin-bottom: 0;
+            color: var(--muted);
+            font-size: clamp(1.02rem, 2vw, 1.24rem);
+        }
+
+        .section {
+            padding: clamp(30px, 5vw, 54px) clamp(22px, 5vw, 54px);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 22px;
+            margin-bottom: 24px;
+        }
+
+        .section-kicker {
+            margin-bottom: 7px;
+            color: var(--olive);
+            font-size: 0.86rem;
+            font-weight: 800;
+        }
+
+        h2 {
+            margin-bottom: 0;
+            font-size: clamp(1.55rem, 3vw, 2.35rem);
+            line-height: 1.35;
+        }
+
+        h3 {
+            margin-bottom: 12px;
+            font-size: 1.08rem;
+            line-height: 1.55;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            border: 1px solid var(--line);
+        }
+
+        .meta-item {
+            min-height: 116px;
+            padding: 18px;
+            border-inline-start: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            background: rgba(242, 236, 225, 0.38);
+        }
+
+        .meta-item:nth-child(3n) {
+            border-inline-start: 0;
+        }
+
+        .meta-item:nth-last-child(-n+3) {
+            border-bottom: 0;
+        }
+
+        .meta-label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--soft);
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .meta-value {
+            display: block;
+            color: var(--ink);
+            font-size: 1rem;
+            font-weight: 800;
+            line-height: 1.65;
+        }
+
+        .notice {
+            margin-top: 18px;
+            padding: 17px 20px;
+            border: 1px solid var(--line-strong);
+            border-radius: 8px;
+            background: var(--surface);
+            color: var(--muted);
+            font-weight: 700;
+        }
+
+        .packages {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            align-items: start;
+        }
+
+        .package {
+            position: relative;
+            display: flex;
+            min-height: 100%;
+            flex-direction: column;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--surface);
+            overflow: hidden;
+        }
+
+        .package.recommended {
+            border-color: var(--olive);
+            box-shadow: 0 0 0 1px rgba(89, 97, 77, 0.12), var(--shadow);
+        }
+
+        .package-head {
+            padding: 24px 24px 22px;
+            border-bottom: 1px solid var(--line);
+            background: rgba(242, 236, 225, 0.48);
+        }
+
+        .package.recommended .package-head {
+            background: rgba(89, 97, 77, 0.1);
+        }
+
+        .badge {
+            display: inline-flex;
+            width: fit-content;
+            margin-bottom: 12px;
+            padding: 5px 10px;
+            border: 1px solid rgba(89, 97, 77, 0.32);
+            border-radius: 999px;
+            background: var(--surface);
+            color: var(--olive);
+            font-size: 0.78rem;
+            font-weight: 800;
+        }
+
+        .package-title {
+            margin-bottom: 10px;
+            font-size: clamp(1.18rem, 2vw, 1.5rem);
+            line-height: 1.5;
+        }
+
+        .price {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin: 14px 0;
+            color: var(--ink);
+        }
+
+        .price strong {
+            font-size: clamp(2.2rem, 4.5vw, 3.3rem);
+            line-height: 1;
+        }
+
+        .price span {
+            color: var(--muted);
+            font-weight: 800;
+        }
+
+        .package-description {
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .package-body {
+            display: grid;
+            gap: 22px;
+            padding: 24px;
+        }
+
+        .phase {
+            break-inside: avoid;
+        }
+
+        .phase-title {
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--line);
+            color: var(--olive);
+            font-weight: 800;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            position: relative;
+            padding: 6px 17px 6px 0;
+            color: var(--muted);
+            font-size: 0.96rem;
+        }
+
+        li::before {
+            content: "";
+            position: absolute;
+            top: 1.08em;
+            right: 0;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--line-strong);
+        }
+
+        .excluded {
+            margin-top: 12px;
+            padding: 14px 16px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(251, 250, 246, 0.82);
+        }
+
+        .excluded h4 {
+            margin: 0 0 8px;
+            color: var(--ink);
+            font-size: 0.95rem;
+        }
+
+        .duration {
+            padding: 18px 24px 24px;
+            border-top: 1px solid var(--line);
+            color: var(--ink);
+            font-weight: 800;
+        }
+
+        .comparison-wrap {
+            overflow-x: auto;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--surface);
+        }
+
+        table {
+            width: 100%;
+            min-width: 760px;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 15px 16px;
+            border-bottom: 1px solid var(--line);
+            text-align: right;
+            vertical-align: top;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background: rgba(242, 236, 225, 0.74);
+            color: var(--ink);
+            font-weight: 800;
+        }
+
+        td {
+            color: var(--muted);
+        }
+
+        tr:last-child td {
+            border-bottom: 0;
+        }
+
+        th.recommended-col,
+        td.recommended-col {
+            background: rgba(89, 97, 77, 0.08);
+            color: var(--ink);
+            font-weight: 800;
+        }
+
+        .list-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px 22px;
+        }
+
+        .payment-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .payment-box {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 22px;
+            background: var(--surface);
+        }
+
+        .payment-box.recommended {
+            border-color: rgba(89, 97, 77, 0.45);
+            background: rgba(89, 97, 77, 0.06);
+        }
+
+        .terms {
+            columns: 2;
+            column-gap: 34px;
+        }
+
+        .terms li {
+            break-inside: avoid;
+        }
+
+        .bottom-actions {
+            padding-bottom: 34px;
+        }
+
+        .document-foot {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            color: var(--soft);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 920px) {
+            .meta-grid,
+            .packages,
+            .payment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .meta-item,
+            .meta-item:nth-child(3n),
+            .meta-item:nth-last-child(-n+3) {
+                border-inline-start: 0;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .meta-item:last-child {
+                border-bottom: 0;
+            }
+
+            .section-header {
+                display: block;
+            }
+
+            .terms {
+                columns: 1;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page {
+                width: min(100% - 20px, 1120px);
+            }
+
+            .top-actions,
+            .bottom-actions,
+            .document-foot {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .action-group,
+            .action-group button,
+            .action-group a.button {
+                width: 100%;
+            }
+
+            .hero {
+                min-height: 390px;
+                padding: 34px 22px;
+            }
+
+            .section {
+                padding: 30px 18px;
+            }
+
+            .package-head,
+            .package-body,
+            .duration {
+                padding-inline: 18px;
+            }
+
+            .list-grid {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                min-width: 680px;
+            }
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 13mm;
+            }
+
+            html,
+            body {
+                background: var(--white) !important;
+            }
+
+            body {
+                color: #000;
+                font-size: 11pt;
+                line-height: 1.62;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page {
+                width: 100%;
+                margin: 0;
+            }
+
+            .proposal {
+                border: 0;
+                box-shadow: none;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 0 0 16mm;
+                background: none;
+            }
+
+            h1 {
+                font-size: 32pt;
+            }
+
+            h2 {
+                font-size: 18pt;
+            }
+
+            .section {
+                padding: 10mm 0;
+            }
+
+            .package,
+            .payment-box,
+            .comparison-wrap,
+            .notice,
+            .phase {
+                break-inside: avoid;
+            }
+
+            h2,
+            h3,
+            .phase-title {
+                break-after: avoid;
+            }
+
+            .packages,
+            .payment-grid,
+            .meta-grid {
+                gap: 8mm;
+            }
+
+            .package-head,
+            .package-body,
+            .duration,
+            .payment-box,
+            .meta-item {
+                background: #fffdf8 !important;
+            }
+
+            table {
+                min-width: 0;
+                font-size: 9.2pt;
+            }
+
+            th,
+            td {
+                padding: 7pt;
+            }
+
+            a {
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header class="top-actions no-print" aria-label="إجراءات العرض">
+            <div class="brand-mark">
+                <span class="brand-line" aria-hidden="true"></span>
+                <span>GOLF STUDIO</span>
+            </div>
+            <div class="action-group">
+                <button class="button-secondary" type="button" onclick="window.print()">
+                    <svg class="button-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9V2h12v7"></path>
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                        <path d="M6 14h12v8H6z"></path>
+                    </svg>
+                    طباعة أو حفظ العرض
+                </button>
+                <a class="button button-secondary package-choice" href="https://wa.me/966537311886?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D8%B9%D8%AA%D9%85%D8%A7%D8%AF%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D8%AA%D8%A3%D8%B3%D9%8A%D8%B3%20%D9%88%D8%A7%D9%84%D8%A5%D8%B7%D9%84%D8%A7%D9%82%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%20%D8%A8%D9%82%D9%8A%D9%85%D8%A9%20%D9%A1%D9%A5%2C%D9%A0%D9%A0%D9%A0%20%D8%B1%D9%8A%D8%A7%D9%84." target="_blank" rel="noopener">
+                    اختيار باقة ١٥,٠٠٠ ريال
+                </a>
+                <a class="button button-accent package-choice" href="https://wa.me/966537311886?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D8%B9%D8%AA%D9%85%D8%A7%D8%AF%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D8%AA%D8%A3%D8%B3%D9%8A%D8%B3%20%D9%88%D8%A7%D9%84%D8%A5%D8%B7%D9%84%D8%A7%D9%82%20%D8%A7%D9%84%D9%85%D8%AA%D9%83%D8%A7%D9%85%D9%84%20%D8%A8%D9%82%D9%8A%D9%85%D8%A9%20%D9%A2%D9%A0%2C%D9%A0%D9%A0%D9%A0%20%D8%B1%D9%8A%D8%A7%D9%84." target="_blank" rel="noopener">
+                    اختيار باقة ٢٠,٠٠٠ ريال
+                </a>
+            </div>
+        </header>
+
+        <main class="proposal">
+            <section class="hero" aria-labelledby="proposal-title">
+                <div>
+                    <p class="eyebrow">مقترح تأسيس وإطلاق علامة جلابيات لينن</p>
+                    <h1 id="proposal-title">من الفكرة إلى الإطلاق</h1>
+                    <p class="hero-intro">نقدم خطة متكاملة لتأسيس علامة تجارية سعودية متخصصة في جلابيات اللينن، بهوية فاخرة ومينيمال، ومنتجات عالية الجودة، ومتجر إلكتروني جاهز للبيع، بدءًا من تأسيس العلامة والمتجر، مرورًا بالبحث عن الموردين، وصولًا إلى تجهيز الإطلاق التسويقي.</p>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="meta-title">
+                <div class="section-header">
+                    <div>
+                        <p class="section-kicker">بيانات العرض</p>
+                        <h2 id="meta-title">نطاق المشروع</h2>
+                    </div>
+                </div>
+                <div class="meta-grid">
+                    <div class="meta-item">
+                        <span class="meta-label">اسم العميل</span>
+                        <span class="meta-value">المستثمر أو العميل</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">نوع المشروع</span>
+                        <span class="meta-value">علامة جلابيات لينن</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">منصة المتجر</span>
+                        <span class="meta-value">سلة</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">صلاحية العرض</span>
+                        <span class="meta-value">١٥ يومًا</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">مدة التنفيذ</span>
+                        <span class="meta-value">حسب الباقة وسرعة اعتماد العينات والموردين</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">ملاحظة سعرية</span>
+                        <span class="meta-value">الأسعار غير شاملة التكاليف الخارجية</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="packages-title">
+                <div class="section-header">
+                    <div>
+                        <p class="section-kicker">الباقات</p>
+                        <h2 id="packages-title">خيارات التأسيس والإطلاق</h2>
+                    </div>
+                </div>
+
+                <div class="packages">
+                    <article class="package">
+                        <div class="package-head">
+                            <h3 class="package-title">باقة التأسيس والإطلاق الأساسي</h3>
+                            <div class="price" aria-label="السعر ١٥,٠٠٠ ريال">
+                                <strong>١٥,٠٠٠</strong>
+                                <span>ريال</span>
+                            </div>
+                            <p class="package-description">مناسبة لإطلاق المشروع بصورة احترافية ضمن نطاق محدد، واختبار السوق قبل التوسع في المنتجات والمخزون.</p>
+                        </div>
+                        <div class="package-body">
+                            <div class="phase">
+                                <h3 class="phase-title">المرحلة الأولى: تأسيس العلامة وتجهيز المتجر</h3>
+                                <ul>
+                                    <li>دراسة مختصرة للسوق والمنافسين.</li>
+                                    <li>تحديد الفئة المستهدفة.</li>
+                                    <li>تحديد تمركز العلامة.</li>
+                                    <li>تطوير قصة العلامة ورسالتها.</li>
+                                    <li>تصميم شعار وهوية بصرية أساسية.</li>
+                                    <li>تحديد الألوان والخطوط.</li>
+                                    <li>إعداد تصور مبدئي للتغليف.</li>
+                                    <li>إنشاء متجر إلكتروني على منصة سلة.</li>
+                                    <li>تخصيص قالب جاهز بما يتوافق مع الهوية.</li>
+                                    <li>تصميم الصفحة الرئيسية.</li>
+                                    <li>إعداد الأقسام والقوائم.</li>
+                                    <li>كتابة الصفحات الأساسية.</li>
+                                    <li>إعداد سياسات الشحن والاستبدال والخصوصية.</li>
+                                    <li>ربط الدومين ووسائل الدفع والشحن.</li>
+                                    <li>رفع وإعداد حتى ١٠ منتجات.</li>
+                                    <li>اختبار المتجر على الجوال والكمبيوتر.</li>
+                                </ul>
+                            </div>
+
+                            <div class="phase">
+                                <h3 class="phase-title">المرحلة الثانية: البحث عن الموردين</h3>
+                                <ul>
+                                    <li>تحديد المواصفات الأساسية للمنتجات.</li>
+                                    <li>البحث عن ٣ موردين مناسبين.</li>
+                                    <li>التواصل الأولي مع الموردين.</li>
+                                    <li>جمع عروض الأسعار.</li>
+                                    <li>مقارنة الأسعار والكميات الدنيا.</li>
+                                    <li>مقارنة مدد الإنتاج.</li>
+                                    <li>تنسيق جولة واحدة من العينات.</li>
+                                    <li>تقديم توصية بالمورد الأنسب.</li>
+                                </ul>
+                                <div class="excluded">
+                                    <h4>لا تشمل هذه الباقة:</h4>
+                                    <ul>
+                                        <li>الإشراف الكامل على الإنتاج.</li>
+                                        <li>متابعة الشحن والاستلام.</li>
+                                        <li>فحص الإنتاج داخل المصنع.</li>
+                                        <li>متابعة أكثر من جولة عينات.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="phase">
+                                <h3 class="phase-title">المرحلة الثالثة: تجهيز الإطلاق التسويقي</h3>
+                                <ul>
+                                    <li>إعداد خطة إطلاق لمدة شهر.</li>
+                                    <li>تحديد الرسائل التسويقية الأساسية.</li>
+                                    <li>إعداد خطة محتوى مبدئية.</li>
+                                    <li>تصميم ٩ مواد لمنصات التواصل الاجتماعي.</li>
+                                    <li>كتابة النصوص التسويقية للمحتوى.</li>
+                                    <li>تجهيز حملة إعلانية واحدة.</li>
+                                    <li>ربط أدوات القياس الأساسية.</li>
+                                    <li>إعداد خطة مقترحة للتعاون مع المؤثرات.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="duration">مدة التنفيذ المتوقعة: من ٦ إلى ١٠ أسابيع</div>
+                    </article>
+
+                    <article class="package recommended">
+                        <div class="package-head">
+                            <span class="badge">الخيار الموصى به</span>
+                            <h3 class="package-title">باقة التأسيس والإطلاق المتكامل</h3>
+                            <div class="price" aria-label="السعر ٢٠,٠٠٠ ريال">
+                                <strong>٢٠,٠٠٠</strong>
+                                <span>ريال</span>
+                            </div>
+                            <p class="package-description">مناسبة للمستثمر الذي يرغب في تأسيس علامة أكثر اكتمالًا، مع اهتمام أكبر بالهوية، وتطوير المنتجات، واختيار المورد، وتجهيز الإطلاق التسويقي.</p>
+                        </div>
+                        <div class="package-body">
+                            <div class="phase">
+                                <h3 class="phase-title">المرحلة الأولى: تأسيس العلامة وتجهيز المتجر</h3>
+                                <ul>
+                                    <li>دراسة تفصيلية للسوق والمنافسين.</li>
+                                    <li>تحليل مستويات الأسعار والمنتجات.</li>
+                                    <li>تحديد الفئة المستهدفة.</li>
+                                    <li>تطوير تمركز العلامة.</li>
+                                    <li>وضع تصور مبدئي لاستراتيجية التسعير.</li>
+                                    <li>تطوير قصة العلامة ورسالتها.</li>
+                                    <li>تصميم هوية بصرية أكثر شمولًا.</li>
+                                    <li>تصميم الشعار والألوان والخطوط.</li>
+                                    <li>إعداد دليل استخدام مختصر للهوية.</li>
+                                    <li>تصميم تطبيقات أساسية للعلامة.</li>
+                                    <li>إعداد تصور متكامل للتغليف.</li>
+                                    <li>إنشاء متجر إلكتروني على منصة سلة.</li>
+                                    <li>تخصيص بصري أوسع للمتجر.</li>
+                                    <li>تصميم الصفحة الرئيسية.</li>
+                                    <li>إعداد صفحات المجموعات والمنتجات.</li>
+                                    <li>كتابة الصفحات التعريفية والأساسية.</li>
+                                    <li>كتابة وصف تسويقي للمنتجات.</li>
+                                    <li>رفع وإعداد حتى ٢٠ منتجًا.</li>
+                                    <li>ربط الدومين والدفع والشحن.</li>
+                                    <li>ربط أدوات التحليل والإعلانات.</li>
+                                    <li>تحسين تجربة الطلب على الجوال.</li>
+                                    <li>اختبار المتجر وتجهيزه للإطلاق الإعلاني.</li>
+                                </ul>
+                            </div>
+
+                            <div class="phase">
+                                <h3 class="phase-title">المرحلة الثانية: البحث والتفاوض مع الموردين</h3>
+                                <ul>
+                                    <li>إعداد مواصفات واضحة للخامات والتصنيع.</li>
+                                    <li>تحديد معايير جودة اللينن.</li>
+                                    <li>البحث عن ٥ موردين أو مصانع.</li>
+                                    <li>التواصل والتفاوض مع الموردين.</li>
+                                    <li>جمع ومقارنة عروض الأسعار.</li>
+                                    <li>مقارنة جودة الخامات.</li>
+                                    <li>مقارنة الكميات الدنيا ومدد الإنتاج.</li>
+                                    <li>تنسيق حتى جولتين من العينات.</li>
+                                    <li>مراجعة العينات وتسجيل الملاحظات.</li>
+                                    <li>متابعة تعديلات العينات.</li>
+                                    <li>التفاوض على السعر وشروط الدفع.</li>
+                                    <li>اختيار المورد الأنسب.</li>
+                                    <li>متابعة بدء أول طلب إنتاج.</li>
+                                </ul>
+                                <div class="excluded">
+                                    <h4>لا تشمل هذه الباقة:</h4>
+                                    <ul>
+                                        <li>قيمة العينات.</li>
+                                        <li>قيمة الإنتاج والمخزون.</li>
+                                        <li>تكاليف الشحن والجمارك.</li>
+                                        <li>فحص الإنتاج الخارجي.</li>
+                                        <li>السفر أو زيارة المصانع.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="phase">
+                                <h3 class="phase-title">المرحلة الثالثة: الإطلاق والتسويق</h3>
+                                <ul>
+                                    <li>إعداد استراتيجية إطلاق متكاملة.</li>
+                                    <li>إعداد خطة ما قبل افتتاح المتجر.</li>
+                                    <li>وضع آلية لبناء قائمة انتظار.</li>
+                                    <li>تجهيز حسابات التواصل الاجتماعي.</li>
+                                    <li>إعداد خطة محتوى لمدة شهرين.</li>
+                                    <li>تصميم ١٨ مادة لمنصات التواصل الاجتماعي.</li>
+                                    <li>كتابة النصوص التسويقية.</li>
+                                    <li>إعداد حملتين إعلانيتين.</li>
+                                    <li>إدارة الحملات الإعلانية لمدة شهر واحد.</li>
+                                    <li>متابعة النتائج وتحسين الحملات.</li>
+                                    <li>إعداد خطة تعاون مع المؤثرات.</li>
+                                    <li>إعداد تقرير أداء بعد الشهر الأول.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="duration">مدة التنفيذ المتوقعة: من ٨ إلى ١٢ أسبوعًا</div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="comparison-title">
+                <div class="section-header">
+                    <div>
+                        <p class="section-kicker">المقارنة</p>
+                        <h2 id="comparison-title">جدول مقارنة الباقتين</h2>
+                    </div>
+                </div>
+                <div class="comparison-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>البند</th>
+                                <th>باقة ١٥,٠٠٠ ريال</th>
+                                <th class="recommended-col">باقة ٢٠,٠٠٠ ريال</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>دراسة المنافسين</td><td>دراسة مختصرة</td><td class="recommended-col">دراسة تفصيلية</td></tr>
+                            <tr><td>تمركز العلامة</td><td>أساسي</td><td class="recommended-col">متكامل مع تصور للتسعير</td></tr>
+                            <tr><td>الهوية البصرية</td><td>هوية أساسية</td><td class="recommended-col">هوية أكثر شمولًا</td></tr>
+                            <tr><td>دليل الهوية</td><td>غير مشمول</td><td class="recommended-col">دليل استخدام مختصر</td></tr>
+                            <tr><td>تصور التغليف</td><td>مبدئي</td><td class="recommended-col">متكامل</td></tr>
+                            <tr><td>تخصيص متجر سلة</td><td>تعديل قالب جاهز</td><td class="recommended-col">تخصيص بصري أوسع</td></tr>
+                            <tr><td>عدد المنتجات</td><td>حتى ١٠ منتجات</td><td class="recommended-col">حتى ٢٠ منتجًا</td></tr>
+                            <tr><td>عدد الموردين</td><td>٣ موردين</td><td class="recommended-col">٥ موردين</td></tr>
+                            <tr><td>جولات العينات</td><td>جولة واحدة</td><td class="recommended-col">حتى جولتين</td></tr>
+                            <tr><td>التفاوض مع الموردين</td><td>مقارنة وتواصل أساسي</td><td class="recommended-col">تفاوض شامل على السعر والشروط</td></tr>
+                            <tr><td>متابعة أول إنتاج</td><td>غير مشمولة</td><td class="recommended-col">مشمولة حتى بدء الطلب</td></tr>
+                            <tr><td>خطة المحتوى</td><td>شهر واحد</td><td class="recommended-col">شهران</td></tr>
+                            <tr><td>المواد التسويقية</td><td>٩ مواد</td><td class="recommended-col">١٨ مادة</td></tr>
+                            <tr><td>الحملات الإعلانية</td><td>إعداد حملة واحدة</td><td class="recommended-col">إعداد حملتين</td></tr>
+                            <tr><td>إدارة الحملات</td><td>غير مشمولة</td><td class="recommended-col">إدارة لمدة شهر</td></tr>
+                            <tr><td>تقرير الأداء</td><td>غير مشمول</td><td class="recommended-col">مشمول</td></tr>
+                            <tr><td>المتابعة بعد الإطلاق</td><td>غير مشمولة</td><td class="recommended-col">متابعة وتحسين لمدة شهر</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="exclusions-title">
+                <div class="section-header">
+                    <div>
+                        <p class="section-kicker">نطاق التكلفة</p>
+                        <h2 id="exclusions-title">التكاليف غير المشمولة</h2>
+                    </div>
+                </div>
+                <ul class="list-grid">
+                    <li>ضريبة القيمة المضافة عند انطباقها.</li>
+                    <li>رسوم الاشتراك في منصة سلة.</li>
+                    <li>رسوم الدومين.</li>
+                    <li>رسوم التطبيقات والإضافات المدفوعة.</li>
+                    <li>تسجيل العلامة التجارية.</li>
+                    <li>تكاليف شراء العينات.</li>
+                    <li>تكاليف تطوير وتنفيذ المنتجات.</li>
+                    <li>قيمة المخزون.</li>
+                    <li>تكاليف الشحن والجمارك.</li>
+                    <li>تصوير المنتجات.</li>
+                    <li>المودلز والاستوديو وموقع التصوير.</li>
+                    <li>إنتاج الفيديو الاحترافي.</li>
+                    <li>ميزانية الإعلانات المدفوعة.</li>
+                    <li>أتعاب المؤثرات وصانعات المحتوى.</li>
+                    <li>تكاليف طباعة وتنفيذ التغليف.</li>
+                    <li>أي برمجة خاصة خارج إمكانيات منصة سلة والقالب المعتمد.</li>
+                </ul>
+                <p class="notice">تُدفع تكاليف الموردين والعينات والإنتاج والشحن والإعلانات من قبل العميل مباشرة، ولا يتم خصمها من قيمة الباقة.</p>
+            </section>
+
+            <section class="section" aria-labelledby="payment-title">
+                <div class="section-header">
+                    <div>
+                        <p class="section-kicker">الدفعات</p>
+                        <h2 id="payment-title">آلية الدفع</h2>
+                    </div>
+                </div>
+                <div class="payment-grid">
+                    <div class="payment-box">
+                        <h3>باقة ١٥,٠٠٠ ريال</h3>
+                        <ul>
+                            <li>٥٠٪ عند بدء المشروع.</li>
+                            <li>٣٠٪ بعد اعتماد الهوية والمتجر.</li>
+                            <li>٢٠٪ قبل تسليم خطة الإطلاق.</li>
+                        </ul>
+                    </div>
+                    <div class="payment-box recommended">
+                        <h3>باقة ٢٠,٠٠٠ ريال</h3>
+                        <ul>
+                            <li>٤٠٪ عند بدء المشروع.</li>
+                            <li>٣٠٪ بعد اعتماد الهوية والمتجر.</li>
+                            <li>٣٠٪ عند اعتماد المورد وتجهيز الإطلاق.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="terms-title">
+                <div class="section-header">
+                    <div>
+                        <p class="section-kicker">الشروط</p>
+                        <h2 id="terms-title">الشروط وملاحظات التنفيذ</h2>
+                    </div>
+                </div>
+                <ul class="terms">
+                    <li>يبدأ التنفيذ بعد استلام الدفعة الأولى.</li>
+                    <li>تبدأ مدة التنفيذ بعد استلام جميع البيانات والمحتويات المطلوبة.</li>
+                    <li>يعتمد الجدول الزمني على سرعة العميل في تقديم الملاحظات والاعتمادات.</li>
+                    <li>تأخر الموردين أو العينات لا يُحتسب ضمن مدة تنفيذ الأعمال الداخلية.</li>
+                    <li>تشمل كل مرحلة جولتي تعديلات ما لم يُذكر خلاف ذلك.</li>
+                    <li>أي أعمال إضافية خارج نطاق الباقة يتم تسعيرها بشكل مستقل.</li>
+                    <li>لا يتم شراء العينات أو المخزون من حساب مقدم الخدمة.</li>
+                    <li>جميع تكاليف الموردين والمصانع والشحن تدفع من قبل العميل مباشرة.</li>
+                    <li>لا يوجد ضمان لمستوى محدد من المبيعات.</li>
+                    <li>تعتمد نتائج التسويق على جودة المنتج، والتسعير، والمخزون، وميزانية الإعلانات، واستجابة السوق.</li>
+                    <li>لا يبدأ تنفيذ المرحلة التالية قبل اعتماد مخرجات المرحلة السابقة.</li>
+                    <li>لا تشمل الباقات إدارة المتجر اليومية بعد انتهاء مدة الإطلاق المحددة.</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="bottom-actions no-print" aria-label="إجراءات العرض النهائية">
+            <div class="document-foot">
+                <span>GOLF STUDIO</span>
+                <span>عرض مستقل لتأسيس وإطلاق علامة جلابيات لينن</span>
+            </div>
+            <div class="action-group">
+                <button class="button-secondary" type="button" onclick="window.print()">
+                    <svg class="button-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9V2h12v7"></path>
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                        <path d="M6 14h12v8H6z"></path>
+                    </svg>
+                    طباعة أو حفظ العرض
+                </button>
+                <a class="button button-secondary package-choice" href="https://wa.me/966537311886?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D8%B9%D8%AA%D9%85%D8%A7%D8%AF%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D8%AA%D8%A3%D8%B3%D9%8A%D8%B3%20%D9%88%D8%A7%D9%84%D8%A5%D8%B7%D9%84%D8%A7%D9%82%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%20%D8%A8%D9%82%D9%8A%D9%85%D8%A9%20%D9%A1%D9%A5%2C%D9%A0%D9%A0%D9%A0%20%D8%B1%D9%8A%D8%A7%D9%84." target="_blank" rel="noopener">
+                    اختيار باقة ١٥,٠٠٠ ريال
+                </a>
+                <a class="button button-accent package-choice" href="https://wa.me/966537311886?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D8%B9%D8%AA%D9%85%D8%A7%D8%AF%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D8%AA%D8%A3%D8%B3%D9%8A%D8%B3%20%D9%88%D8%A7%D9%84%D8%A5%D8%B7%D9%84%D8%A7%D9%82%20%D8%A7%D9%84%D9%85%D8%AA%D9%83%D8%A7%D9%85%D9%84%20%D8%A8%D9%82%D9%8A%D9%85%D8%A9%20%D9%A2%D9%A0%2C%D9%A0%D9%A0%D9%A0%20%D8%B1%D9%8A%D8%A7%D9%84." target="_blank" rel="noopener">
+                    اختيار باقة ٢٠,٠٠٠ ريال
+                </a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
