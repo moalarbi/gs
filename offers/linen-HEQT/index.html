@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فاتورة اتفاقية - جلابيات اللينن</title>
+    <title>عرض تأسيس وإطلاق علامة جلابيات لينن</title>
 
     <!-- Google Fonts - IBM Plex Sans Arabic -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -144,9 +144,76 @@
             min-width: 210px;
         }
 
+        .pricing-box.approval-box {
+            max-width: 620px;
+        }
+
+        .approval-fields {
+            margin-top: 16px;
+            background: var(--white);
+            border: 1px solid var(--border-green);
+            border-radius: var(--radius-md);
+            padding: 12px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .approval-field {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed var(--border-green);
+            font-size: 14px;
+        }
+
+        .approval-field:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .approval-label {
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .approval-value {
+            color: var(--text-primary);
+            font-weight: 700;
+            text-align: left;
+        }
+
+        .approval-line {
+            min-width: 180px;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            text-align: left;
+        }
+
+        .approval-note {
+            margin: 14px 0 0;
+            color: var(--text-secondary);
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
         @media (max-width: 768px) {
             .payment-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .approval-field {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .approval-value,
+            .approval-line {
+                width: 100%;
+                text-align: right;
             }
 
             .approval-actions {
@@ -155,6 +222,37 @@
 
             .approval-actions .btn {
                 width: 100%;
+            }
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 12mm;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .scope-section,
+            .workflow-section,
+            .notes-section,
+            .pricing-section,
+            .scope-card,
+            .workflow-container,
+            .pricing-box,
+            .meta-single-card,
+            .comparison-table-wrap {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .section-title,
+            .scope-title {
+                break-after: avoid;
+                page-break-after: avoid;
             }
         }
     </style>
@@ -180,32 +278,44 @@
             <!-- Hero Section -->
             <section class="hero-section">
                 <div class="hero-banner">
-                    <h1 class="hero-title"><span>فاتورة اتفاقية</span><br>تأسيس وإطلاق علامة تجارية متخصصة في جلابيات اللينن</h1>
+                    <h1 class="hero-title"><span>عرض تأسيس وإطلاق علامة جلابيات لينن</span><br>من تأسيس العلامة إلى جاهزية الإطلاق</h1>
                 </div>
             </section>
 
-            <!-- Invoice Meta Section -->
+            <!-- Offer Meta Section -->
             <section class="meta-section">
                 <div class="meta-single-card">
                     <div class="meta-row">
-                        <span class="meta-label">نوع المستند:</span>
-                        <span class="meta-value" id="invoice-number">مقترح تأسيس وإطلاق</span>
+                        <span class="meta-label">رقم العرض:</span>
+                        <span class="meta-value" id="invoice-number">GS-LINEN-HEQT</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">اسم العميل:</span>
+                        <span class="meta-value company-name">محمد عبدالله</span>
                     </div>
                     <div class="meta-row">
                         <span class="meta-label">تاريخ العرض:</span>
-                        <span class="meta-value">2026/07/18</span>
+                        <span class="meta-value">١٨ يوليو ٢٠٢٦</span>
                     </div>
                     <div class="meta-row">
-                        <span class="meta-label">المقدمة إلى:</span>
-                        <span class="meta-value company-name">المستثمر أو العميل</span>
+                        <span class="meta-label">صالح حتى:</span>
+                        <span class="meta-value">٢ أغسطس ٢٠٢٦</span>
                     </div>
                     <div class="meta-row">
-                        <span class="meta-label">صلاحية العرض:</span>
-                        <span class="meta-value">15 يومًا</span>
+                        <span class="meta-label">نوع المستند:</span>
+                        <span class="meta-value">مقترح تأسيس وإطلاق علامة تجارية</span>
                     </div>
                     <div class="meta-row">
                         <span class="meta-label">نوع المشروع:</span>
-                        <span class="meta-value">علامة جلابيات لينن على منصة سلة</span>
+                        <span class="meta-value">علامة متخصصة في جلابيات اللينن</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">منصة المتجر:</span>
+                        <span class="meta-value">سلة</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">صلاحية العرض:</span>
+                        <span class="meta-value">١٥ يومًا</span>
                     </div>
                     <div class="meta-row">
                         <span class="meta-label">مدة التنفيذ:</span>
@@ -216,11 +326,11 @@
 
             <!-- Description Section -->
             <section class="scope-section">
-                <h2 class="section-title">من الفكرة إلى الإطلاق</h2>
+                <h2 class="section-title">من تأسيس العلامة إلى جاهزية الإطلاق</h2>
                 <div class="service-description">
-                    <p>نقدم خطة متكاملة لتأسيس علامة تجارية سعودية متخصصة في جلابيات اللينن، بهوية فاخرة ومينيمال، ومنتجات عالية الجودة، ومتجر إلكتروني جاهز للبيع، بدءًا من تأسيس العلامة والمتجر، مرورًا بالبحث عن الموردين، وصولًا إلى تجهيز الإطلاق التسويقي.</p>
+                    <p>خطة متكاملة لتأسيس علامة تجارية سعودية متخصصة في جلابيات اللينن، تشمل بناء الهوية والمتجر الإلكتروني، والبحث عن الموردين، وتجهيز الخطة التسويقية للإطلاق، وفق نطاق الباقة المختارة.</p>
                 </div>
-                <div class="notice-box">الأسعار غير شاملة التكاليف الخارجية، وتُدفع تكاليف الموردين والعينات والإنتاج والشحن والإعلانات من قبل العميل مباشرة، ولا يتم خصمها من قيمة الباقة.</div>
+                <div class="notice-box">الأسعار الموضحة تمثل أتعاب مقدم الخدمة فقط، ولا تشمل المصروفات الخارجية المذكورة في العرض. الأسعار الموضحة هي القيمة النهائية لأتعاب مقدم الخدمة، ما لم ينطبق نظامًا إضافة ضريبة القيمة المضافة.</div>
             </section>
 
             <!-- Packages Section -->
@@ -235,7 +345,7 @@
                         </div>
                         <div class="scope-list">
                             <div class="package-price">
-                                <span class="amount">15,000</span>
+                                <span class="amount">١٥,٠٠٠</span>
                                 <span class="currency">ريال</span>
                             </div>
                             <p class="pricing-note">مناسبة لإطلاق المشروع بصورة احترافية ضمن نطاق محدد، واختبار السوق قبل التوسع في المنتجات والمخزون.</p>
@@ -250,7 +360,7 @@
                         <div class="scope-list">
                             <span class="recommended-badge">الخيار الموصى به</span>
                             <div class="package-price">
-                                <span class="amount">20,000</span>
+                                <span class="amount">٢٠,٠٠٠</span>
                                 <span class="currency">ريال</span>
                             </div>
                             <p class="pricing-note">مناسبة للمستثمر الذي يرغب في تأسيس علامة أكثر اكتمالًا، مع اهتمام أكبر بالهوية، وتطوير المنتجات، واختيار المورد، وتجهيز الإطلاق التسويقي.</p>
@@ -261,7 +371,7 @@
 
             <!-- Basic Package Scope -->
             <section class="scope-section">
-                <h2 class="section-title">تفاصيل باقة 15,000 ريال</h2>
+                <h2 class="section-title">تفاصيل باقة ١٥,٠٠٠ ريال</h2>
 
                 <div class="scope-grid">
                     <div class="scope-card">
@@ -279,7 +389,8 @@
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تصميم الصفحة الرئيسية وإعداد الأقسام والقوائم.</span></div></li>
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">كتابة الصفحات الأساسية وسياسات الشحن والاستبدال والخصوصية.</span></div></li>
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">ربط الدومين ووسائل الدفع والشحن.</span></div></li>
-                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">رفع وإعداد حتى 10 منتجات واختبار المتجر على الجوال والكمبيوتر.</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">رفع وإعداد حتى ١٠ منتجات واختبار المتجر على الجوال والكمبيوتر.</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">يشمل رفع بيانات المنتجات والمحتوى المقدم من العميل دون كتابة وصف تسويقي مستقل لكل منتج.</span></div></li>
                         </ul>
                     </div>
 
@@ -290,7 +401,7 @@
                         </div>
                         <ul class="scope-list">
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تحديد المواصفات الأساسية للمنتجات.</span></div></li>
-                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">البحث عن 3 موردين مناسبين.</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">البحث عن ٣ موردين مناسبين.</span></div></li>
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">التواصل الأولي مع الموردين وجمع عروض الأسعار.</span></div></li>
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">مقارنة الأسعار والكميات الدنيا ومدد الإنتاج.</span></div></li>
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تنسيق جولة واحدة من العينات وتقديم توصية بالمورد الأنسب.</span></div></li>
@@ -306,9 +417,10 @@
                         <ul class="scope-list">
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إعداد خطة إطلاق لمدة شهر وتحديد الرسائل التسويقية الأساسية.</span></div></li>
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إعداد خطة محتوى مبدئية.</span></div></li>
-                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تصميم 9 مواد لمنصات التواصل الاجتماعي وكتابة النصوص التسويقية للمحتوى.</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تصميم ٩ مواد رقمية، تشمل ٦ منشورات ثابتة و٣ قصص لمنصات التواصل الاجتماعي، وكتابة النصوص التسويقية للمحتوى.</span></div></li>
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تجهيز حملة إعلانية واحدة وربط أدوات القياس الأساسية.</span></div></li>
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إعداد خطة مقترحة للتعاون مع المؤثرات.</span></div></li>
+                            <li class="scope-item group-header"><div class="item-content"><span class="item-name group-title">لا تشمل المواد التسويقية تصوير المنتجات، أو إنتاج مقاطع الفيديو، أو تصميم Reels، ما لم يتم الاتفاق عليها وتسعيرها بشكل مستقل.</span></div></li>
                             <li class="scope-item group-header"><div class="item-content"><span class="item-name group-title">مدة التنفيذ المتوقعة: من 6 إلى 10 أسابيع.</span></div></li>
                         </ul>
                     </div>
@@ -317,7 +429,7 @@
 
             <!-- Complete Package Scope -->
             <section class="scope-section">
-                <h2 class="section-title">تفاصيل باقة 20,000 ريال</h2>
+                <h2 class="section-title">تفاصيل باقة ٢٠,٠٠٠ ريال</h2>
 
                 <div class="scope-grid">
                     <div class="scope-card recommended-card">
@@ -334,8 +446,9 @@
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تصميم تطبيقات أساسية للعلامة وإعداد تصور متكامل للتغليف.</span></div></li>
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إنشاء متجر إلكتروني على منصة سلة مع تخصيص بصري أوسع.</span></div></li>
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تصميم الصفحة الرئيسية وصفحات المجموعات والمنتجات.</span></div></li>
-                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">كتابة الصفحات التعريفية والأساسية ووصف تسويقي للمنتجات.</span></div></li>
-                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">رفع وإعداد حتى 20 منتجًا وربط الدومين والدفع والشحن.</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">كتابة الصفحات التعريفية والأساسية وصياغة وصف تسويقي مختصر للمنتجات.</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">رفع وإعداد حتى ٢٠ منتجًا وربط الدومين والدفع والشحن.</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">يشمل رفع بيانات المنتجات وصياغة وصف تسويقي مختصر لكل منتج، بحد أقصى ٢٠ منتجًا.</span></div></li>
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">ربط أدوات التحليل والإعلانات وتحسين تجربة الطلب على الجوال.</span></div></li>
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">اختبار المتجر وتجهيزه للإطلاق الإعلاني.</span></div></li>
                         </ul>
@@ -348,12 +461,12 @@
                         </div>
                         <ul class="scope-list">
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إعداد مواصفات واضحة للخامات والتصنيع وتحديد معايير جودة اللينن.</span></div></li>
-                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">البحث عن 5 موردين أو مصانع والتواصل والتفاوض معهم.</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">البحث عن ٥ موردين أو مصانع والتواصل والتفاوض معهم.</span></div></li>
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">جمع ومقارنة عروض الأسعار وجودة الخامات والكميات الدنيا ومدد الإنتاج.</span></div></li>
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تنسيق حتى جولتين من العينات ومراجعتها وتسجيل الملاحظات.</span></div></li>
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">متابعة تعديلات العينات والتفاوض على السعر وشروط الدفع.</span></div></li>
-                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">اختيار المورد الأنسب ومتابعة بدء أول طلب إنتاج.</span></div></li>
-                            <li class="scope-item group-header"><div class="item-content"><span class="item-name group-title">لا تشمل هذه المرحلة: قيمة العينات، قيمة الإنتاج والمخزون، تكاليف الشحن والجمارك، فحص الإنتاج الخارجي، السفر أو زيارة المصانع.</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">اختيار المورد الأنسب والتنسيق مع المورد المعتمد حتى إصدار طلب الإنتاج الأول، وتأكيد المواصفات والكميات وموعد التسليم المتفق عليه.</span></div></li>
+                            <li class="scope-item group-header"><div class="item-content"><span class="item-name group-title">لا تشمل هذه المرحلة: قيمة العينات، قيمة الإنتاج والمخزون، تكاليف الشحن والجمارك، فحص الإنتاج الخارجي، السفر أو زيارة المصانع، الإشراف اليومي على المصنع، فحص جميع القطع المنتجة، إدارة الشحن والجمارك، ضمان التزام المورد بمدة الإنتاج، أو تحمل مسؤولية أي عيوب تصنيع بعد اعتماد العميل للعينة النهائية.</span></div></li>
                         </ul>
                     </div>
 
@@ -365,10 +478,11 @@
                         <ul class="scope-list">
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إعداد استراتيجية إطلاق متكاملة وخطة ما قبل افتتاح المتجر.</span></div></li>
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">وضع آلية لبناء قائمة انتظار وتجهيز حسابات التواصل الاجتماعي.</span></div></li>
-                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إعداد خطة محتوى لمدة شهرين وتصميم 18 مادة لمنصات التواصل الاجتماعي.</span></div></li>
+                            <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إعداد خطة محتوى لمدة شهرين وتصميم ١٨ مادة رقمية، تشمل ١٢ منشورًا ثابتًا و٦ قصص لمنصات التواصل الاجتماعي.</span></div></li>
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">كتابة النصوص التسويقية وإعداد حملتين إعلانيتين.</span></div></li>
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إدارة الحملات الإعلانية لمدة شهر واحد ومتابعة النتائج وتحسين الحملات.</span></div></li>
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إعداد خطة تعاون مع المؤثرات وتقرير أداء بعد الشهر الأول.</span></div></li>
+                            <li class="scope-item group-header"><div class="item-content"><span class="item-name group-title">لا تشمل المواد التسويقية تصوير المنتجات، أو إنتاج مقاطع الفيديو، أو تصميم Reels، ما لم يتم الاتفاق عليها وتسعيرها بشكل مستقل.</span></div></li>
                             <li class="scope-item group-header"><div class="item-content"><span class="item-name group-title">مدة التنفيذ المتوقعة: من 8 إلى 12 أسبوعًا.</span></div></li>
                         </ul>
                     </div>
@@ -383,8 +497,8 @@
                         <thead>
                             <tr>
                                 <th>البند</th>
-                                <th>باقة 15,000 ريال</th>
-                                <th class="recommended-col">باقة 20,000 ريال</th>
+                                <th>باقة ١٥,٠٠٠ ريال</th>
+                                <th class="recommended-col">باقة ٢٠,٠٠٠ ريال</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -394,13 +508,14 @@
                             <tr><td>دليل الهوية</td><td>غير مشمول</td><td class="recommended-col">دليل استخدام مختصر</td></tr>
                             <tr><td>تصور التغليف</td><td>مبدئي</td><td class="recommended-col">متكامل</td></tr>
                             <tr><td>تخصيص متجر سلة</td><td>تعديل قالب جاهز</td><td class="recommended-col">تخصيص بصري أوسع</td></tr>
-                            <tr><td>عدد المنتجات</td><td>حتى 10 منتجات</td><td class="recommended-col">حتى 20 منتجًا</td></tr>
-                            <tr><td>عدد الموردين</td><td>3 موردين</td><td class="recommended-col">5 موردين</td></tr>
+                            <tr><td>عدد المنتجات</td><td>حتى ١٠ منتجات</td><td class="recommended-col">حتى ٢٠ منتجًا</td></tr>
+                            <tr><td>كتابة وصف المنتجات</td><td>غير مشمولة، ويتم استخدام البيانات المقدمة من العميل</td><td class="recommended-col">وصف تسويقي مختصر حتى ٢٠ منتجًا</td></tr>
+                            <tr><td>عدد الموردين</td><td>٣ موردين</td><td class="recommended-col">٥ موردين</td></tr>
                             <tr><td>جولات العينات</td><td>جولة واحدة</td><td class="recommended-col">حتى جولتين</td></tr>
                             <tr><td>التفاوض مع الموردين</td><td>مقارنة وتواصل أساسي</td><td class="recommended-col">تفاوض شامل على السعر والشروط</td></tr>
-                            <tr><td>متابعة أول إنتاج</td><td>غير مشمولة</td><td class="recommended-col">مشمولة حتى بدء الطلب</td></tr>
+                            <tr><td>متابعة أول طلب إنتاج</td><td>غير مشمولة</td><td class="recommended-col">التنسيق حتى إصدار طلب الإنتاج الأول</td></tr>
                             <tr><td>خطة المحتوى</td><td>شهر واحد</td><td class="recommended-col">شهران</td></tr>
-                            <tr><td>المواد التسويقية</td><td>9 مواد</td><td class="recommended-col">18 مادة</td></tr>
+                            <tr><td>المواد التسويقية</td><td>٩ مواد رقمية: ٦ منشورات ثابتة و٣ قصص</td><td class="recommended-col">١٨ مادة رقمية: ١٢ منشورًا ثابتًا و٦ قصص</td></tr>
                             <tr><td>الحملات الإعلانية</td><td>إعداد حملة واحدة</td><td class="recommended-col">إعداد حملتين</td></tr>
                             <tr><td>إدارة الحملات</td><td>غير مشمولة</td><td class="recommended-col">إدارة لمدة شهر</td></tr>
                             <tr><td>تقرير الأداء</td><td>غير مشمول</td><td class="recommended-col">مشمول</td></tr>
@@ -415,7 +530,7 @@
                 <h2 class="section-title">آلية الدفع</h2>
                 <div class="payment-grid">
                     <div class="workflow-container">
-                        <h3 class="scope-title">باقة 15,000 ريال</h3>
+                        <h3 class="scope-title">باقة ١٥,٠٠٠ ريال</h3>
                         <ul class="workflow-list">
                             <li class="workflow-item"><span class="step-number">50%</span><span class="step-text">عند بدء المشروع.</span></li>
                             <li class="workflow-item"><span class="step-number">30%</span><span class="step-text">بعد اعتماد الهوية والمتجر.</span></li>
@@ -423,7 +538,7 @@
                         </ul>
                     </div>
                     <div class="workflow-container">
-                        <h3 class="scope-title">باقة 20,000 ريال</h3>
+                        <h3 class="scope-title">باقة ٢٠,٠٠٠ ريال</h3>
                         <ul class="workflow-list">
                             <li class="workflow-item"><span class="step-number">40%</span><span class="step-text">عند بدء المشروع.</span></li>
                             <li class="workflow-item"><span class="step-number">30%</span><span class="step-text">بعد اعتماد الهوية والمتجر.</span></li>
@@ -437,11 +552,14 @@
             <section class="notes-section">
                 <h2 class="section-title">التكاليف غير المشمولة</h2>
                 <ul class="notes-list">
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">الأسعار الموضحة تمثل أتعاب مقدم الخدمة فقط، ولا تشمل المصروفات الخارجية المذكورة في العرض.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">الأسعار الموضحة هي القيمة النهائية لأتعاب مقدم الخدمة، ما لم ينطبق نظامًا إضافة ضريبة القيمة المضافة.</span></li>
                     <li class="note-item"><span class="note-bullet">•</span><span class="note-text">ضريبة القيمة المضافة عند انطباقها.</span></li>
                     <li class="note-item"><span class="note-bullet">•</span><span class="note-text">رسوم الاشتراك في منصة سلة ورسوم الدومين والتطبيقات والإضافات المدفوعة.</span></li>
                     <li class="note-item"><span class="note-bullet">•</span><span class="note-text">تسجيل العلامة التجارية وتكاليف شراء العينات وتطوير وتنفيذ المنتجات وقيمة المخزون.</span></li>
                     <li class="note-item"><span class="note-bullet">•</span><span class="note-text">تكاليف الشحن والجمارك وتصوير المنتجات والمودلز والاستوديو وموقع التصوير.</span></li>
                     <li class="note-item"><span class="note-bullet">•</span><span class="note-text">إنتاج الفيديو الاحترافي وميزانية الإعلانات المدفوعة وأتعاب المؤثرات وصانعات المحتوى.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">ميزانية الإعلانات المدفوعة وأتعاب المؤثرين وإنتاج الصور والفيديو غير مشمولة في قيمة الباقات.</span></li>
                     <li class="note-item"><span class="note-bullet">•</span><span class="note-text">تكاليف طباعة وتنفيذ التغليف وأي برمجة خاصة خارج إمكانيات منصة سلة والقالب المعتمد.</span></li>
                 </ul>
                 <div class="notice-box">تُدفع تكاليف الموردين والعينات والإنتاج والشحن والإعلانات من قبل العميل مباشرة، ولا يتم خصمها من قيمة الباقة.</div>
@@ -455,22 +573,65 @@
                     <li class="note-item"><span class="note-bullet">•</span><span class="note-text">تبدأ مدة التنفيذ بعد استلام جميع البيانات والمحتويات المطلوبة.</span></li>
                     <li class="note-item"><span class="note-bullet">•</span><span class="note-text">يعتمد الجدول الزمني على سرعة العميل في تقديم الملاحظات والاعتمادات.</span></li>
                     <li class="note-item"><span class="note-bullet">•</span><span class="note-text">تأخر الموردين أو العينات لا يُحتسب ضمن مدة تنفيذ الأعمال الداخلية.</span></li>
-                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">تشمل كل مرحلة جولتي تعديلات ما لم يُذكر خلاف ذلك.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">يلتزم العميل بتوفير صور المنتجات النهائية، والأسعار، والمقاسات، والألوان، والكميات، وتفاصيل الخامات، وأي معلومات ضرورية قبل رفع المنتجات إلى المتجر.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">تشمل أعمال الهوية وتصميم المتجر جولتي تعديلات مجمعة. أما العينات والموردون، فتخضع للعدد المحدد في كل باقة: جولة واحدة من العينات في الباقة الأساسية، وحتى جولتين من العينات في الباقة المتكاملة.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">تُسعّر التعديلات أو جولات العينات الإضافية بشكل مستقل بعد اعتمادها من العميل.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">المقصود بجولة التعديلات المجمعة هو إرسال العميل جميع ملاحظاته المتعلقة بالمرحلة في رسالة أو ملف واحد.</span></li>
                     <li class="note-item"><span class="note-bullet">•</span><span class="note-text">أي أعمال إضافية خارج نطاق الباقة يتم تسعيرها بشكل مستقل.</span></li>
-                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">لا يتم شراء العينات أو المخزون من حساب مقدم الخدمة، وجميع تكاليف الموردين والمصانع والشحن تدفع من قبل العميل مباشرة.</span></li>
-                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">لا يوجد ضمان لمستوى محدد من المبيعات، وتعتمد نتائج التسويق على جودة المنتج والتسعير والمخزون وميزانية الإعلانات واستجابة السوق.</span></li>
-                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">لا يبدأ تنفيذ المرحلة التالية قبل اعتماد مخرجات المرحلة السابقة.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">يقتصر دور مقدم الخدمة على البحث عن الموردين، والمقارنة، والتفاوض، والتنسيق، وتقديم التوصيات، ويكون قرار اعتماد المورد والعينات والأسعار والإنتاج النهائي من مسؤولية العميل.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">لا يضمن مقدم الخدمة استمرار أسعار الموردين، أو توافر الخامات، أو ثبات الكميات الدنيا، أو التزام المورد بمدة الإنتاج بعد الاعتماد.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">يتحمل العميل تكاليف العينات، والإنتاج، والمخزون، والشحن، والجمارك، والفحص، وأي مصاريف مرتبطة بالموردين أو المصانع.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">لا يقوم مقدم الخدمة بسداد أي مبالغ للموردين أو شراء المخزون من حسابه الخاص.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">لا يضمن مقدم الخدمة تحقيق عدد محدد من المبيعات أو الإيرادات أو نتائج إعلانية ثابتة.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">تعتمد النتائج على جودة المنتج، والأسعار، والمخزون، والتصوير، وميزانية الإعلانات، وسرعة استجابة العميل، وقدرة المورد على توفير المنتجات.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">الدفعات المستلمة غير مستردة بعد بدء تنفيذ المرحلة المرتبطة بها.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">في حال إلغاء المشروع بعد بدء التنفيذ، تتم محاسبة الأعمال المنفذة حتى تاريخ الإلغاء، ولا تنتقل الملفات النهائية قبل سداد جميع المستحقات.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">في حال توقف العميل عن إرسال البيانات أو الملاحظات أو الاعتمادات لمدة تتجاوز ٣٠ يومًا، يحق لمقدم الخدمة تعليق المشروع وإعادة جدولة التنفيذ حسب توفر الفريق.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">قد يتم احتساب رسوم إضافية لإعادة تشغيل المشروع إذا تجاوزت مدة التوقف ٣٠ يومًا.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">لا تُحتسب فترات انتظار العميل أو الموردين أو العينات ضمن مدة التنفيذ.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">تنتقل ملكية الملفات النهائية المعتمدة إلى العميل بعد سداد كامل قيمة الباقة.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">لا تشمل الملكية المقترحات أو التصاميم أو الاتجاهات الإبداعية غير المعتمدة.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">يحق لمقدم الخدمة الاحتفاظ بنسخة من الأعمال المنفذة وعرضها ضمن ملف الأعمال، ما لم يطلب العميل كتابيًا الحفاظ على سريتها قبل بدء المشروع.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">يتم إنشاء متجر سلة والحسابات الإعلانية وحسابات التواصل الاجتماعي باسم العميل، أو يتم تسليم صلاحيات الإدارة الكاملة إليه عند انتهاء المشروع وسداد المستحقات.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">لا تشمل الباقات رسوم الاشتراكات أو التطبيقات أو الأدوات الخارجية المطلوبة لتشغيل المتجر.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">يتم إرسال مخرجات كل مرحلة إلى العميل لاعتمادها قبل الانتقال إلى المرحلة التالية.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">يُعد الاعتماد المرسل عبر البريد الإلكتروني أو واتساب اعتمادًا رسميًا ونهائيًا للمرحلة.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">أي طلب لإعادة تنفيذ مرحلة سبق اعتمادها يُعامل باعتباره عملًا إضافيًا ويتم تسعيره بشكل مستقل.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">لا يبدأ تنفيذ المرحلة التالية قبل اعتماد مخرجات المرحلة السابقة وسداد الدفعة المستحقة لها.</span></li>
                     <li class="note-item"><span class="note-bullet">•</span><span class="note-text">لا تشمل الباقات إدارة المتجر اليومية بعد انتهاء مدة الإطلاق المحددة.</span></li>
                 </ul>
             </section>
 
             <!-- Approval Section -->
-            <section class="pricing-section no-print">
-                <div class="pricing-box">
+            <section class="pricing-section">
+                <div class="pricing-box approval-box">
                     <span class="pricing-label">اعتماد العرض</span>
-                    <div class="approval-actions">
-                        <a class="btn btn-primary" href="https://wa.me/966537311886?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D8%B9%D8%AA%D9%85%D8%A7%D8%AF%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D8%AA%D8%A3%D8%B3%D9%8A%D8%B3%20%D9%88%D8%A7%D9%84%D8%A5%D8%B7%D9%84%D8%A7%D9%82%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%20%D8%A8%D9%82%D9%8A%D9%85%D8%A9%20%D9%A1%D9%A5%2C%D9%A0%D9%A0%D9%A0%20%D8%B1%D9%8A%D8%A7%D9%84." target="_blank" rel="noopener">اختيار باقة 15,000 ريال</a>
-                        <a class="btn btn-primary" href="https://wa.me/966537311886?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D8%B9%D8%AA%D9%85%D8%A7%D8%AF%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D8%AA%D8%A3%D8%B3%D9%8A%D8%B3%20%D9%88%D8%A7%D9%84%D8%A5%D8%B7%D9%84%D8%A7%D9%82%20%D8%A7%D9%84%D9%85%D8%AA%D9%83%D8%A7%D9%85%D9%84%20%D8%A8%D9%82%D9%8A%D9%85%D8%A9%20%D9%A2%D9%A0%2C%D9%A0%D9%A0%D9%A0%20%D8%B1%D9%8A%D8%A7%D9%84." target="_blank" rel="noopener">اختيار باقة 20,000 ريال</a>
+                    <div class="approval-fields">
+                        <div class="approval-field">
+                            <span class="approval-label">اسم العميل:</span>
+                            <span class="approval-value">محمد عبدالله</span>
+                        </div>
+                        <div class="approval-field">
+                            <span class="approval-label">الباقة المختارة:</span>
+                            <span class="approval-line">____________________</span>
+                        </div>
+                        <div class="approval-field">
+                            <span class="approval-label">قيمة الباقة:</span>
+                            <span class="approval-line">____________________</span>
+                        </div>
+                        <div class="approval-field">
+                            <span class="approval-label">تاريخ الاعتماد:</span>
+                            <span class="approval-line">____________________</span>
+                        </div>
+                        <div class="approval-field">
+                            <span class="approval-label">التوقيع:</span>
+                            <span class="approval-line">____________________</span>
+                        </div>
+                    </div>
+                    <p class="approval-note">يمكن اعتماد العرض إلكترونيًا من خلال الضغط على زر اختيار الباقة وإرسال رسالة الاعتماد عبر واتساب.</p>
+                    <div class="approval-actions no-print">
+                        <a class="btn btn-primary" href="https://wa.me/966537311886?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D8%B9%D8%AA%D9%85%D8%A7%D8%AF%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D8%AA%D8%A3%D8%B3%D9%8A%D8%B3%20%D9%88%D8%A7%D9%84%D8%A5%D8%B7%D9%84%D8%A7%D9%82%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%20%D8%A8%D9%82%D9%8A%D9%85%D8%A9%20%D9%A1%D9%A5%2C%D9%A0%D9%A0%D9%A0%20%D8%B1%D9%8A%D8%A7%D9%84." target="_blank" rel="noopener">اختيار باقة ١٥,٠٠٠ ريال</a>
+                        <a class="btn btn-primary" href="https://wa.me/966537311886?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D8%B9%D8%AA%D9%85%D8%A7%D8%AF%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D8%AA%D8%A3%D8%B3%D9%8A%D8%B3%20%D9%88%D8%A7%D9%84%D8%A5%D8%B7%D9%84%D8%A7%D9%82%20%D8%A7%D9%84%D9%85%D8%AA%D9%83%D8%A7%D9%85%D9%84%20%D8%A8%D9%82%D9%8A%D9%85%D8%A9%20%D9%A2%D9%A0%2C%D9%A0%D9%A0%D9%A0%20%D8%B1%D9%8A%D8%A7%D9%84." target="_blank" rel="noopener">اختيار باقة ٢٠,٠٠٠ ريال</a>
                     </div>
                 </div>
             </section>
@@ -506,13 +667,13 @@
                     </div>
                 </div>
                 <div class="print-action-bottom no-print">
-                    <button class="btn btn-primary btn-large" onclick="printDocument()">
+                    <button class="btn btn-primary btn-large" onclick="window.print()">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="6 9 6 2 18 2 18 9"></polyline>
                             <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
                             <rect x="6" y="14" width="12" height="8"></rect>
                         </svg>
-                        طباعة الفاتورة
+                        طباعة العرض
                     </button>
                 </div>
             </footer>
