@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فاتورة اتفاقية - إنشاء متجر إلكتروني بالهوية البصرية</title>
+
+    <!-- Google Fonts - IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../assets/style.css">
+
+    <style>
+        :root {
+            --primary: #0f5c3b;
+            --primary-light: rgba(15, 92, 59, 0.06);
+            --primary-medium: rgba(15, 92, 59, 0.12);
+            --border-green: rgba(15, 92, 59, 0.2);
+        }
+
+        .hero-banner {
+            background: #0f5c3b;
+        }
+
+        .brand[dir="ltr"],
+        .footer-brand-name[dir="ltr"] {
+            direction: ltr;
+            unicode-bidi: isolate;
+        }
+
+        .pricing-box {
+            border: 2px solid var(--primary);
+            background: linear-gradient(to bottom, var(--white), var(--primary-light));
+        }
+
+        .pricing-note strong {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">تم النسخ بنجاح</div>
+
+    <!-- Top Bar -->
+    <header class="top-bar no-print">
+        <div class="top-bar-content">
+            <div class="brand" dir="ltr">
+                <span class="brand-name">Golf Studio</span>
+                <span class="brand-icon">⛳</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Document Card -->
+    <main class="document-wrapper">
+        <div class="document-card" id="document-card">
+
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-banner">
+                    <h1 class="hero-title">
+                        <span>فاتورة اتفاقية</span><br>
+                        إنشاء متجر إلكتروني بالهوية البصرية
+                    </h1>
+                </div>
+            </section>
+
+            <!-- Invoice Meta Section -->
+            <section class="meta-section">
+                <div class="meta-single-card">
+                    <div class="meta-row">
+                        <span class="meta-label">رقم الفاتورة:</span>
+                        <span class="meta-value" id="invoice-number">202607192248</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">تاريخ الفاتورة:</span>
+                        <span class="meta-value">2026/07/19</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">المقدمة إلى:</span>
+                        <span class="meta-value company-name">العميل</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">مدة التنفيذ:</span>
+                        <span class="meta-value">خلال 7 أيام عمل من استلام المتطلبات</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scope Section -->
+            <section class="scope-section">
+                <h2 class="section-title">بنود الاتفاقية</h2>
+
+                <div class="scope-grid">
+                    <!-- Scope Card 1 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🎨</span>
+                            <h3 class="scope-title">الهوية البصرية الأساسية</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[تجهيز شكل العلامة داخل المتجر]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تحديد اتجاه بصري مناسب للمتجر يشمل الألوان والخطوط وأسلوب العرض.</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تطبيق الهوية على واجهة المتجر والأقسام الرئيسية والعناصر البصرية الأساسية.</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تجهيز بنرات أو عناصر افتتاحية أساسية للصفحة الرئيسية حسب المواد المتوفرة.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Scope Card 2 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">🛒</span>
+                            <h3 class="scope-title">إنشاء وتجهيز المتجر الإلكتروني</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[المتجر وصفحات البيع]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إنشاء المتجر وإعداد الصفحة الرئيسية بما يناسب نشاط العلامة التجارية.</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إعداد الأقسام والقوائم وصفحات المنتجات الأساسية بشكل منظم وسهل التصفح.</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إضافة حتى 10 منتجات أولية من البيانات والصور المقدمة من العميل.</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">إعداد الصفحات الأساسية مثل: من نحن، سياسة الاستبدال والاسترجاع، الخصوصية، والشحن والتوصيل.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Scope Card 3 -->
+                    <div class="scope-card">
+                        <div class="scope-header">
+                            <span class="scope-icon">⚙️</span>
+                            <h3 class="scope-title">الإعدادات والتسليم</h3>
+                        </div>
+                        <ul class="scope-list">
+                            <li class="scope-item group-header">
+                                <div class="item-content">
+                                    <span class="item-name group-title">[تشغيل المتجر واختباره]</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تهيئة الدومين ووسائل الدفع والشحن حسب الحسابات والاشتراكات المتاحة لدى العميل.</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">اختبار تجربة المتجر على الجوال والكمبيوتر قبل التسليم.</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">جولة تعديلات واحدة بعد المعاينة النهائية ضمن نطاق إنشاء المتجر.</span>
+                                </div>
+                            </li>
+                            <li class="scope-item">
+                                <span class="item-bullet"></span>
+                                <div class="item-content">
+                                    <span class="item-name">تسليم المتجر جاهزًا للاستخدام مع شرح مختصر لطريقة إدارة المنتجات والطلبات.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Workflow Section -->
+            <section class="workflow-section">
+                <h2 class="section-title">آلية العمل</h2>
+                <div class="workflow-container">
+                    <ul class="workflow-list">
+                        <li class="workflow-item"><span class="step-number">1</span><span class="step-text">استلام بيانات المتجر والمنتجات والصور والحسابات المطلوبة.</span></li>
+                        <li class="workflow-item"><span class="step-number">2</span><span class="step-text">تحديد الاتجاه البصري واعتماد شكل الهوية داخل المتجر.</span></li>
+                        <li class="workflow-item"><span class="step-number">3</span><span class="step-text">إنشاء الصفحات والأقسام وتجهيز المنتجات الأساسية.</span></li>
+                        <li class="workflow-item"><span class="step-number">4</span><span class="step-text">تهيئة الإعدادات وربط الخدمات المتاحة واختبار تجربة الشراء.</span></li>
+                        <li class="workflow-item"><span class="step-number">5</span><span class="step-text">المراجعة النهائية والتسليم.</span></li>
+                    </ul>
+                    <div class="workflow-note">
+                        <span class="highlight-text">مدة التنفيذ: خلال 7 أيام عمل من استلام كامل المتطلبات</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section class="pricing-section">
+                <div class="pricing-box">
+                    <span class="pricing-label">قيمة المشروع</span>
+                    <div class="pricing-amount">
+                        <span class="amount">3,000</span>
+                        <span class="currency">ريال سعودي</span>
+                    </div>
+                    <p class="pricing-note"><strong>القيمة تشمل إنشاء متجر إلكتروني فقط</strong> بالهوية البصرية ومشتملاته الموضحة أعلاه.</p>
+                </div>
+            </section>
+
+            <!-- Notes Section -->
+            <section class="notes-section">
+                <h2 class="section-title">غير مشمول في السعر</h2>
+                <ul class="notes-list">
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">إدارة الحسابات التسويقية أو الحملات الإعلانية أو صناعة المحتوى بعد التسليم.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">تصوير المنتجات، إنتاج الفيديو، كتابة محتوى تسويقي موسع، أو تصميم مواد سوشال ميديا.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">رسوم المنصة، الدومين، الاشتراكات، التطبيقات المدفوعة، بوابات الدفع، أو شركات الشحن.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">أي تطوير برمجي خاص أو خصائص خارج إمكانيات المنصة أو القالب المعتمد.</span></li>
+                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">إدخال منتجات إضافية تتجاوز 10 منتجات، ويتم تسعيرها بشكل مستقل عند الحاجة.</span></li>
+                </ul>
+            </section>
+
+            <!-- Footer -->
+            <footer class="document-footer">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <span class="footer-brand-name" dir="ltr">Golf Studio ⛳</span>
+                    </div>
+                    <div class="footer-contact">
+                        <a href="https://wa.me/966537311886" class="contact-item">
+                            <span>+966537311886</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </a>
+                        <a href="mailto:Golf.Studio.Adv@gmail.com" class="contact-item">
+                            <span>Golf.Studio.Adv@gmail.com</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                        <a href="https://matjarak.vercel.app/" target="_blank" rel="noopener" class="contact-item">
+                            <span>https://matjarak.vercel.app/</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="print-action-bottom no-print">
+                    <button class="btn btn-primary btn-large" onclick="printDocument()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                            <rect x="6" y="14" width="12" height="8"></rect>
+                        </svg>
+                        طباعة الفاتورة
+                    </button>
+                </div>
+            </footer>
+
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../assets/script.js"></script>
+</body>
+</html>
