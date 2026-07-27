@@ -28,6 +28,7 @@
                 <span class="brand-icon">⛳</span>
                 <span class="brand-name">GOLF STUDIO</span>
             </div>
+            <button id="lang-toggle" type="button" class="btn btn-primary" style="margin-inline-start: auto;">English</button>
         </div>
     </header>
 
@@ -63,11 +64,7 @@
                     </div>
                     <div class="meta-row">
                         <span class="meta-label">مدة التنفيذ:</span>
-                        <span class="meta-value">٢١ يوم عمل</span>
-                    </div>
-                    <div class="meta-row">
-                        <span class="meta-label">صلاحية العرض:</span>
-                        <span class="meta-value">٧ أيام من تاريخ الإصدار</span>
+                        <span class="meta-value">40 يوم عمل</span>
                     </div>
                 </div>
             </section>
@@ -136,7 +133,7 @@
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تصميم بطاقة أعمال احترافية.</span></div></li>
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">تصميم توقيع بريد إلكتروني موحد.</span></div></li>
                             <li class="scope-item"><span class="item-bullet"></span><div class="item-content"><span class="item-name">إعداد دليل استخدام بصري أساسي ومختصر للهوية.</span></div></li>
-                            <li class="scope-item note-item"><span class="note-bullet">•</span><div class="item-content"><span class="item-name">ملاحظة: لا يشمل هذا المشروع إعادة تصميم الشعار من الصفر.</span></div></li>
+                            <li class="scope-item note-item"><span class="note-bullet">•</span><div class="item-content"><span class="item-name">ملاحظة: يشمل هذا المشروع إنشاء الشعار الجديد.</span></div></li>
 
                             <li class="scope-item group-header">
                                 <div class="item-content">
@@ -299,7 +296,7 @@
                         <li class="workflow-item"><span class="step-number">11</span><span class="step-text">إطلاق المشروع والتسليم والتدريب.</span></li>
                     </ul>
                     <div class="workflow-note">
-                        <span class="highlight-text">مدة التنفيذ التقديرية: ٢١ يوم عمل من تاريخ اكتمال استلام جميع المتطلبات واعتماد بدء التنفيذ.</span>
+                        <span class="highlight-text">مدة التنفيذ التقديرية: ٤٠ يوم عمل من تاريخ اكتمال استلام جميع المتطلبات واعتماد بدء التنفيذ.</span>
                     </div>
                 </div>
             </section>
@@ -359,7 +356,6 @@
                     </div>
                     <p class="pricing-note">دفعة أولى بنسبة 50% عند اعتماد المشروع.</p>
                     <p class="pricing-note">دفعة نهائية بنسبة 50% قبل الإطلاق والتسليم.</p>
-                    <p class="pricing-note">الأسعار لا تشمل ضريبة القيمة المضافة إن كانت مطبقة.</p>
                 </div>
             </section>
 
@@ -369,7 +365,6 @@
                 <ul class="notes-list">
                     <li class="note-item"><span class="note-bullet">•</span><span class="note-text">رسوم الدومين والاستضافة.</span></li>
                     <li class="note-item"><span class="note-bullet">•</span><span class="note-text">رسوم الأدوات أو القوالب أو الإضافات المدفوعة.</span></li>
-                    <li class="note-item"><span class="note-bullet">•</span><span class="note-text">إعادة تصميم الشعار بالكامل.</span></li>
                     <li class="note-item"><span class="note-bullet">•</span><span class="note-text">التصوير الاحترافي الجديد.</span></li>
                     <li class="note-item"><span class="note-bullet">•</span><span class="note-text">إنتاج الفيديوهات أو الموشن جرافيك.</span></li>
                     <li class="note-item"><span class="note-bullet">•</span><span class="note-text">إدارة الحسابات أو النشر الشهري.</span></li>
@@ -447,8 +442,8 @@
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
                         </a>
-                        <a href="https://www.Golf-Studio.umso.co" target="_blank" rel="noopener" class="contact-item">
-                            <span>www.Golf-Studio.umso.co</span>
+                        <a href="https://matjarak.vercel.app/" target="_blank" rel="noopener" class="contact-item">
+                            <span>matjarak.vercel.app</span>
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <circle cx="12" cy="12" r="10"></circle>
                                 <line x1="2" y1="12" x2="22" y2="12"></line>
@@ -473,6 +468,257 @@
     </main>
 
     <!-- Scripts -->
+    <script>
+        (() => {
+            const toggleButton = document.getElementById('lang-toggle');
+            const documentCard = document.getElementById('document-card');
+            const translations = {
+                'عرض سعر واتفاقية تنفيذ': 'Quotation and Implementation Proposal',
+                'مشروع تأسيس الهوية المؤسسية والحضور الرقمي': 'Corporate Identity & Digital Presence Project',
+                'رقم الفاتورة:': 'Invoice Number:',
+                'تاريخ الفاتورة:': 'Invoice Date:',
+                '٢٧/٧/٢٠٢٦': '27/7/2026',
+                'المقدمة إلى:': 'Prepared For:',
+                'شركة سواعد للاستيراد والتصدير': 'Sawaed Import and Export',
+                'مدة التنفيذ:': 'Execution Period:',
+                '40 يوم عمل': '40 Working Days',
+                'نبذة عن المشروع': 'Project Summary',
+                'يهدف هذا المشروع إلى تطوير وتوحيد الحضور المؤسسي والرقمي لشركة سواعد للاستيراد والتصدير، بما يعكس وجودها الفعلي في المملكة العربية السعودية والصين، ويعزز ثقة العملاء والشركاء في خدمات التوريد والاستيراد والتصدير وإدارة سلسلة الإمداد.': 'This project aims to develop and unify the company\'s institutional and digital presence, reflecting its actual presence in Saudi Arabia and China, while strengthening client and partner trust in procurement, importing, exporting, and supply-chain services.',
+                'يشمل المشروع تأسيس المظهر المؤسسي للشركة، وإعداد المحتوى والملف التعريفي، وتصميم وتطوير الموقع الإلكتروني، وتأسيس الحسابات الرقمية الأساسية، بما يمنح الشركة حضورًا احترافيًا موحدًا وقابلًا للتطوير مستقبلًا.': 'The project includes establishing the company’s corporate visual identity, preparing content and the company profile, designing and developing the website, and setting up core digital accounts to deliver a unified and scalable professional presence.',
+                'أهداف المشروع': 'Project Objectives',
+                'توحيد الصورة المؤسسية للشركة في جميع نقاط التواصل.': 'Unify the corporate image across all touchpoints.',
+                'رفع مستوى الثقة عند تقديم الشركة للعملاء والشركاء.': 'Increase trust when presenting the company to clients and partners.',
+                'توثيق وجود الشركة وعملياتها بين المملكة العربية السعودية والصين.': 'Document the company\'s presence and operations between Saudi Arabia and China.',
+                'إعداد أدوات تعريف ومبيعات مؤسسية احترافية.': 'Prepare professional institutional selling and identity assets.',
+                'تأسيس موقع إلكتروني وحسابات رقمية رسمية.': 'Establish a company website and official digital accounts.',
+                'توفير أساس رقمي قابل للتوسع في التسويق والمبيعات مستقبلًا.': 'Provide a scalable digital foundation for future marketing and sales.',
+                'نطاق العمل والمخرجات': 'Scope of Work and Deliverables',
+                'المرحلة الأولى: تأسيس العلامة والمحتوى المؤسسي': 'Phase 1: Corporate Identity and Institutional Content',
+                'تطوير وتوحيد الهوية البصرية الحالية': 'Develop and Standardize the Current Visual Identity',
+                'مراجعة الشعار الحالي وتحسين طريقة استخدامه دون إعادة تصميمه بالكامل.': 'Review the existing logo and improve its usage.',
+                'اعتماد لوحة ألوان مؤسسية موحدة.': 'Adopt a unified institutional color palette.',
+                'اعتماد الخطوط العربية والإنجليزية المستخدمة في المواد المؤسسية.': 'Adopt Arabic and English typography used in institutional materials.',
+                'إعداد أسلوب موحد للعناوين والنصوص والعناصر البصرية.': 'Establish a consistent style for headlines, copy, and visual assets.',
+                'تصميم بطاقة أعمال احترافية.': 'Design a professional business card.',
+                'تصميم توقيع بريد إلكتروني موحد.': 'Design a unified email signature.',
+                'إعداد دليل استخدام بصري أساسي ومختصر للهوية.': 'Prepare a concise visual identity usage guide.',
+                'ملاحظة: يشمل هذا المشروع إنشاء الشعار الجديد.': 'Note: This project includes the creation of a new logo.',
+                'إعداد المحتوى المؤسسي': 'Institutional Content Setup',
+                'كتابة نبذة احترافية عن الشركة.': 'Write a professional company overview.',
+                'صياغة الرؤية والرسالة والقيم المؤسسية.': 'Craft the vision, mission, and corporate values.',
+                'تنظيم خدمات الشركة وقطاعات عملها.': 'Organize the company services and business sectors.',
+                'كتابة وصف مكتب الصين ودوره التشغيلي.': 'Write the description of the China office and its operational role.',
+                'كتابة وصف عمليات التوريد والفحص والجودة والشحن.': 'Write the description of procurement, inspection, quality, and shipping operations.',
+                'كتابة المحتوى المؤسسي الأساسي باللغتين العربية والإنجليزية.': 'Prepare core institutional content in Arabic and English.',
+                'تصميم الملف التعريفي للشركة': 'Company Profile Design',
+                'تصميم ملف تعريفي احترافي للشركة من 16 إلى 20 صفحة.': 'Design a professional 16 to 20-page company profile.',
+                'تنظيم أقسام الشركة وخدماتها وقطاعاتها ومراحل العمل.': 'Organize the company structure, services, sectors, and workflow stages.',
+                'استخدام الصور الحقيقية للمكتب والمصانع والاجتماعات والشحنات.': 'Use authentic photos of the office, factories, meetings, and shipments.',
+                'تجهيز نسخة PDF عالية الجودة للعرض الرقمي.': 'Prepare a high-quality PDF version for digital presentation.',
+                'تجهيز نسخة مناسبة للطباعة.': 'Prepare a print-ready version.',
+                'تجهيز نسخة مناسبة للإرسال عبر البريد الإلكتروني وWhatsApp.': 'Prepare a version suitable for email and WhatsApp sharing.',
+                'المرحلة الثانية: تأسيس الموقع الإلكتروني': 'Phase 2: Website Foundation',
+                'تصميم واجهة مؤسسية مخصصة ومتوافقة مع الهوية البصرية.': 'Design a custom institutional interface aligned with the visual identity.',
+                'تطوير موقع إلكتروني متجاوب مع الجوال والكمبيوتر.': 'Develop a responsive website for mobile and desktop.',
+                'دعم اللغتين العربية والإنجليزية.': 'Support both Arabic and English languages.',
+                'إنشاء الصفحة الرئيسية.': 'Create the Homepage.',
+                'إنشاء صفحة من نحن.': 'Create the About Us page.',
+                'إنشاء صفحة الخدمات.': 'Create the Services page.',
+                'إنشاء صفحة المنتجات.': 'Create the Products page.',
+                'إنشاء صفحة القطاعات.': 'Create the Sectors page.',
+                'إنشاء صفحة مكتب الصين.': 'Create the China Office page.',
+                'إنشاء صفحة الجودة والفحص.': 'Create the Quality and Inspection page.',
+                'إنشاء صفحة المشاريع والشحنات.': 'Create the Projects and Shipments page.',
+                'إنشاء صفحة تواصل معنا.': 'Create the Contact Us page.',
+                'إنشاء صفحة طلب عرض سعر.': 'Create the Quote Request page.',
+                'إنشاء نموذج طلب عرض سعر RFQ.': 'Create an RFQ request form.',
+                'إضافة إمكانية رفع الملفات ضمن نموذج طلب عرض السعر إذا كانت التقنية المستخدمة تدعم ذلك.': 'Add file upload capability in the quote form when supported by the platform.',
+                'ربط البريد الإلكتروني وWhatsApp.': 'Connect email and WhatsApp.',
+                'ربط حسابات التواصل الاجتماعي.': 'Connect social media accounts.',
+                'تهيئة عناوين الصفحات والوصف التعريفي لمحركات البحث.': 'Optimize page titles and meta descriptions for SEO.',
+                'إنشاء خريطة موقع أساسية.': 'Create a core site map.',
+                'ربط Google Analytics.': 'Integrate Google Analytics.',
+                'ربط Google Search Console عند توفر صلاحيات العميل.': 'Integrate Google Search Console when client permissions are available.',
+                'إضافة شهادة SSL إذا كانت متاحة ضمن الاستضافة المستخدمة.': 'Add SSL certificate if available in the selected hosting.',
+                'اختبار الموقع على الجوال والكمبيوتر.': 'Test the website on mobile and desktop.',
+                'اختبار النماذج والروابط قبل الإطلاق.': 'Test all forms and links before launch.',
+                'ملاحظة: يتم تنفيذ الموقع ضمن الصفحات والوظائف المذكورة، ولا يشمل الأنظمة البرمجية المخصصة أو بوابات العملاء أو أنظمة متابعة الشحنات.': 'Note: The website will be implemented based on the listed pages and features, excluding custom software, client portals, or shipment tracking systems.',
+                'المرحلة الثالثة: تأسيس الحضور الرقمي': 'Phase 3: Digital Presence Setup',
+                'LinkedIn': 'LinkedIn',
+                'إنشاء أو تحسين صفحة الشركة الرسمية.': 'Create or optimize the official company page.',
+                'كتابة الوصف المؤسسي للشركة.': 'Write the institutional company description.',
+                'إضافة الخدمات ومعلومات التواصل.': 'Add services and contact information.',
+                'تصميم صورة الغلاف.': 'Design the cover image.',
+                'توحيد الهوية البصرية.': 'Unify the visual identity.',
+                'ربط الموقع الإلكتروني.': 'Link the website.',
+                'Facebook': 'Facebook',
+                'إنشاء أو تحسين صفحة الأعمال.': 'Create or optimize the business page.',
+                'إعداد معلومات الشركة الرسمية.': 'Set up official company details.',
+                'تصميم صورة الغلاف وصورة الملف الشخصي.': 'Design cover image and profile photo.',
+                'إضافة روابط التواصل والموقع الإلكتروني.': 'Add contact links and website URL.',
+                'Instagram': 'Instagram',
+                'إنشاء أو تحسين حساب الأعمال.': 'Create or optimize the business account.',
+                'كتابة النبذة التعريفية.': 'Write the profile description.',
+                'توحيد اسم المستخدم والهوية البصرية.': 'Align username and visual identity.',
+                'تصميم صورة الملف الشخصي.': 'Design the profile picture.',
+                'ربط الموقع ووسائل التواصل.': 'Connect website and social media channels.',
+                'X': 'X',
+                'إنشاء أو تحسين الحساب الرسمي.': 'Create or optimize the official account.',
+                'كتابة الوصف التعريفي المختصر.': 'Write a concise account description.',
+                'توحيد الهوية والروابط.': 'Align identity and links.',
+                'YouTube': 'YouTube',
+                'إنشاء أو تحسين القناة الرسمية.': 'Create or optimize the official channel.',
+                'إعداد وصف القناة ومعلومات التواصل.': 'Set up channel description and contact information.',
+                'تصميم صورة الغلاف وصورة القناة.': 'Design the cover image and channel image.',
+                'تجهيز القناة لاستقبال فيديوهات المصانع والشحنات مستقبلًا.': 'Prepare the channel to host future manufacturing and shipment videos.',
+                'Google Business Profile': 'Google Business Profile',
+                'إعداد أو تحسين الملف التجاري عند توفر متطلبات التحقق.': 'Create or optimize the business listing where verification requirements are met.',
+                'إضافة البيانات الرسمية للشركة.': 'Add official company information.',
+                'إضافة الموقع وساعات العمل ووسائل التواصل.': 'Add location, working hours, and communication channels.',
+                'رفع الصور الأساسية.': 'Upload core visual assets.',
+                'تجهيز المحتوى الافتتاحي': 'Launch Content Preparation',
+                'إعداد 10 منشورات تعريفية افتتاحية.': 'Prepare 10 introductory posts.',
+                'كتابة نصوص المنشورات بالعربية والإنجليزية عند الحاجة.': 'Draft post copy in Arabic and English when needed.',
+                'تصميم قوالب ثابتة متوافقة مع الهوية البصرية.': 'Create static templates aligned with the brand identity.',
+                'توزيع المحتوى على موضوعات الشركة والخدمات والمكتب والمصانع والجودة والشحن.': 'Distribute content across topics about the company, services, office, factories, quality, and shipments.',
+                'تسليم المنشورات جاهزة للنشر.': 'Deliver posts ready for publishing.',
+                'ملاحظة: يشمل هذا البند تأسيس وتجهيز الحسابات والمحتوى الافتتاحي فقط، ولا يشمل الإدارة أو النشر الشهري بعد التسليم.': 'Note: This scope covers account setup and launch content only, excluding management or monthly publishing after handover.',
+                'المرحلة الرابعة: الإطلاق والتسليم': 'Phase 4: Launch and Delivery',
+                'مراجعة جميع المخرجات قبل التسليم.': 'Review all deliverables before handover.',
+                'مراجعة الموقع الإلكتروني والنماذج والروابط.': 'Review the website, forms, and links.',
+                'مراجعة الملف التعريفي النهائي.': 'Review the final profile.',
+                'مراجعة الحسابات الرقمية.': 'Review all digital accounts.',
+                'تنفيذ التعديلات المتفق عليها ضمن نطاق المشروع.': 'Implement approved revisions within project scope.',
+                'إطلاق الموقع الإلكتروني.': 'Launch the website.',
+                'تسليم الملف التعريفي النهائي.': 'Deliver the final profile.',
+                'تسليم ملفات الهوية الأساسية.': 'Deliver core identity files.',
+                'تسليم ملفات بطاقة الأعمال وتوقيع البريد الإلكتروني.': 'Deliver business card and email signature files.',
+                'تسليم بيانات الدخول للحسابات التي تم إنشاؤها.': 'Provide login credentials for all created accounts.',
+                'تسليم ملفات المحتوى الافتتاحي.': 'Deliver launch content files.',
+                'تقديم جلسة تدريب لمدة ساعة على إدارة الموقع والحسابات.': 'Provide a one-hour training session on managing the website and accounts.',
+                'تقديم دعم فني لمدة 14 يومًا لمعالجة الأخطاء المتعلقة بالتنفيذ.': 'Provide 14 days of technical support for implementation issues.',
+                'آلية تنفيذ المشروع': 'Project Execution Method',
+                'اعتماد عرض السعر وسداد الدفعة الأولى.': 'Approve the quote and pay the first installment.',
+                'عقد اجتماع بدء المشروع وجمع المعلومات والمتطلبات.': 'Conduct a project kickoff meeting and gather requirements.',
+                'استلام الشعار والمعلومات والصور والوثائق المتوفرة.': 'Collect logo, information, photos, and available documents.',
+                'إعداد المحتوى والهيكل المؤسسي.': 'Prepare content and institutional structure.',
+                'تطوير وتوحيد الهوية البصرية الحالية.': 'Develop and standardize the current visual identity.',
+                'تصميم الملف التعريفي للشركة.': 'Design the company profile.',
+                'تصميم وتطوير الموقع الإلكتروني.': 'Design and develop the website.',
+                'تأسيس الحسابات الرقمية الرسمية.': 'Set up official digital accounts.',
+                'إعداد المحتوى الافتتاحي.': 'Prepare launch content.',
+                'مراجعة المشروع وتنفيذ التعديلات المعتمدة.': 'Review project and implement approved revisions.',
+                'إطلاق المشروع والتسليم والتدريب.': 'Launch project, hand over, and train.',
+                'مدة التنفيذ التقديرية: ٤٠ يوم عمل من تاريخ اكتمال استلام جميع المتطلبات واعتماد بدء التنفيذ.': 'Estimated execution time: 40 business days from complete receipt of all requirements and start approval.',
+                'الجدول الزمني': 'Timeline',
+                'الأسبوع الأول: جمع البيانات، إعداد المحتوى المؤسسي، ومراجعة واعتماد الأساس البصري.': 'Week 1: Collect data, prepare institutional content, and review and approve the visual foundation.',
+                'الأسبوع الثاني: تصميم الملف التعريفي، وإعداد التصميمات الأساسية، وتطوير واجهات الموقع الإلكتروني.': 'Week 2: Design the profile, prepare core visuals, and develop website interfaces.',
+                'الأسبوع الثالث: استكمال تطوير الموقع، وتأسيس الحسابات الرقمية، وإعداد المحتوى الافتتاحي، والمراجعة والإطلاق.': 'Week 3: Finalize website development, establish digital accounts, prepare launch content, review, and launch.',
+                'ملاحظة: يتوقف الجدول الزمني عند تأخر العميل في توفير المعلومات أو الاعتمادات أو الملاحظات المطلوبة.': 'Note: Timeline depends on timely provision of required information, approvals, and feedback.',
+                'المتطلبات المطلوبة من العميل': 'Client Requirements',
+                'الشعار الحالي بصيغة عالية الجودة إن توفر.': 'High-quality existing logo files, if available.',
+                'الاسم الرسمي للشركة ومعلومات السجل.': 'Official company name and registration details.',
+                'النبذة الحالية عن الشركة.': 'Current company overview.',
+                'قائمة الخدمات والمنتجات والقطاعات.': 'List of services, products, and sectors.',
+                'معلومات مكتب المملكة العربية السعودية ومكتب الصين.': 'Information for both Saudi Arabia and China offices.',
+                'بيانات التواصل الرسمية.': 'Official contact details.',
+                'صور المكتب والمصانع والاجتماعات والشحنات.': 'Photos of office, factories, meetings, and shipments.',
+                'أسماء الموظفين أو المسؤولين المطلوب إضافتهم.': 'Names of team members or decision-makers to include.',
+                'بيانات الدخول أو الصلاحيات للحسابات الحالية.': 'Credentials/access for existing accounts where applicable.',
+                'الدومين والاستضافة أو الموافقة على شرائهما بشكل مستقل.': 'Domain and hosting arrangements, or approval to procure them.',
+                'اعتماد المحتوى والتصاميم والملاحظات ضمن الوقت المحدد.': 'Timely approval of content, designs, and feedback.',
+                'الاستثمار في المشروع': 'Project Investment',
+                'غير مشمول في السعر': 'Not Included',
+                'رسوم الدومين والاستضافة.': 'Domain and hosting fees.',
+                'رسوم الأدوات أو القوالب أو الإضافات المدفوعة.': 'Paid tools, templates, or plugin costs.',
+                'التصوير الاحترافي الجديد.': 'New professional photography.',
+                'إنتاج الفيديوهات أو الموشن جرافيك.': 'Video or motion graphics production.',
+                'إدارة الحسابات أو النشر الشهري.': 'Ongoing account management or monthly posting.',
+                'الحملات الإعلانية المدفوعة وميزانياتها.': 'Paid advertising campaigns and budgets.',
+                'تحسين محركات البحث المتقدم والمستمر.': 'Advanced and continuous SEO optimization.',
+                'كتابة المقالات المستمرة.': 'Ongoing article writing.',
+                'الترجمة إلى اللغة الصينية.': 'Translation into Chinese.',
+                'أنظمة CRM أو ERP.': 'CRM or ERP systems.',
+                'البرمجة أو التكاملات المخصصة.': 'Custom development or integrations.',
+                'إنشاء بوابة عملاء أو نظام متابعة شحنات.': 'Customer portal or shipment tracking system.',
+                'إدخال أعداد كبيرة من المنتجات أو البيانات.': 'Large-scale data or product input.',
+                'أي خدمات أو تعديلات خارج نطاق المخرجات المذكورة.': 'Any services or changes outside listed deliverables.',
+                'سياسة التعديلات': 'Revision Policy',
+                'يشمل المشروع جولتين من التعديلات المجمعة لكل مرحلة.': 'The project includes two consolidated revision rounds per phase.',
+                'يجب إرسال الملاحظات بصورة واضحة ومجمعة.': 'Feedback must be delivered clearly and in batches.',
+                'التعديلات الخارجة عن نطاق المشروع يتم تسعيرها بشكل مستقل.': 'Out-of-scope changes will be priced separately.',
+                'يبدأ تنفيذ المرحلة التالية بعد اعتماد المرحلة السابقة.': 'The next phase starts after approval of the previous phase.',
+                'الملكية والتسليم': 'Ownership and Handoff',
+                'تنتقل حقوق استخدام المخرجات النهائية إلى العميل بعد سداد كامل قيمة المشروع.': 'Ownership rights for final outputs transfer after full payment.',
+                'يحتفظ المنفذ بحق عرض المشروع ضمن ملف الأعمال، ما لم يطلب العميل خلاف ذلك كتابيًا.': 'The provider retains the right to showcase the project in portfolio unless client requests otherwise in writing.',
+                'لا يتم تسليم الملفات النهائية أو بيانات الإطلاق قبل استكمال الدفعات المستحقة.': 'Final files or launch credentials are delivered only after all payments are completed.',
+                'خدمات مستقبلية اختيارية': 'Optional Future Services',
+                'إدارة LinkedIn والحسابات الرقمية.': 'LinkedIn and digital account management.',
+                'إنتاج المحتوى الشهري.': 'Monthly content production.',
+                'تصوير المصانع والمشاريع.': 'Factory and project shooting.',
+                'إنتاج الفيديوهات التعريفية.': 'Creation of introductory videos.',
+                'إدارة الحملات الإعلانية.': 'Advertising campaign management.',
+                'تحسين محركات البحث بصورة مستمرة.': 'Continuous SEO optimization.',
+                'كتابة المقالات المؤسسية.': 'Corporate article writing.',
+                'تطوير نظام CRM.': 'CRM system development.',
+                'أتمتة طلبات عروض الأسعار.': 'RFQ request automation.',
+                'إنشاء مكتبة منتجات رقمية.': 'Digital product library development.',
+                'تطوير الموقع وإضافة لغات أو خدمات جديدة.': 'Website expansion with new languages or services.',
+                'الخدمات المذكورة أعلاه ليست ضمن قيمة المشروع الحالية، ويمكن تسعيرها بصورة مستقلة عند الحاجة.': 'The services listed above are outside the current project scope and can be priced separately when required.'
+            };
+            const nodes = [];
+
+            const walker = document.createTreeWalker(documentCard, NodeFilter.SHOW_TEXT, null);
+            const normalize = (text) => text.replace(/\s+/g, ' ').trim();
+            const hasArabicText = (text) => /[\u0600-\u06FF]/.test(text);
+
+            let node;
+            while ((node = walker.nextNode())) {
+                const text = node.nodeValue;
+                if (!text || !text.trim()) continue;
+                if (!hasArabicText(text)) continue;
+                const normalized = normalize(text);
+                if (!normalized) continue;
+                if (translations[normalized]) {
+                    nodes.push({ node, arabic: text, key: normalized });
+                }
+            }
+
+            function setLanguage(language) {
+                if (language === 'en') {
+                    nodes.forEach((entry) => {
+                        const translated = translations[entry.key];
+                        if (translated) {
+                            entry.node.nodeValue = entry.node.nodeValue.replace(entry.arabic.trim(), translated);
+                        }
+                    });
+                    document.documentElement.setAttribute('dir', 'ltr');
+                    document.documentElement.setAttribute('lang', 'en');
+                    document.body.setAttribute('dir', 'ltr');
+                    documentCard.setAttribute('dir', 'ltr');
+                    toggleButton.textContent = 'العربية';
+                } else {
+                    nodes.forEach((entry) => {
+                        entry.node.nodeValue = entry.arabic;
+                    });
+                    document.documentElement.setAttribute('dir', 'rtl');
+                    document.documentElement.setAttribute('lang', 'ar');
+                    document.body.setAttribute('dir', 'rtl');
+                    documentCard.setAttribute('dir', 'rtl');
+                    toggleButton.textContent = 'English';
+                }
+            }
+
+            let currentLang = localStorage.getItem('invoiceLanguage') || 'ar';
+            setLanguage(currentLang);
+
+            toggleButton.addEventListener('click', () => {
+                currentLang = currentLang === 'ar' ? 'en' : 'ar';
+                setLanguage(currentLang);
+                localStorage.setItem('invoiceLanguage', currentLang);
+            });
+        })();
+    </script>
     <script src="../../assets/script.js"></script>
 </body>
 </html>
