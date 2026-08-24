@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض سعر لإنتاج فيديو تعريفي - سواعد التشييد</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="../../assets/style.css">
+    <style>
+        :root {
+            --primary: #0f5c3b;
+            --primary-dark: #0a4029;
+            --primary-light: #f1f7f4;
+            --border-green: rgba(15, 92, 59, 0.2);
+        }
+
+        body {
+            background: #f6f8f7;
+        }
+
+        .document-wrapper {
+            padding: 32px 15px 48px;
+        }
+
+        .document-card {
+            box-shadow: 0 10px 35px rgba(10, 64, 41, 0.08);
+        }
+
+        .hero-banner {
+            padding: 46px 28px 42px;
+        }
+
+        .hero-title span {
+            margin: 0;
+        }
+
+        .hero-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 17px;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+        .hero-english {
+            color: rgba(255, 255, 255, 0.72);
+            direction: ltr;
+            font-size: 13px;
+            letter-spacing: 0.35px;
+            margin-top: 5px;
+        }
+
+        .quote-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px 24px;
+            background: var(--primary-light);
+            border: 1px solid var(--border-green);
+            border-radius: var(--radius-md);
+            padding: 20px;
+        }
+
+        .quote-meta-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 14px;
+            padding-bottom: 9px;
+            border-bottom: 1px dashed var(--border-green);
+        }
+
+        .quote-meta-label {
+            color: var(--text-muted);
+            font-size: 13px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .quote-meta-value {
+            color: var(--text-primary);
+            font-size: 14px;
+            font-weight: 700;
+            text-align: left;
+        }
+
+        .content-section {
+            padding: 26px 22px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .content-section .section-title,
+        .detail-card .section-title {
+            margin-bottom: 16px;
+        }
+
+        .description-box,
+        .detail-card,
+        .scope-box,
+        .steps-box,
+        .delivery-box {
+            background: #fff;
+            border: 1px solid var(--border-green);
+            border-radius: var(--radius-md);
+            padding: 20px;
+        }
+
+        .description-box {
+            background: var(--primary-light);
+        }
+
+        .description-box p,
+        .duration-copy {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .scope-list,
+        .plain-list,
+        .steps-list {
+            list-style: none;
+            display: grid;
+            gap: 0 26px;
+        }
+
+        .scope-list {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .plain-list {
+            grid-template-columns: 1fr;
+        }
+
+        .steps-list {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            counter-reset: video-steps;
+        }
+
+        .scope-list li,
+        .plain-list li {
+            position: relative;
+            padding: 10px 18px 10px 0;
+            border-bottom: 1px solid #edf0ee;
+            color: var(--text-secondary);
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .scope-list li::before,
+        .plain-list li::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 18px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+
+        .steps-list li {
+            counter-increment: video-steps;
+            min-height: 92px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 14px;
+            border: 1px solid var(--border-green);
+            border-radius: var(--radius-md);
+            color: var(--text-secondary);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .steps-list li::before {
+            content: counter(video-steps);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            flex: 0 0 24px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .two-card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .duration-copy + .duration-copy {
+            margin-top: 10px;
+        }
+
+        .price-block {
+            padding: 32px 22px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .pricing-box {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 28px;
+            background: linear-gradient(180deg, #fff 0%, var(--primary-light) 100%);
+            box-shadow: 0 8px 24px rgba(15, 92, 59, 0.08);
+        }
+
+        .pricing-label {
+            font-size: 17px;
+        }
+
+        .price-value {
+            display: block;
+            color: var(--primary);
+            font-size: 38px;
+            font-weight: 700;
+            line-height: 1.25;
+            margin: 8px 0 12px;
+        }
+
+        .pricing-note {
+            line-height: 1.8;
+        }
+
+        .exclusions-box {
+            border-right: 4px solid var(--primary);
+        }
+
+        .document-footer {
+            padding: 25px 20px;
+            gap: 0;
+        }
+
+        .print-action-bottom {
+            width: 100%;
+        }
+
+        .print-action-bottom .btn {
+            min-height: 48px;
+        }
+
+        @media (max-width: 768px) {
+            .document-wrapper {
+                padding: 14px 10px 28px;
+            }
+
+            .hero-banner {
+                padding: 34px 18px 32px;
+            }
+
+            .hero-title,
+            .hero-title span {
+                font-size: 23px;
+            }
+
+            .hero-subtitle {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+
+            .quote-meta-grid,
+            .two-card-grid,
+            .scope-list,
+            .steps-list {
+                grid-template-columns: 1fr;
+            }
+
+            .quote-meta-row {
+                flex-direction: column;
+                gap: 3px;
+            }
+
+            .quote-meta-value {
+                text-align: right;
+            }
+
+            .content-section,
+            .price-block {
+                padding: 22px 15px;
+            }
+
+            .description-box,
+            .detail-card,
+            .scope-box,
+            .steps-box,
+            .delivery-box {
+                padding: 16px;
+            }
+
+            .steps-list li {
+                min-height: 0;
+            }
+
+            .price-value {
+                font-size: 30px;
+            }
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            body {
+                background: #fff;
+                font-size: 11px;
+            }
+
+            .document-wrapper {
+                padding: 0;
+            }
+
+            .document-card {
+                overflow: visible;
+            }
+
+            .hero-banner {
+                padding: 28px 20px;
+            }
+
+            .content-section,
+            .price-block,
+            .meta-section {
+                padding: 16px 14px;
+            }
+
+            .description-box,
+            .detail-card,
+            .scope-box,
+            .steps-box,
+            .pricing-box,
+            .delivery-box {
+                break-inside: avoid;
+            }
+
+            .steps-list li {
+                min-height: 76px;
+                break-inside: avoid;
+            }
+
+            .scope-list li::before,
+            .plain-list li::before,
+            .steps-list li::before {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="document-wrapper">
+        <article class="document-card" id="document-card">
+            <header class="hero-section">
+                <div class="hero-banner">
+                    <h1 class="hero-title"><span>عرض سعر لإنتاج فيديو تعريفي</span></h1>
+                    <p class="hero-subtitle">إنتاج فيديو بالذكاء الاصطناعي بمدة تصل إلى 60 ثانية</p>
+                    <p class="hero-english" lang="en">AI Corporate Video Production</p>
+                </div>
+            </header>
+
+            <section class="meta-section">
+                <div class="quote-meta-grid">
+                    <div class="quote-meta-row">
+                        <span class="quote-meta-label">رقم الفاتورة</span>
+                        <span class="quote-meta-value" id="invoice-number">2026082501</span>
+                    </div>
+                    <div class="quote-meta-row">
+                        <span class="quote-meta-label">تاريخ الإصدار</span>
+                        <span class="quote-meta-value">2026/08/25</span>
+                    </div>
+                    <div class="quote-meta-row">
+                        <span class="quote-meta-label">اسم العميل</span>
+                        <span class="quote-meta-value company-name">سواعد التشييد</span>
+                    </div>
+                    <div class="quote-meta-row">
+                        <span class="quote-meta-label">اسم الخدمة</span>
+                        <span class="quote-meta-value">إنتاج فيديو تعريفي بالذكاء الاصطناعي</span>
+                    </div>
+                    <div class="quote-meta-row">
+                        <span class="quote-meta-label">مدة الفيديو</span>
+                        <span class="quote-meta-value">حتى 60 ثانية</span>
+                    </div>
+                    <div class="quote-meta-row">
+                        <span class="quote-meta-label">السعر</span>
+                        <span class="quote-meta-value">1,000 ريال سعودي</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">وصف الخدمة</h2>
+                <div class="description-box">
+                    <p>إنتاج فيديو تعريفي احترافي باستخدام تقنيات الذكاء الاصطناعي، بمدة تصل إلى 60 ثانية، ويشمل تطوير الفكرة، وإعداد السيناريو البصري، وإنتاج وتحريك المشاهد، والمونتاج النهائي، بما يتوافق مع هوية الشركة وطبيعة نشاطها.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">نطاق العمل</h2>
+                <div class="scope-box">
+                    <ul class="scope-list">
+                        <li>تطوير فكرة الفيديو والكونسبت العام.</li>
+                        <li>كتابة السيناريو البصري للفيديو.</li>
+                        <li>تخطيط المشاهد وتسلسلها.</li>
+                        <li>إنتاج المشاهد باستخدام تقنيات الذكاء الاصطناعي.</li>
+                        <li>تحريك المشاهد وإعداد الانتقالات البصرية.</li>
+                        <li>تنفيذ المونتاج النهائي.</li>
+                        <li>إضافة الموسيقى المناسبة للفيديو.</li>
+                        <li>إضافة المؤثرات الصوتية عند الحاجة.</li>
+                        <li>دمج شعار وهوية الشركة داخل الفيديو.</li>
+                        <li>معالجة الألوان والتناسق البصري للمشاهد.</li>
+                        <li>تجهيز النسخة النهائية بجودة عالية.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="detail-card">
+                    <h2 class="section-title">مدة الفيديو</h2>
+                    <p class="duration-copy">مدة الفيديو تصل إلى 60 ثانية كحد أقصى.</p>
+                    <p class="duration-copy">يتم تحديد المدة النهائية وفق السيناريو وتسلسل المشاهد بما يحقق أفضل نتيجة بصرية للفيديو.</p>
+                </div>
+            </section>
+
+            <section class="price-block">
+                <div class="pricing-box">
+                    <span class="pricing-label">قيمة إنتاج الفيديو</span>
+                    <span class="price-value">1,000 ريال سعودي</span>
+                    <p class="pricing-note">يشمل السعر إنتاج فيديو واحد بمدة تصل إلى 60 ثانية وفق نطاق العمل الموضح أعلاه.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">مراحل تنفيذ الفيديو</h2>
+                <div class="steps-box">
+                    <ol class="steps-list">
+                        <li>تحديد فكرة الفيديو والهدف منه.</li>
+                        <li>إعداد السيناريو البصري وتسلسل المشاهد.</li>
+                        <li>اعتماد الفكرة والسيناريو قبل بدء الإنتاج.</li>
+                        <li>إنتاج المشاهد باستخدام الذكاء الاصطناعي.</li>
+                        <li>تحريك المشاهد وتجهيز الانتقالات.</li>
+                        <li>تنفيذ المونتاج والموسيقى والمؤثرات الصوتية.</li>
+                        <li>إرسال النسخة الأولية للمراجعة.</li>
+                        <li>تنفيذ التعديلات المتفق عليها.</li>
+                        <li>تسليم النسخة النهائية.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="two-card-grid">
+                    <div class="detail-card">
+                        <h2 class="section-title">التعديلات</h2>
+                        <ul class="plain-list">
+                            <li>يشمل العرض جولتين من التعديلات.</li>
+                            <li>يجب إرسال الملاحظات بصورة واضحة ومجمعة في كل جولة.</li>
+                            <li>التعديلات التي تغير فكرة الفيديو أو السيناريو بالكامل بعد الاعتماد لا تعتبر ضمن جولات التعديل.</li>
+                            <li>أي طلبات إضافية خارج نطاق العمل يتم تسعيرها بشكل مستقل.</li>
+                        </ul>
+                    </div>
+                    <div class="detail-card">
+                        <h2 class="section-title">المواد المطلوبة من العميل</h2>
+                        <ul class="plain-list">
+                            <li>شعار الشركة بجودة عالية.</li>
+                            <li>الهوية البصرية أو الألوان المعتمدة إن توفرت.</li>
+                            <li>المعلومات الأساسية التي يجب أن يظهرها الفيديو.</li>
+                            <li>الصور أو المواد المرجعية المتوفرة لدى الشركة إن وجدت.</li>
+                            <li>اعتماد الفكرة والسيناريو قبل بدء مرحلة الإنتاج.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">غير مشمول في السعر</h2>
+                <div class="scope-box exclusions-box">
+                    <ul class="scope-list">
+                        <li>التعليق الصوتي.</li>
+                        <li>التصوير الميداني أو تصوير الأشخاص والمواقع.</li>
+                        <li>شراء لقطات فيديو مدفوعة من منصات خارجية.</li>
+                        <li>إنتاج أكثر من نسخة رئيسية للفيديو.</li>
+                        <li>إعادة بناء الفيديو بالكامل بعد اعتماد الفكرة والسيناريو.</li>
+                        <li>إنتاج نسخ إضافية بمقاسات أو مدد مختلفة ما لم يتم الاتفاق عليها مسبقًا.</li>
+                        <li>أي خدمات إضافية غير مذكورة ضمن نطاق العمل.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">التسليم النهائي</h2>
+                <div class="delivery-box">
+                    <ul class="plain-list">
+                        <li>تسليم فيديو نهائي واحد بجودة عالية.</li>
+                        <li>تسليم النسخة النهائية بصيغة رقمية مناسبة للنشر.</li>
+                        <li>تسليم النسخة بعد إتمام جولات التعديل المعتمدة.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <footer class="document-footer">
+                <div class="print-action-bottom no-print">
+                    <button class="btn btn-primary btn-large" type="button" onclick="window.print()">طباعة الفاتورة</button>
+                </div>
+            </footer>
+        </article>
+    </main>
+</body>
+</html>
