@@ -107,8 +107,7 @@
             background: var(--primary-light);
         }
 
-        .description-box p,
-        .duration-copy {
+        .description-box p {
             color: var(--text-secondary);
             font-size: 14px;
             line-height: 1.9;
@@ -193,8 +192,10 @@
             gap: 18px;
         }
 
-        .duration-copy + .duration-copy {
-            margin-top: 10px;
+        .quote-meta-row:last-child {
+            grid-column: 1 / -1;
+            border-bottom: none;
+            padding-bottom: 0;
         }
 
         .price-block {
@@ -221,6 +222,18 @@
             font-weight: 700;
             line-height: 1.25;
             margin: 8px 0 12px;
+        }
+
+        .pricing-summary {
+            display: block;
+            margin: 0 auto 8px;
+            padding: 8px 14px;
+            border-radius: var(--radius-sm);
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.7;
         }
 
         .pricing-note {
@@ -279,6 +292,10 @@
                 text-align: right;
             }
 
+            .quote-meta-row:last-child {
+                grid-column: auto;
+            }
+
             .content-section,
             .price-block {
                 padding: 22px 15px;
@@ -304,12 +321,12 @@
         @media print {
             @page {
                 size: A4;
-                margin: 10mm;
+                margin: 7mm;
             }
 
             body {
                 background: #fff;
-                font-size: 11px;
+                font-size: 10px;
             }
 
             .document-wrapper {
@@ -321,13 +338,104 @@
             }
 
             .hero-banner {
-                padding: 28px 20px;
+                padding: 18px 16px;
+            }
+
+            .hero-title,
+            .hero-title span {
+                font-size: 27px;
+            }
+
+            .hero-subtitle {
+                margin-top: 5px;
+                font-size: 14px;
+            }
+
+            .hero-english {
+                margin-top: 2px;
             }
 
             .content-section,
             .price-block,
             .meta-section {
-                padding: 16px 14px;
+                padding: 10px 12px;
+            }
+
+            .quote-meta-grid,
+            .description-box,
+            .detail-card,
+            .scope-box,
+            .steps-box,
+            .delivery-box {
+                padding: 12px;
+            }
+
+            .quote-meta-grid {
+                gap: 6px 18px;
+            }
+
+            .quote-meta-row {
+                padding-bottom: 5px;
+            }
+
+            .content-section .section-title,
+            .detail-card .section-title {
+                margin-bottom: 8px;
+                break-after: avoid;
+            }
+
+            .description-box p {
+                font-size: 12px;
+                line-height: 1.6;
+            }
+
+            .scope-list li,
+            .plain-list li {
+                padding: 6px 16px 6px 0;
+                font-size: 11.5px;
+                line-height: 1.5;
+            }
+
+            .scope-list li::before,
+            .plain-list li::before {
+                top: 11px;
+            }
+
+            .price-block {
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
+
+            .pricing-box {
+                padding: 16px;
+            }
+
+            .pricing-label {
+                font-size: 15px;
+            }
+
+            .price-value {
+                margin: 4px 0 7px;
+                font-size: 32px;
+            }
+
+            .pricing-summary {
+                margin-bottom: 5px;
+                padding: 5px 10px;
+                font-size: 12px;
+                line-height: 1.5;
+            }
+
+            .pricing-note {
+                line-height: 1.5;
+            }
+
+            .steps-list {
+                gap: 8px;
+            }
+
+            .two-card-grid {
+                gap: 12px;
             }
 
             .description-box,
@@ -340,13 +448,17 @@
             }
 
             .steps-list li {
-                min-height: 76px;
+                min-height: 56px;
+                padding: 9px;
+                font-size: 11.5px;
+                line-height: 1.45;
                 break-inside: avoid;
             }
 
             .scope-list li::before,
             .plain-list li::before,
-            .steps-list li::before {
+            .steps-list li::before,
+            .pricing-summary {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
@@ -387,6 +499,10 @@
                         <span class="quote-meta-value">حتى 60 ثانية</span>
                     </div>
                     <div class="quote-meta-row">
+                        <span class="quote-meta-label">مدة التنفيذ</span>
+                        <span class="quote-meta-value">5 أيام عمل</span>
+                    </div>
+                    <div class="quote-meta-row">
                         <span class="quote-meta-label">السعر</span>
                         <span class="quote-meta-value">1,000 ريال سعودي</span>
                     </div>
@@ -396,7 +512,7 @@
             <section class="content-section">
                 <h2 class="section-title">وصف الخدمة</h2>
                 <div class="description-box">
-                    <p>إنتاج فيديو تعريفي احترافي باستخدام تقنيات الذكاء الاصطناعي، بمدة تصل إلى 60 ثانية، ويشمل تطوير الفكرة، وإعداد السيناريو البصري، وإنتاج وتحريك المشاهد، والمونتاج النهائي، بما يتوافق مع هوية الشركة وطبيعة نشاطها.</p>
+                    <p>إنتاج فيديو تعريفي بصري باستخدام تقنيات الذكاء الاصطناعي، بمدة تصل إلى 60 ثانية، يشمل تطوير الفكرة والسيناريو البصري، وإنتاج المشاهد وتحريكها، والمونتاج والموسيقى والمؤثرات الصوتية، وصولًا إلى نسخة نهائية متوافقة مع هوية الشركة وطبيعة نشاطها.</p>
                 </div>
             </section>
 
@@ -405,13 +521,10 @@
                 <div class="scope-box">
                     <ul class="scope-list">
                         <li>تطوير فكرة الفيديو والكونسبت العام.</li>
-                        <li>كتابة السيناريو البصري للفيديو.</li>
-                        <li>تخطيط المشاهد وتسلسلها.</li>
+                        <li>كتابة السيناريو البصري وتخطيط تسلسل المشاهد.</li>
                         <li>إنتاج المشاهد باستخدام تقنيات الذكاء الاصطناعي.</li>
-                        <li>تحريك المشاهد وإعداد الانتقالات البصرية.</li>
-                        <li>تنفيذ المونتاج النهائي.</li>
-                        <li>إضافة الموسيقى المناسبة للفيديو.</li>
-                        <li>إضافة المؤثرات الصوتية عند الحاجة.</li>
+                        <li>تنفيذ التحريك والمونتاج والانتقالات البصرية.</li>
+                        <li>إضافة الموسيقى والمؤثرات الصوتية المناسبة.</li>
                         <li>دمج شعار وهوية الشركة داخل الفيديو.</li>
                         <li>معالجة الألوان والتناسق البصري للمشاهد.</li>
                         <li>تجهيز النسخة النهائية بجودة عالية.</li>
@@ -419,19 +532,12 @@
                 </div>
             </section>
 
-            <section class="content-section">
-                <div class="detail-card">
-                    <h2 class="section-title">مدة الفيديو</h2>
-                    <p class="duration-copy">مدة الفيديو تصل إلى 60 ثانية كحد أقصى.</p>
-                    <p class="duration-copy">يتم تحديد المدة النهائية وفق السيناريو وتسلسل المشاهد بما يحقق أفضل نتيجة بصرية للفيديو.</p>
-                </div>
-            </section>
-
             <section class="price-block">
                 <div class="pricing-box">
                     <span class="pricing-label">قيمة إنتاج الفيديو</span>
                     <span class="price-value">1,000 ريال سعودي</span>
-                    <p class="pricing-note">يشمل السعر إنتاج فيديو واحد بمدة تصل إلى 60 ثانية وفق نطاق العمل الموضح أعلاه.</p>
+                    <span class="pricing-summary">فيديو واحد | حتى 60 ثانية | جولتان من التعديلات</span>
+                    <p class="pricing-note">يشمل السعر إنتاج فيديو واحد وفق نطاق العمل الموضح أعلاه.</p>
                 </div>
             </section>
 
@@ -442,11 +548,8 @@
                         <li>تحديد فكرة الفيديو والهدف منه.</li>
                         <li>إعداد السيناريو البصري وتسلسل المشاهد.</li>
                         <li>اعتماد الفكرة والسيناريو قبل بدء الإنتاج.</li>
-                        <li>إنتاج المشاهد باستخدام الذكاء الاصطناعي.</li>
-                        <li>تحريك المشاهد وتجهيز الانتقالات.</li>
-                        <li>تنفيذ المونتاج والموسيقى والمؤثرات الصوتية.</li>
-                        <li>إرسال النسخة الأولية للمراجعة.</li>
-                        <li>تنفيذ التعديلات المتفق عليها.</li>
+                        <li>إنتاج وتحريك المشاهد باستخدام الذكاء الاصطناعي.</li>
+                        <li>تنفيذ المونتاج والمراجعة والتعديلات.</li>
                         <li>تسليم النسخة النهائية.</li>
                     </ol>
                 </div>
@@ -466,11 +569,10 @@
                     <div class="detail-card">
                         <h2 class="section-title">المواد المطلوبة من العميل</h2>
                         <ul class="plain-list">
-                            <li>شعار الشركة بجودة عالية.</li>
-                            <li>الهوية البصرية أو الألوان المعتمدة إن توفرت.</li>
-                            <li>المعلومات الأساسية التي يجب أن يظهرها الفيديو.</li>
-                            <li>الصور أو المواد المرجعية المتوفرة لدى الشركة إن وجدت.</li>
-                            <li>اعتماد الفكرة والسيناريو قبل بدء مرحلة الإنتاج.</li>
+                            <li>الشعار والهوية البصرية المتوفرة.</li>
+                            <li>المعلومات الأساسية المطلوب ظهورها في الفيديو.</li>
+                            <li>الصور أو المواد المرجعية المتوفرة إن وجدت.</li>
+                            <li>اعتماد الفكرة والسيناريو قبل بدء الإنتاج.</li>
                         </ul>
                     </div>
                 </div>
